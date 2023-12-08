@@ -12,11 +12,15 @@ Figure 1: Minkowski distance representation by generating circles in 2D. Center 
  
 Figure 3: Final graphical representation of Entropy by modifying initial Gaussian distributions.
 
+![image](https://github.com/Rgzsat/DS-projects/assets/87973999/9b75bc0f-2a3c-49cc-96fe-5c97ba7c8bf9)
+
+Figure 4: Initial 2D moon data set, using own implementation.
+
 # Unsupervised Learning
 
 ![image](https://github.com/Rgzsat/DS-projects/assets/87973999/352722b2-bcc9-4857-8caa-5a3b299e7636)
 
-Figure 4: Clustered dataset of "two diamonds" that illustrate the implementation of the wavecluster.
+Figure 5: Clustered dataset of "two diamonds" that illustrate the implementation of the wavecluster.
 
 
 
