@@ -12,6 +12,13 @@ Figure 1: Minkowski distance representation by generating circles in 2D. Center 
  
 Figure 3: Final graphical representation of Entropy by modifying initial Gaussian distributions.
 
+# Unsupervised Learning
+
+![image](https://github.com/Rgzsat/DS-projects/assets/87973999/352722b2-bcc9-4857-8caa-5a3b299e7636)
+
+Figure 4: Clustered dataset of "two diamonds" that illustrate the implementation of the wavecluster.
+
+
 
 
 
