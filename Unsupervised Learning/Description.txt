@@ -1,1 +1,10 @@
+Clustering: 
+1.- Wavecluster
+2.- DBSCAN
+3.- OPTICS
+
+Outlier Analysis: 
+1.- Local Outlier Factor (LOF)
+2.- DBSCAN 
+3.- OPTICS
 
