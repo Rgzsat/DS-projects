@@ -1,1 +1,4 @@
-
+WAVECLUSTER
+Different grid-based clustering methods are explored and the wavecluster is selected.
+It was found that wavecluster applies wavelet transform on the spatial data feature space,
+which is useful in detecting arbitrary shape clusters at different scale.
