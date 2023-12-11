@@ -16,13 +16,14 @@ Figure 3: Final graphical representation of Entropy by modifying initial Gaussia
 
 Figure 4: Initial 2D moon data set, using own implementation.
 
+![image](https://github.com/Rgzsat/DS-projects/assets/87973999/838999ff-3f64-4f7f-bb26-9200b2776865)
+
+Figure 5: Implementation of the the kernel trick in 3D. Left solution represents the Paraboloid, right solution represents the polynomial
+
 # Unsupervised Learning
 
 ![image](https://github.com/Rgzsat/DS-projects/assets/87973999/352722b2-bcc9-4857-8caa-5a3b299e7636)
 
-Figure 5: Clustered dataset of "two diamonds" that illustrate the implementation of the wavecluster.
-
-
-
+Figure 6: Clustered dataset of "two diamonds" that illustrate the implementation of the wavecluster.
 
 
