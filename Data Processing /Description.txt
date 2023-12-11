@@ -4,4 +4,10 @@
 
 3.- KERNEL TRICK
 
+  3.1-  Paraboloid
+  A loop is initialized and the euclidean distance has been calculated based on the values of each coordinate "x" and "y"
+  A restriction that divides the points inside or outside a specific quantile of the calculated distance in the previous step     is implemented. New labels are assigned based on this current condition.
+  Points are linearly separated in 2D. A new coordinate is created, considering the sum of the squares of the initial           
+   coordinates "x" and "y", the output is a 3D Paraboloid.
+
 
