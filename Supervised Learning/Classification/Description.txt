@@ -1,5 +1,4 @@
-DECISION TREE 
-
-The Decision Tree for a classification problem has been coded, specifically using a binary approach. Initially, the next steps summarize the implementation of the algorithm:
+DECISION TREE: The Decision Tree for a classification problem has been coded,
+specifically using a binary approach.
 
   
