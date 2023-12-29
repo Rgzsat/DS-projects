@@ -26,4 +26,11 @@ Figure 5: Implementation of the the kernel trick in 3D. Left solution represents
 
 Figure 6: Clustered dataset of "two diamonds" that illustrate the implementation of the wavecluster.
 
+# Supervised Learning
+
+![image](https://github.com/Rgzsat/DS-projects/assets/87973999/500960aa-86a1-4d6a-a267-a0402b0f0bcb)
+
+Figure 7: Confusion matrix for the classification problem based on Decision Tree (from scratch).
+
+
 
