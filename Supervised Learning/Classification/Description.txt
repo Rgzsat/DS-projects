@@ -2,8 +2,4 @@ DECISION TREE
 
 The Decision Tree for a classification problem has been coded, specifically using a binary approach. Initially, the next steps summarize the implementation of the algorithm:
 
--Step 1: The loss functions are initialized, which are the Entropy and Gini impurity. A python function to calculate the variance is also implemented, all to complement the next steps that will execute the information gain and the corresponding splits.
--Step 2: The information gain, split for a maximum information gain, and best split, are the main functions in this step. Input variables in the previous functions are the predictors in the initial dataset and the target (predicted variable).
-Step 3: Split execution, prediction, and training of the tree are the 3 implemented functions in the code. The first function estimates the split based on step 2, the second makes a prediction considering the initial dataset and target factor. Finally, the training function considers as main hyper parameters the maximum depth, minimum information gain, and the split with the minimum samples.
-Step 4: The binary classifier is initially coded for a single prediction in the function "data_classifier". A simple k-fold cross validation is implemented from scratch, and the function "dec_tree" executes the complete algorithm and returns the final predicted values of the target variable.
   
