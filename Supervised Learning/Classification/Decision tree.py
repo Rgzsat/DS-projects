@@ -174,3 +174,169 @@ def execute_split(variable, val, data, is_numeric):
 
   return(df_1,df_2)
 
+def prediction(data, fact_targ):
+  '''
+  Make a prediction, given an initial dataset.
+  data: the target variable, in pandas
+  target_factor: Considering if a variable is a factor, input boolean
+  '''
+  # Make predictions
+  if fact_targ:
+    predict = data.value_counts().idxmax()
+  else:
+    predict = data.mean()
+
+  return predict
+
+# TEST
+execute_split('Weight', 96, data, True)
+execute_split('Height', 149, data, True)
+prediction(data['obese'], True)
+prediction(data['Weight'], True)
+prediction(data['Weight'], False)
+
+#%%
+
+def tree_training(data,v, fact_target, max_depth = None,
+               split_min_samples = None, min_inf_gain = 1e-20,
+               counter=0):
+  '''
+  data: Input data
+  v: target variable column name
+  fact_target: boolean to consider if target variable is factor or numeric.
+  max_depth: maximum depth to stop splitting.
+  split_min_samples: minimum number of observations to make a split.
+  min_inf_gain: minimum ig gain to consider a split to be valid.
+  '''
+
+  # Condition to check max_depth
+  if max_depth == None:
+    depth_cond = True
+
+  else:
+    if counter < max_depth:
+      depth_cond = True
+
+    else:
+      depth_cond = False
+
+  # Condition to check split_min_samples
+  if split_min_samples == None:
+    sample_cond = True
+
+  else:
+    if data.shape[0] > split_min_samples:
+      sample_cond = True
+
+    else:
+      sample_cond = False
+
+  # Condition to check information gain
+  if depth_cond & sample_cond:
+
+    var,val,inf_gain,var_type = calc_best_split(v, data)
+
+    # If information gain condition is met, make split 
+    if inf_gain is not None and inf_gain >= min_inf_gain:
+
+      counter= counter+1
+
+      left,right = execute_split(var, val, data,var_type)
+
+      # Initialize sub-tree
+      split_type = "<=" if var_type else "in"
+      question =   "{} {}  {}".format(var,split_type,val)
+      subtree = {question: []}
+
+
+      # Find answers (recursion)
+      posi_answer = tree_training(left,v, fact_target, max_depth,split_min_samples,min_inf_gain, counter)
+
+      neg_answer = tree_training(right,v, fact_target, max_depth,split_min_samples,min_inf_gain, counter)
+
+      if posi_answer == neg_answer:
+        subtree = posi_answer
+
+      else:
+        subtree[question].append(posi_answer)
+        subtree[question].append(neg_answer)
+
+    # If it doesn't match information gain condition, make prediction
+    else:
+      pred = prediction(data[v],fact_target)
+      return pred
+
+   # Drop dataset if doesn't match depth or sample condition
+  else:
+    pred = prediction(data[v],fact_target)
+    return pred
+
+  return subtree
+
+#input variables
+max_depth = 5
+split_min_samples = 20
+min_inf_gain  = 1e-5
+
+#Test
+decisions = tree_training(data,'obese',True, max_depth,split_min_samples,min_inf_gain)
+
+#%%
+
+def data_classifier(obs, tree):
+  
+  '''
+  obs: sample of the dataset that will be used in the decision tree.
+  tree: output of the previous function, "tree_training"
+  output= returns the predicted classifier
+  '''
+  
+  ask_quest = list(tree.keys())[0] 
+
+
+  if ask_quest.split()[1] == '<=':
+
+    if obs[ask_quest.split()[0]] <= float(ask_quest.split()[2]):
+      answer = tree[ask_quest][0]
+    else:
+      answer = tree[ask_quest][1]
+
+  else:
+
+    if obs[ask_quest.split()[0]] in (ask_quest.split()[2]):
+      answer = tree[ask_quest][0]
+    else:
+      answer = tree[ask_quest][1]
+
+
+  # If the answer is not a dictionary
+  if not isinstance(answer, dict):
+    return answer
+  else:
+    residual_tree = answer
+    return data_classifier(obs, answer)
+
+#TEST
+data_classifier(data.iloc[3,:], decisions)
+data_classifier(data.iloc[6,:], decisions)
+data_classifier(data.iloc[180,:], decisions)
+
+#%%
+
+def cross_val(data, n):
+    "n= number of selected folds"
+    "data= dataset"
+    df = data.reindex(np.random.permutation(data.index)) #Randomized data by randomizing the index      
+    df = df.reset_index(drop=True) #Randomized data with reseted index
+
+    length = int(len(df)/n) #length of each fold
+    folds = []
+    for i in range(n-1):
+        folds += [data[i*length:(i+1)*length]]
+    folds += [data[9*length:len(data)]]
+    return folds
+
+#Test
+print(cross_val(data, 10)[9])
+#%%
+
