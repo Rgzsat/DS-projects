@@ -340,3 +340,46 @@ def cross_val(data, n):
 print(cross_val(data, 10)[9])
 #%%
 
+def dec_tree(data, y_true, tree):
+    data_prediction = []
+    num_obser= len(y_true)
+    
+    for i in range(num_obser):
+      obs_pred = data_classifier(data.iloc[i,:], tree)
+      data_prediction.append(obs_pred)
+    return data_prediction
+  
+#y_true= data.iloc[1:80,-1]
+y_true= (cross_val(data, 10)[9]).iloc[:,-1]
+data_f= cross_val(data, 10)[9]
+yp=(dec_tree(data_f, y_true, decisions))
+print(yp)
+#%%
+
+import matplotlib.pyplot as plt
+#Accuracy
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score
+# Calculate the confusion matrix
+#
+conf_matrix = confusion_matrix(y_true=y_true, y_pred=np.array(yp))
+#
+# Print the confusion matrix using Matplotlib
+fig, ax = plt.subplots(figsize=(5, 5))
+ax.matshow(conf_matrix, cmap=plt.cm.Oranges, alpha=0.3)
+for i in range(conf_matrix.shape[0]):
+    for j in range(conf_matrix.shape[1]):
+        ax.text(x=j, y=i,s=conf_matrix[i, j], va='center', ha='center', size='xx-large')
+ 
+plt.xlabel('Predictions', fontsize=18)
+plt.ylabel('Actuals', fontsize=18)
+plt.title('Confusion Matrix', fontsize=18)
+plt.show()
+
+#%%
+
+print('accuracy is', accuracy_score(y_true, yp))
+print('f1 score is', f1_score(y_true,yp, average=None)) 
+print('sensitivity is', recall_score(y_true, yp, pos_label='1'))
+print('specificity is', recall_score(y_true, yp, pos_label='0'))
+print('precision score is', precision_score(y_true, yp, pos_label= '1'))
