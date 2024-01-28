@@ -5,3 +5,6 @@ Step 1: The loss functions are initialized, which are the Entropy and Gini impur
 Step 2: The information gain, split for a maximum information gain, and best split, are the main functions in this step.
 Step 3: Split execution, prediction, and training of the tree are the 3 implemented functions in the code. 
 Step 4: The binary classifier is initially coded for predictions and execution of cross validation.
+
+
+sTOCHASTIC GRADIENT DESCENT (SGD):The Online Gradient Descent has been implemented based on the supervised case. Initially, the Mean Squared Error (MSE) is defined as the loss function, which has been coded and compared with the implementation of the scikit-learn library.
