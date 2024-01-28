@@ -68,3 +68,57 @@ def information_gain(v, split_c, func=entropy):
   
   return inf_gain
 
+#TEST
+information_gain(data['obese'], data['Gender'] == 'Male')
+
+
+def split_max_inf_gain(x, v, func=entropy):
+  '''
+  Given a predictor and target variable, returns the best split, the error and variable type according to a selected loss function.
+  x: independent variable (predictor) as pandas.
+  v: predicted variable as pandas Series.
+  func: loss function to be used.
+  '''
+
+  split_value = []
+  inf_gain = [] 
+
+  if x.dtypes!='0':
+      numeric_variable= True
+  else:
+       numeric_variable= False
+
+  # Create options according to variable type
+  if numeric_variable:
+    options = x.sort_values().unique()[1:]
+
+  # Calculate information gain for all values
+  for val in options:
+    if numeric_variable:
+        mask =   x < val 
+    else:
+        x.isin(val)
+    val_ig = information_gain(v, mask, func)
+    # Append results
+    inf_gain.append(val_ig)
+    split_value.append(val)
+
+  # To check if there are more than 1 results
+  if len(inf_gain) == 0:
+    return(None,None,None, False)
+
+  else:
+  # Get results with highest information gain
+    best_ig = max(inf_gain)
+    best_ig_index = inf_gain.index(best_ig)
+    best_split = split_value[best_ig_index]
+    return(best_ig,best_split,numeric_variable, True)
+
+#TEST 
+(split_max_inf_gain(data['Weight'], data['obese'],) )
+(split_max_inf_gain(data['Height'], data['obese'],) )
+(split_max_inf_gain(data['Gender']=='Male', data['obese'],) )
+(split_max_inf_gain(data['Gender']=='Female', data['obese'],) )
+
+#%%
+
