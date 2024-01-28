@@ -6,7 +6,7 @@ import numpy as np
 from pandas import DataFrame 
 #%% DATASETS and loss function
 
-X, y = make_blobs(n_samples=400, centers=2, n_features=4, cluster_std=5, random_state=11)
+X, y = make_blobs(n_samples=400, centers=2, n_features=4, cluster_std=5, random_state=11) #Use dataset of moons
 
 X = np.c_[np.ones((X.shape[0])), X]
 thetas = np.zeros(X.shape[1])
