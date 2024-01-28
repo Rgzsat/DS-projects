@@ -32,5 +32,10 @@ Figure 6: Clustered dataset of "two diamonds" that illustrate the implementation
 
 Figure 7: Confusion matrix for the classification problem based on Decision Tree (from scratch).
 
+![image](https://github.com/Rgzsat/DS-projects/assets/87973999/b888cd94-33ac-4c12-bf81-093bb1335582)
+
+Figure 8: Final graphical results of the Online Gradient Descent, using moons data set.
+
+
 
 
