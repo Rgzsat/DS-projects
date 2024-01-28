@@ -121,4 +121,56 @@ def split_max_inf_gain(x, v, func=entropy):
 (split_max_inf_gain(data['Gender']=='Female', data['obese'],) )
 
 #%%
+#to summarize the split with the predictors, use "apply"
+data.drop('obese', axis= 1).apply(split_max_inf_gain, v = data['obese'])
+
+#Get the best split
+def calc_best_split(v, data):
+  '''
+  Select the best split and return the variable, value,variable type, and information gain.
+  v: target variable
+  data: dataframe to find the best split.
+  we define "mf" as a mask that help us to apply the function "get_best_split"
+  '''
+  mf = data.drop(v, axis= 1).apply(split_max_inf_gain, v = data[v])
+  if sum(mf.loc[3,:]) == 0:
+    return(None, None, None, None)
+
+  else:
+    # Calculate the masks to be splitted in the dataframe
+    mf = mf.loc[:,mf.loc[3,:]]
+
+    # Get the results for split with highest information gain
+    split_variable = mf.iloc[0].astype(np.float32).idxmax()
+    split_value = mf[split_variable][1] 
+    split_ig = mf[split_variable][0]
+    split_numeric = mf[split_variable][2]
+
+    return(split_variable, split_value, split_ig, split_numeric)
+
+# TEST
+calc_best_split('obese',data)
+calc_best_split('Weight',data)
+calc_best_split('Gender',data)
+calc_best_split('Height',data)
+
+#%%
+
+def execute_split(variable, val, data, is_numeric):
+  '''
+  Given a data and a split condition, do the split.
+  variable: variable with which execute split.
+  value: value of the selected variable with which execute the split.
+  data: data to be splitted.
+  is_numeric: booleanvariable that considers if the variable to be splitted is or not numerical.
+  '''
+  if is_numeric:
+    df_1 = data[data[variable] < val]
+    df_2 = data[(data[variable] < val) == False]
+
+  else:
+    df_1 = data[data[variable].isin(val)]
+    df_2 = data[(data[variable].isin(val)) == False]
+
+  return(df_1,df_2)
 
