@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-data= (pd.read_csv(r'c:\Users\Admin\Downloads\archive\500_Person_Gender_Height_Weight_Index.csv'))
+data= #Insert the data here
 #public dataset here: https://github.com/chriswmann/datasets/blob/master/500_Person_Gender_Height_Weight_Index.csv
 
 #%%
