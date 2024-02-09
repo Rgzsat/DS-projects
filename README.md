@@ -36,6 +36,12 @@ Figure 7: Confusion matrix for the classification problem based on Decision Tree
 
 Figure 8: Final graphical results of the Online Gradient Descent, using moons data set.
 
+![image](https://github.com/Rgzsat/DS-projects/assets/87973999/74283ae6-1285-4343-97de-732c4a14c561)
+
+Figure 9: Confusion matrix for the classification problem based on Bayes Classifier (from scratch).
+
+
+
 
 
 
