@@ -33,3 +33,33 @@ def initial_calc(X,y, classes):
 
 f_pos= initial_calc(X, y, classes)
 
+#%%
+     
+def calculate_likelihood(class_idx, x):
+    mean= f_pos[0][0:2][class_idx]
+    #mean = ini_mean[class_idx]
+    #var = ini_var[class_idx]
+    var= f_pos[0][2:][class_idx]
+    num = np.exp(- (x-mean)**2 / (2 * var))
+    denom = np.sqrt(2 * np.pi * var)
+    likelihood= num/denom
+    return likelihood
+
+
+def classify_sample(x):
+     posterior_prob = []
+     # calculation of posterior probability for each class
+     for i, c in enumerate(classes):
+         #fin_prior = np.log(prior_prob[i])
+         fin_prior = np.log(f_pos[1][i])
+         posterior = np.sum(np.log(calculate_likelihood(i, x)))
+         posterior = fin_prior + posterior
+         posterior_prob.append(posterior)
+     # provides the class with highest posterior probability
+     return classes[np.argmax(posterior_prob)]
+
+def naive_predict(X):
+    y_pred = [classify_sample(x) for x in X]
+    return np.array(y_pred)
+
+#%%
