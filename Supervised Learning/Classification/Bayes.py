@@ -32,5 +32,4 @@ def initial_calc(X,y, classes):
     return np.concatenate((ini_mean, ini_var), axis=0), prior_prob
 
 f_pos= initial_calc(X, y, classes)
-#f_pos= np.concatenate((ini_mean, ini_var), axis=0), prior_prob
 
