@@ -12,11 +12,15 @@ Initially, the Mean Squared Error (MSE) is defined as the loss function, which h
 
 ADABOOST: Implementation of the algorithm is divided into 3 steps, explained as follows:
 
-Step 1: Initial or helper functions: In this case, 3 functions are coded to initialize the algorithm, 
+1) Initial or helper functions: In this case, 3 functions are coded to initialize the algorithm, 
 the first calculates the error based on the target and predicted variable, the second indicates 
 the weight of a weak classifier  using the majority vote of the final classifier, 
 the third updates individual weights per each boosting iteration.
 
-Step 2: AdaBosst function: It executes the boosting taking the matrix of features,
+2) AdaBosst function: It executes the boosting taking the matrix of features,
 output variable, and desired number of boosting iterations. 
 In this specific example, the Decision tree classifier has been selected.
+
+3) Predictions: A final function that takes the independent variables as an input argument is coded.
+Inside the function, the weak classifier is iterated over the number of selected boosting
+rounds and weighted by alpha parameter.
