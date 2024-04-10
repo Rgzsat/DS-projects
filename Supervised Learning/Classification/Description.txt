@@ -16,3 +16,7 @@ Step 1: Initial or helper functions: In this case, 3 functions are coded to init
 the first calculates the error based on the target and predicted variable, the second indicates 
 the weight of a weak classifier  using the majority vote of the final classifier, 
 the third updates individual weights per each boosting iteration.
+
+Step 2: AdaBosst function: It executes the boosting taking the matrix of features,
+output variable, and desired number of boosting iterations. 
+In this specific example, the Decision tree classifier has been selected.
