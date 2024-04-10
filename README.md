@@ -40,8 +40,9 @@ Figure 8: Final graphical results of the Online Gradient Descent, using moons da
 
 Figure 9: Confusion matrix for the classification problem based on Bayes Classifier (from scratch).
 
+![image](https://github.com/Rgzsat/DS-projects/assets/87973999/8fdd0980-a53e-41f3-85f2-a8e30d1b5c19)
 
-
+Figure 10: Confusion matrix for the classification problem based on AdaBoost (from scratch).
 
 
 
