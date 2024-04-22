@@ -42,3 +42,19 @@ def new_weights(w_ind, alpha, y, y_pred):
     return new_weights
 
 #%%
+
+w_ind = np.ones(len(y_test)) * 1 / len(y_test)  # At m = 0, weights are all the same and equal to 1 / N
+alphas = []
+boosting_clas = []
+training_errors = []
+prediction_errors = []
+y= y_test
+weak_clas= DecisionTreeClassifier(max_depth = 1) 
+weak_clas.fit(X_train, y_train)
+y_pred = weak_clas.predict(X_test)
+
+#TEST INITIAL FUNCTIONS
+error= calc_error(y_test, y_pred, w_ind)
+alpha_m= calc_alpha(error)
+update_weights= new_weights(w_ind, alpha_m, y_test, y_pred)
+
