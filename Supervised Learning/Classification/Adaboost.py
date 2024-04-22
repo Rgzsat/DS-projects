@@ -28,3 +28,17 @@ def calc_alpha(error):
     '''
     alpha=np.log((1 - error) / error)
     return alpha
+
+def new_weights(w_ind, alpha, y, y_pred):
+    ''' 
+    Update individual weights w_ind after a boosting iteration
+    w_ind: individual weights for each observation
+    y: actual target value
+    y_pred: predicted value by weak classifier  
+    alpha: weight of weak classifier used to estimate new predictions
+    '''  
+    new_weights= w_ind * np.exp(alpha * (np.not_equal(y, y_pred)).astype(int))
+    
+    return new_weights
+
+#%%
