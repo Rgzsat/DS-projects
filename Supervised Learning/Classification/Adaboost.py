@@ -104,3 +104,27 @@ def ada_boost(X, y, M=M):
 alphas= ada_boost(X_test, y_test)[0] #take the alphas
 final_weak_clas= ada_boost(X_test, y_test)[1] #take the binary weak classifier
 
+def boost_predict(X, M=M):
+        '''
+        Predict using new model
+        X: independent variables
+        '''
+        # initialize array with predictions of weak classifiers for each observation
+        pred_weak = pd.DataFrame(index = range(len(X)), columns = range(M)) 
+
+        # Predict class label for each weak classifier, weighted by alpha_m
+        for m in range(M):
+            y_pred_m = final_weak_clas[m].predict(X) * alphas[m]
+            pred_weak.iloc[:,m] = y_pred_m
+
+        # Estimate final predictions
+        y_pred = (1 * np.sign(pred_weak.T.sum())).astype(int)
+
+        #return weak_preds
+        return y_pred
+    
+        
+y_boost= boost_predict(X_test)
+y_true= y_test
+
+#%%
