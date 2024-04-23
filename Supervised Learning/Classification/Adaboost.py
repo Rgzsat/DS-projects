@@ -128,3 +128,15 @@ y_boost= boost_predict(X_test)
 y_true= y_test
 
 #%%
+import matplotlib.pyplot as plt
+
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import ConfusionMatrixDisplay
+from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score
+
+from sklearn import metrics
+import seaborn as sns
+# Calculate the confusion matrix
+#
+conf_matrix = confusion_matrix(y_true=y_test, y_pred=np.array(y_boost))
+
