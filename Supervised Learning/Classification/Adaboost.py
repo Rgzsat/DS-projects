@@ -58,3 +58,46 @@ error= calc_error(y_test, y_pred, w_ind)
 alpha_m= calc_alpha(error)
 update_weights= new_weights(w_ind, alpha_m, y_test, y_pred)
 
+#%%
+M=150
+def ada_boost(X, y, M=M):
+        '''
+        New model, boosting. Arguments:
+        X: independent variables -matrix of features
+        y: target variable (to be predicted)
+        M: number of boosting rounds.
+        '''       
+        # Initialize lists and weak classifier
+        alphas = []
+        boosting_clas = []
+        training_errors = []
+        w_ind = np.ones(len(y_test)) * 1 / len(y_test)  #At m=0 weights are the same and equal to (1/N)
+        weak_clas = DecisionTreeClassifier(max_depth = 1)     # Initialize classification tree
+        weak_clas.fit(X, y, sample_weight = w_ind)
+
+        # Iterate over the total of "M" weak classifiers
+        for m in range(0, M):
+            
+            if m == 0:
+                w_ind = np.ones(len(y)) * 1 / len(y)  # At m = 0, weights are all the same and equal to 1 / N
+            else:
+                pred_test_i = weak_clas.predict(X_test)
+                miss = [int(x) for x in (pred_test_i != y_test)]
+                err_m = np.dot(w_ind,miss) / sum(w_ind)
+                err_m= calc_error(y_test, pred_test_i, w_ind)
+                alpha_m = 0.5 * np.log( (1 - err_m) / float(err_m))
+                w_ind = new_weights(w_ind, alpha_m, y, pred_test_i)
+
+            boosting_clas.append(weak_clas) # Save to list of weak classifiers
+            # (b) Calculate error
+            error_m = calc_error(y, y_pred, w_ind)
+            training_errors.append(error_m)
+
+            # (c) Calculate alpha
+            alpha_m = calc_alpha(error_m)
+            alphas.append(alpha_m)
+
+        assert len(boosting_clas) == len(alphas)
+        
+        return alphas, boosting_clas
+
