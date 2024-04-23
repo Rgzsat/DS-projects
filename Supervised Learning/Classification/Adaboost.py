@@ -136,7 +136,7 @@ from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_sc
 
 from sklearn import metrics
 import seaborn as sns
+
 # Calculate the confusion matrix
-#
 conf_matrix = confusion_matrix(y_true=y_test, y_pred=np.array(y_boost))
 
