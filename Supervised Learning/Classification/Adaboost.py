@@ -101,3 +101,6 @@ def ada_boost(X, y, M=M):
         
         return alphas, boosting_clas
 
+alphas= ada_boost(X_test, y_test)[0] #take the alphas
+final_weak_clas= ada_boost(X_test, y_test)[1] #take the binary weak classifier
+
