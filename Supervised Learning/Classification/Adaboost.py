@@ -140,3 +140,20 @@ import seaborn as sns
 # Calculate the confusion matrix
 conf_matrix = confusion_matrix(y_true=y_test, y_pred=np.array(y_boost))
 
+# Print the confusion matrix using Matplotlib
+cm= metrics.confusion_matrix(y_true, y_boost)
+cm_display = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix, display_labels = [False, True])
+ax= plt.subplot()
+sns.heatmap(cm, annot=True, fmt='g', ax=ax, cmap='summer');  
+# labels, title and ticks
+ax.set_xlabel('Predictions');ax.set_ylabel('Actuals'); 
+ax.set_title('Confusion Matrix- AdaBoost'); 
+
+y_true= y_test
+print('accuracy is', accuracy_score(y_true, y_boost))
+print('f1 score is', f1_score(y_true,y_boost, average=None)) 
+print('sensitivity is',recall_score(y_true, y_boost, pos_label=1))
+print('specificity is', recall_score(y_true, y_boost, pos_label=0))
+print('precision score is', precision_score(y_true, y_boost, pos_label= 1))
+print('The ROC-AUC score of the model is:', round(roc_auc_score(y_test, y_boost), 4))
+
