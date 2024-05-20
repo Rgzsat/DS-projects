@@ -40,3 +40,13 @@ def backpropagation_func(h1,h2,nn_weights,y):
     h1_error=h2_delta.dot(nn_weights[1].T)
     h1_delta=h1_error*sigmoid_derivative(h1)
     return h2_error,h1_delta,h2_delta
+
+#%%Implementation, computing the training and testing accuracy
+
+f_test= []
+f_train= []
+ep= []
+nn_weights=create_arch(x,3,1)
+n_epochs= 30000
+n_iter= 5000
+
