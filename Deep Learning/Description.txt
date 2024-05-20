@@ -1,1 +1,4 @@
+Neural Networks
 
+The solution consists on implementing several functions to compute the calculations and execute 
+the algorithm based on 2 hidden neural networks
