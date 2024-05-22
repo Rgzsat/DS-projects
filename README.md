@@ -46,5 +46,7 @@ Figure 10: Confusion matrix for the classification problem based on AdaBoost (fr
 
 # Deep Learning
 
+![image](https://github.com/Rgzsat/DS-projects/assets/87973999/cfd4875d-d828-4b78-81ef-d5d8eef93a7c)
 
+Figure 11: Image classification of the CNN.
 
