@@ -54,3 +54,7 @@ Figure 11: Image classification of the CNN.
 
 Figure 12: Confusion matrix of the CNN.
 
+![ml3-7](https://github.com/Rgzsat/DS-projects/assets/87973999/16e5a53b-c4f3-4e4d-8617-0998eb3c9435)
+
+Figure 13: Image classification of the Vision Transformer.
+
