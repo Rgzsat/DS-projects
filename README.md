@@ -58,3 +58,7 @@ Figure 12: Confusion matrix of the CNN.
 
 Figure 13: Image classification of the Vision Transformer.
 
+![image](https://github.com/Rgzsat/DS-projects/assets/87973999/5b8962b2-a922-4f72-997e-3c23352af94a)
+
+Figure 14: Confusion matrix of the Vision Transformer.
+
