@@ -3,5 +3,9 @@ The solution consists on implementing several functions to compute the calculati
 the algorithm based on 2 hidden neural networks
 
 2) Convolutional Neural Networks (CNN)
+A dataset containing training and validation folders, which can be downloaded 
+from the reference in the Jupyter Notebook, considering a binary classification of bees or ants.
 
-A dataset containing training and validation folders, which can be downloaded from the reference in the Jupyter Notebook, considering a binary classification of bees or ants.
+3) Vision Transformer
+This problem consisting of a Vision Transformer and a beans dataset.
+Three categories of beans are the basis of the classification problem. 
