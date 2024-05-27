@@ -62,3 +62,5 @@ Figure 13: Image classification of the Vision Transformer.
 
 Figure 14: Confusion matrix of the Vision Transformer.
 
+# Projects 
+
