@@ -1,0 +1,3 @@
+This final project focuses on implementing Machine Learning algorithms 
+for Battery Energy Storage Systems (BESSs) according 
+to Health and Charge indicators based on End-of-Life (EOL) criteria.
