@@ -1,0 +1,9 @@
+This final project focuses on implementing Machine Learning algorithms 
+for Battery Energy Storage Systems (BESSs) according 
+to Health and Charge indicators based on End-of-Life (EOL) criteria.
+
+Density-based spatial clustering of Applications with Noise (DBSCAN), Ordering
+Points to identify the Clustering Structure (OPTICS), and Local Outlier Factor (LOF) 
+are the Unsupervised techniques implemented for anomaly detection, while Multi-Layer Perceptron (MLP),
+Long-Short Term Memory (LSTM), and Gradient Boosting Regressor (GBR)
+are the Supervised algorithms executed for diagnostics.
