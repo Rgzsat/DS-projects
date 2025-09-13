@@ -92,3 +92,49 @@ plt.ylabel('capacity')
 plt.scatter(np.random.choice(np.array(cycles)[ind_lof], size=500, replace=False),
             np.random.choice(np.array(y)[ind_lof], size=500, replace=False))
 
+#%%MULTIPLE MODELS FOR LOF
+from pyod.models.combination import aom, moa, average, maximization
+from pyod.utils.utility import standardizer
+from pyod.models.lof import LOF
+# Standardize data
+X_train_norm, X_test_norm = standardizer(X_train, X_test)
+# Test a range of k-neighbors from 10 to 200. There will be 20 models.
+n_clf = 20
+k_list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110,
+ 120, 130, 140, 150, 160, 170, 180, 190, 200]
+# Just prepare data frames so we can store the model results
+train_scores = np.zeros([X_train.shape[0], n_clf])
+test_scores = np.zeros([X_test.shape[0], n_clf])
+train_scores.shape
+# Modeling
+for i in range(n_clf):
+    k = k_list[i]
+    lof = LOF(n_neighbors=k)
+    lof.fit(X_train_norm)
+
+    # Store the results in each column:
+    train_scores[:, i] = lof.decision_scores_
+    test_scores[:, i] = lof.decision_function(X_test_norm)
+# Decision scores have to be normalized before combination
+train_scores_norm, test_scores_norm = standardizer(train_scores,test_scores)
+
+# Combination by average
+# The test_scores_norm is 500 x 20. The "average" function will take the average of the 20 columns. The result "y_by_average" is a single column:
+y_by_average = average(train_scores_norm)
+import matplotlib.pyplot as plt
+plt.hist(y_by_average, bins='auto') # arguments are passed to np.histogram
+plt.title("Combination by average")
+plt.xlabel('LOF score')
+plt.ylabel('Frequency')
+plt.xlim(-0.7,1.5)
+plt.show()
+
+mult_lof= test_scores.mean(axis=1)
+f_ind_lof= np.where(mult_lof>=threshold)
+
+plt.title('LOF models outliers')
+plt.xlabel('cycles')
+plt.ylabel('capacity')
+plt.scatter(np.random.choice(np.array(cycles), size=500, replace=False),
+            np.random.choice(np.array(y)[f_ind_lof], size=500, replace=False))
+
