@@ -137,3 +137,32 @@ plt.xlabel('cycles')
 plt.ylabel('capacity')
 plt.scatter(np.random.choice(np.array(cycles), size=500, replace=False),
             np.random.choice(np.array(y)[f_ind_lof], size=500, replace=False))
+
+#%% LOF SECOND APPROACH OUTLIERS
+
+n_neighbors = [5, 20]
+contamination_arr = [0.01,0.03]
+#flags_arr = [1,2]
+f_discharge['cycles']=cycles
+
+from sklearn.neighbors import LocalOutlierFactor
+#for f in flags_arr:
+for n in n_neighbors:
+    for c in contamination_arr:
+            # model specification
+        model1 = LocalOutlierFactor(n_neighbors = n, metric = "manhattan", contamination = c)
+            # model fitting
+        y_pred = model1.fit_predict(f_discharge)
+            # filter outlier index
+        outlier_index = np.where(y_pred == -1) # negative values are outliers and positives inliers
+            # filter outlier values
+        outlier_values = f_discharge.iloc[outlier_index]
+            # plot data
+        #plt.scatter(f_discharge["cycles"].sample(n=500), f_discharge["Capacity"].sample(n=500), color = "b", s = 65)
+            # plot outlier values
+        plt.scatter(outlier_values["cycles"].sample(n=500), outlier_values["Capacity"].sample(n=500), color = "r")
+        plt.xlabel('cycles')
+        plt.ylabel('capacity')
+        plt.title('with n_neighbors = '+ str(n)+' having contamination of '+str(c))
+        plt.show()
+
