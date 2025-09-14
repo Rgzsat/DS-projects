@@ -166,3 +166,17 @@ for n in n_neighbors:
         plt.title('with n_neighbors = '+ str(n)+' having contamination of '+str(c))
         plt.show()
 
+#PARAMETER OPTIMIZATION DBSCAN, INITIALIZATION
+
+st = StandardScaler()
+stdDf =  pd.DataFrame(st.fit_transform(f_discharge), columns=f_discharge.columns)
+nn = NearestNeighbors(n_neighbors=5).fit(stdDf)
+distances, indices = nn.kneighbors(stdDf)
+distances = np.sort(distances, axis=0)
+distances = distances[:,1]
+#plt.figure(figsize=(10,8))
+plt.title('Eps determination')
+plt.xlabel('Points sample')
+plt.ylabel('5-Nearest Neighbor distance')
+plt.axhline(y=0.12, color='r', linestyle='-')
+plt.plot(distances)
