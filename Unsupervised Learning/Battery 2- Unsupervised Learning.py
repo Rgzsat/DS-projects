@@ -40,3 +40,60 @@ plt.plot(time_exp, voltage_exp)
 plt.xlabel('Time [sec]')
 plt.ylabel('Voltage [V]')
 plt.show()
+
+import seaborn as sns
+
+df= Battery
+df['time']= time_exp
+sns.heatmap(df.corr(),linewidths=.1,cmap="YlGnBu", annot=True)
+plt.yticks(rotation=0);
+print(df.isnull().sum())
+
+
+from sklearn.model_selection import train_test_split
+from pyod.models.lof import LOF
+x= np.array(df.loc[:, df.columns != 'V'])
+y= df.loc[:,'mAh']
+X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
+
+from pyod.models.lof import LOF
+lof = LOF(contamination=0.10)
+lof.fit(X_train)
+
+# Training data
+y_train_scores = lof.decision_function(X_train)
+y_train_pred = lof.predict(X_train)
+
+# Test data
+y_test_scores = lof.decision_function(X_test)
+y_test_pred = lof.predict(X_test) # outlier labels (0 or 1)
+
+def count_stat(vector):
+    # Because it is '0' and '1', we can run a count statistic.
+    unique, counts = np.unique(vector, return_counts=True)
+    return dict(zip(unique, counts))
+
+print("The training data:", count_stat(y_train_pred))
+print("The testing data:", count_stat(y_test_pred))
+# Threshold for the defined comtanimation rate
+print("The threshold for the defined comtanimation rate:" , lof.threshold_)
+lof.get_params()
+
+import matplotlib.pyplot as plt
+plt.hist(y_train_scores, bins='auto')  # arguments are passed to np.histogram
+plt.title("Histogram LOF")
+plt.xlabel('LOF outlier score')
+plt.ylabel('Frequency')
+plt.xlim(0.95,1.05)
+plt.show()
+threshold = lof.threshold_ # Or other value from the above histogram
+print((np.array(np.where(y_test_scores>=threshold))).shape)
+
+ind_lof= np.where(y_test_scores>=threshold)
+np.array(y)[np.where(y_test_scores>=threshold)]
+np.array(y)[ind_lof]
+plt.title('LOF intial outliers')
+plt.xlabel('Time')
+plt.ylabel('capacity')
+plt.scatter(np.random.choice(np.array(time_exp)[ind_lof], size=30, replace=False),
+            np.random.choice(np.array(y)[ind_lof], size=30, replace=False))
