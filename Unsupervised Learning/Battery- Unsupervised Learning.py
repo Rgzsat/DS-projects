@@ -180,3 +180,41 @@ plt.xlabel('Points sample')
 plt.ylabel('5-Nearest Neighbor distance')
 plt.axhline(y=0.12, color='r', linestyle='-')
 plt.plot(distances)
+
+#%% OPTICS, IMPLEMENTATION BASED ON OPTIMIZED PARAMETERS
+from sklearn.cluster import OPTICS
+from numpy import quantile, where, random
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import DBSCAN
+from sklearn.neighbors import NearestNeighbors
+from sklearn.metrics import silhouette_score
+
+
+model = OPTICS(eps = 0.12, min_samples = 22).fit(stdDf)
+print(model)
+scores = model.core_distances_
+thresh = quantile(scores, .98)
+print(thresh)
+index = where(scores >= thresh)
+
+np.array(y)[index]
+plt.scatter(np.random.choice(np.array(cycles)[index], size=500, replace=False),
+            np.random.choice(np.array(y)[index], size=500, replace=False), color= 'b')
+plt.title('OPTICS outliers')
+plt.xlabel('cycles')
+plt.ylabel('capacity')
+
+#DBSCAN IMPLEMENTATION, BASED ON PREVIOUS PARAMETERS
+dbsc = DBSCAN(eps = 0.12, min_samples = 22).fit(stdDf)
+labels = dbsc.labels_
+out_df = f_discharge.copy()
+out_df['label'] = dbsc.labels_
+out_df['label'].value_counts()
+
+out_df['cycles']= cycles
+dbsc_out= out_df[out_df['label']==-1]
+plt.scatter(dbsc_out['cycles'].sample(n=500), (dbsc_out['Capacity'].sample(frac=1)).sample(n=500), color= 'green')
+plt.title('DBSCAN outliers')
+plt.xlabel('cycles')
+plt.ylabel('capacity')
