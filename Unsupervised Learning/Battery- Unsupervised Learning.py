@@ -218,3 +218,31 @@ plt.scatter(dbsc_out['cycles'].sample(n=500), (dbsc_out['Capacity'].sample(frac=
 plt.title('DBSCAN outliers')
 plt.xlabel('cycles')
 plt.ylabel('capacity')
+
+
+fig, (ax1, ax2, ax3) = plt.subplots(3)
+plt.subplots_adjust(left=0.15,
+                    bottom=0.15,
+                    right=0.9,
+                    top=0.85,
+                    wspace=1,
+                    hspace=1)
+fig.suptitle('Outlier analysis')
+ax1.scatter(outlier_values["cycles"].sample(n=200), outlier_values["Capacity"].sample(n=200), color = "r")
+ax1.set_ylim(1,2)
+#ax1.set_xlim(0.1,1.1)
+ax2.scatter(dbsc_out['cycles'].sample(n=200), (dbsc_out['Capacity'].sample(frac=1)).sample(n=200), color= 'b')
+ax2.set_ylim(1,2)
+#ax2.set_xlim(0.1,1.1)
+ax3.scatter(np.random.choice(np.array(cycles)[index], size=200, replace=False),
+            np.random.choice(np.array(y)[index], size=200, replace=False))
+ax3.set_ylim(1,2)
+#ax3.set_xlim(0.1,1.1)
+ax1.set_title('LOF')
+ax2.set_title('DBSCAN')
+ax3.set_title('OPTICS')
+fig.supxlabel('Cycles')
+fig.supylabel('Capacity')
+ax1.grid(True)
+ax2.grid(True)
+ax3.grid(True)
