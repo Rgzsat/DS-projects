@@ -364,3 +364,53 @@ plt.title(f'OPTICS Outliers (eps={best_params_optics["eps"]}, min_samples={best_
 plt.xlabel('Time')
 plt.ylabel('Capacity (mAh)')
 plt.show()
+
+##COMPARISON PLOT 
+
+
+
+# Sample size (use the minimum of 200 or available points)
+sample_lof = min(50, len(outlier_values))
+sample_dbscan = min(50, len(outliers_db))
+sample_optics = min(50, len(index[0]))  # index is from the OPTICS thresholding step
+
+# Plot setup
+fig, (ax1, ax2, ax3) = plt.subplots(3, figsize=(8, 12))
+plt.subplots_adjust(left=0.15, bottom=0.15, right=0.9, top=0.85, wspace=1, hspace=1)
+fig.suptitle('Outlier Analysis (mAh vs Time)', fontsize=14)
+
+# --- LOF ---
+ax1.scatter(
+    outlier_values["time"].sample(n=sample_lof, replace=False),
+    outlier_values["mAh"].sample(n=sample_lof, replace=False),
+    color="r"
+)
+ax1.set_title('LOF')
+#ax1.set_ylim(1, 2)
+ax1.grid(True)
+
+# --- DBSCAN ---
+ax2.scatter(
+    outliers_db ["time"].sample(n=sample_dbscan, replace=False),
+    outliers_db ["mAh"].sample(n=sample_dbscan, replace=False),
+    color="b"
+)
+ax2.set_title('DBSCAN')
+#ax2.set_ylim(1, 2)
+ax2.grid(True)
+
+# --- OPTICS ---
+ax3.scatter(
+    np.random.choice(np.array(time_exp)[index], size=sample_optics, replace=False),
+    np.random.choice(np.array(y)[index], size=sample_optics, replace=False),
+    color="g"
+)
+ax3.set_title('OPTICS')
+#ax3.set_ylim(1, 2)
+ax3.grid(True)
+
+# Labels
+fig.supxlabel('Time [sec]', fontsize=12)
+fig.supylabel('mAh', fontsize=12)
+
+plt.show()
