@@ -209,7 +209,7 @@ plt.show()
 
 plt.show()
 
-#DBSCAN IMPLEMENTATION
+#$DBSCAN IMPLEMENTATION
 
 from sklearn.preprocessing import StandardScaler
 from sklearn.neighbors import NearestNeighbors
@@ -268,7 +268,7 @@ print("\nBest DBSCAN params:", best_params_dbscan)
 print("Best Silhouette Score:", round(best_score, 3))
 
 
-#DBSCAN IMPLEMENTATION, BASED ON PREVIOUS PARAMETERS
+##DBSCAN IMPLEMENTATION, BASED ON PREVIOUS PARAMETERS
 from sklearn.cluster import DBSCAN
 
 # Replace with your best values
