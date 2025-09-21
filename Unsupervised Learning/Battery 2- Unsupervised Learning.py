@@ -181,3 +181,116 @@ for n in n_neighbors:
         plt.show()
 
         plt.show()
+
+#SINGLE PLOT
+
+#single plot for LOF
+modellof = LocalOutlierFactor(n_neighbors = 5, metric = "manhattan", contamination = 0.03)
+    # model fitting
+y_pred = modellof.fit_predict(df.loc[:, df.columns != 'V'])
+    # filter outlier index
+outlier_index = np.where(y_pred == -1) # negative values are outliers and positives inliers
+    # filter outlier values
+outlier_values = df.loc[:, df.columns != 'V'].iloc[outlier_index]
+    # plot data
+# Check if we have enough samples in outlier_values
+if len(outlier_values) >= 500:
+    # Plot data (outliers)
+    plt.scatter(outlier_values["time"].sample(n=500), outlier_values["mAh"].sample(n=500), color="r")
+else:
+    # If not enough, sample the available outliers
+    plt.scatter(outlier_values["time"], outlier_values["mAh"], color="r")
+
+# Set labels and title
+plt.xlabel('Time')
+plt.ylabel('mAh')
+plt.title(f'Outlier Points with n_neighbors={n} and contamination={c}')
+plt.show()
+
+plt.show()
+
+#DBSCAN IMPLEMENTATION
+
+from sklearn.preprocessing import StandardScaler
+from sklearn.neighbors import NearestNeighbors
+
+st = StandardScaler()
+stdDf = pd.DataFrame(st.fit_transform(df.loc[:, df.columns != 'V']), columns=df.loc[:, df.columns != 'V'].columns)
+
+# Compute distances to 4th nearest neighbor (5 - 1)
+nn = NearestNeighbors(n_neighbors=5)
+nn_fit = nn.fit(stdDf)
+distances, indices = nn_fit.kneighbors(stdDf)
+
+# Sort the distances to plot the "elbow"
+distances = np.sort(distances[:, 4])  # 4 = n_neighbors - 1
+
+plt.figure(figsize=(8, 5))
+plt.plot(distances)
+plt.title("K-distance Graph (for DBSCAN eps selection)")
+plt.xlabel("Points sorted by distance")
+plt.ylabel("4th Nearest Neighbor Distance")
+plt.grid(True)
+plt.show()
+
+from sklearn.metrics import silhouette_score
+from sklearn.cluster import DBSCAN
+
+best_score = -1
+best_params_dbscan = {}
+
+# Try ranges of eps and min_samples
+#eps_values = [0.08, 0.1, 0.12, 0.15, 0.18]
+eps_values = [0.2, 0.25, 0.30]
+min_samples_values = [5, 10, 15, 22, 30]
+
+for eps in eps_values:
+    for min_samples in min_samples_values:
+        dbscan = DBSCAN(eps=eps, min_samples=min_samples)
+        labels = dbscan.fit_predict(stdDf)
+
+        # Ignore if only one cluster (or all noise)
+        if len(set(labels)) <= 1 or len(set(labels)) == len(stdDf):
+            continue
+
+        mask = labels != -1
+        if len(set(labels[mask])) <= 1:
+            continue
+
+        score = silhouette_score(stdDf[mask], labels[mask])
+        print(f"eps={eps}, min_samples={min_samples}, Silhouette={score:.3f}")
+
+        if score > best_score:
+            best_score = score
+            best_params_dbscan = {'eps': eps, 'min_samples': min_samples}
+
+print("\nBest DBSCAN params:", best_params_dbscan)
+print("Best Silhouette Score:", round(best_score, 3))
+
+
+#DBSCAN IMPLEMENTATION, BASED ON PREVIOUS PARAMETERS
+from sklearn.cluster import DBSCAN
+
+# Replace with your best values
+dbscan = DBSCAN(eps=best_params_dbscan['eps'], min_samples=best_params_dbscan['min_samples'])
+labels = dbscan.fit_predict(stdDf)
+
+# Plot
+dbsc_out_df = df.loc[:, df.columns != 'V'].copy()
+dbsc_out_df['label'] = labels
+dbsc_out_df['time'] = time_exp
+outliers_db = dbsc_out_df[dbsc_out_df['label'] == -1]
+
+# Sample size
+sample_size = min(200, len(outliers_db))
+
+plt.scatter(
+    outliers_db['time'].sample(n=sample_size),
+    outliers_db['mAh'].sample(n=sample_size),
+    color='purple'
+)
+plt.title('Optimized DBSCAN Outliers')
+plt.xlabel('Time')
+plt.ylabel('mAh')
+plt.grid(True)
+plt.show()
