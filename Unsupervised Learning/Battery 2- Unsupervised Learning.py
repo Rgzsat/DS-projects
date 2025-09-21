@@ -294,3 +294,73 @@ plt.xlabel('Time')
 plt.ylabel('mAh')
 plt.grid(True)
 plt.show()
+
+##OPTICS IMPLEMENTATION
+
+from sklearn.cluster import OPTICS
+from numpy import quantile, where, random
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import silhouette_score
+
+# --- Standardize Data ---
+st = StandardScaler()
+stdDf = pd.DataFrame(st.fit_transform(df.loc[:, df.columns != 'V']),
+                     columns=df.loc[:, df.columns != 'V'].columns)
+
+# --- Parameter Grid for OPTICS ---
+min_samples_range = range(5, 70, 5)  # Try min_samples = 5, 10, ..., 45
+eps_range = [0.05, 0.1, 0.15, 0.2, 0.25, 0.30, 0.40]  # Try various eps values
+best_score = -1
+best_params_optics = {}
+
+# --- Optimization Loop ---
+for min_s in min_samples_range:
+    for eps in eps_range:
+        model = OPTICS(eps=eps, min_samples=min_s)
+        labels = model.fit_predict(stdDf)
+
+        # Mask noise points
+        mask = labels != -1
+        n_clusters = len(np.unique(labels[mask]))
+
+        if n_clusters > 1:
+            score = silhouette_score(stdDf[mask], labels[mask])
+            print(f"eps={eps}, min_samples={min_s} → silhouette score: {score:.3f}")
+
+            if score > best_score:
+                best_score = score
+                best_params_optics = {'eps': eps, 'min_samples': min_s}
+        else:
+            print(f"eps={eps}, min_samples={min_s} → not enough clusters")
+
+print(f"\n Best OPTICS params: {best_params_optics} with silhouette score: {best_score:.3f}")
+
+# --- Final OPTICS Model with Best Params ---
+optics_model = OPTICS(eps=best_params_optics['eps'], min_samples=best_params_optics['min_samples'])
+labels_optics = optics_model.fit_predict(stdDf)
+
+# Get core distances
+scores = optics_model.core_distances_
+
+# Determine threshold by 98th percentile of core distances
+thresh = np.quantile(scores, 0.98)
+print(f"Outlier threshold (98th percentile): {thresh:.4f}")
+
+# Get indices of outliers (core distances above threshold)
+index = np.where(scores >= thresh)
+outliers_optics = np.array(y)[index]
+
+# Sample size control
+sample_size = min(500, len(index[0]))
+
+# Plotting
+plt.scatter(
+    np.random.choice(np.array(time_exp)[index], size=sample_size, replace=False),
+    np.random.choice(outliers_optics, size=sample_size, replace=False),
+    color='g'
+)
+plt.title(f'OPTICS Outliers (eps={best_params_optics["eps"]}, min_samples={best_params_optics["min_samples"]})')
+plt.xlabel('Time')
+plt.ylabel('Capacity (mAh)')
+plt.show()
