@@ -1,1 +1,3 @@
-
+This folder is addresed to solve a Data Science project related to Quantitative Finance and 
+the energy sector, specifically for battery optimization in the energy market.
+Three approaches are considered: 1) Physics-based approach, 2) Reinforcement Learning, and 3) Hybrid model
