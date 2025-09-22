@@ -413,4 +413,37 @@ ax3.grid(True)
 fig.supxlabel('Time [sec]', fontsize=12)
 fig.supylabel('mAh', fontsize=12)
 
-plt.show()
+plt.show
+
+#Silhouette calculation
+
+
+# --- Fit DBSCAN with best parameters ---
+dbscan = DBSCAN(eps=best_params_dbscan['eps'], min_samples=best_params_dbscan['min_samples'])
+labels_dbscan = dbscan.fit_predict(stdDf)
+
+# --- Filter out noise points (-1) ---
+mask_dbscan = labels_dbscan != -1
+n_clusters = len(np.unique(labels_dbscan[mask_dbscan]))
+
+if n_clusters > 1:
+    sil_score_dbscan = silhouette_score(stdDf[mask_dbscan], labels_dbscan[mask_dbscan])
+    print(f" DBSCAN Silhouette Score: {sil_score_dbscan:.3f}")
+else:
+    print("⚠️ DBSCAN: Not enough clusters to compute Silhouette Score.")
+
+
+
+# Fit OPTICS
+optics_model = OPTICS(eps=best_params_optics['eps'], min_samples=best_params_optics['min_samples']).fit(stdDf)
+labels_optics = optics_model.labels_
+
+# Filter out noise points (-1)
+mask_optics = labels_optics != -1
+if len(np.unique(labels_optics[mask_optics])) > 1:
+    sil_score_optics = silhouette_score(stdDf[mask_optics], labels_optics[mask_optics])
+    print(f"OPTICS Silhouette Score: {sil_score_optics:.3f}")
+else:
+    print("OPTICS: Not enough clusters to compute Silhouette Score.")
+
+
