@@ -430,7 +430,7 @@ if n_clusters > 1:
     sil_score_dbscan = silhouette_score(stdDf[mask_dbscan], labels_dbscan[mask_dbscan])
     print(f" DBSCAN Silhouette Score: {sil_score_dbscan:.3f}")
 else:
-    print("⚠️ DBSCAN: Not enough clusters to compute Silhouette Score.")
+    print(" DBSCAN: Not enough clusters to compute Silhouette Score.")
 
 
 
