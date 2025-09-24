@@ -1,1 +1,8 @@
+Different Deep Learning algorithms have been implemented for this project, 
+consisting on time-series forecasting, predictive analytics, and regression for
+battery systems. Here are the selected network architectures:
 
+1) Convolutional Neural Network
+2) Artificial Neural Networks
+3) Recurrent Neural Networks
+4) Transformer Networks
