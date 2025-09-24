@@ -1,6 +1,6 @@
-Different Deep Learning algorithms have been implemented for this project, 
-consisting on time-series forecasting, predictive analytics, and regression for
-battery systems. Here are the selected network architectures:
+For this project, a range of deep learning algorithms have been implemented to 
+perform time series forecasting, predictive analytics, and regression on battery systems. 
+The following neural network architectures were chosen:
 
 1) Convolutional Neural Network
 2) Artificial Neural Networks
