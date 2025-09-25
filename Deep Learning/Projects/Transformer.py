@@ -204,3 +204,16 @@ plt.legend()
 plt.grid(True)
 plt.tight_layout()
 plt.show()
+
+# Load model
+model = TransAm().to(device)
+model.load_state_dict(torch.load('best_model.pt'))
+model.eval()
+
+# Parameters
+input_window = 10
+output_window = 1
+
+# Folder containing test CSVs
+data_folder_test = #Read the folder with your testing data 
+csv_files = glob.glob(os.path.join(data_folder_test, "*.csv"))
