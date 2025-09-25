@@ -50,7 +50,7 @@ best_val_loss = np.inf
 best_model = None
 
 for fold, (train_idx, val_idx) in enumerate(kfold.split(X)):
-    print(f"\n🔁 Fold {fold+1}")
+    print(f"\n Fold {fold+1}")
 
     X_train, X_val = X[train_idx], X[val_idx]
     y_train, y_val = y[train_idx], y[val_idx]
@@ -71,7 +71,7 @@ for fold, (train_idx, val_idx) in enumerate(kfold.split(X)):
                  callbacks=[stop_early], verbose=1)
 
     best_hps = tuner.get_best_hyperparameters(1)[0]
-    print(f"🔍 Best Hyperparameters for Fold {fold+1}:")
+    print(f" Best Hyperparameters for Fold {fold+1}:")
     print(f"Units: {best_hps.get('units')}, Learning Rate: {best_hps.get('lr')}")
 
     model = tuner.hypermodel.build(best_hps)
@@ -101,7 +101,7 @@ for fold, (train_idx, val_idx) in enumerate(kfold.split(X)):
     plt.show()
 
     val_loss = model.evaluate(X_val, y_val, verbose=0)[0]
-    print(f"✅ Fold {fold+1} Final Validation Loss: {val_loss:.6f}")
+    print(f" Fold {fold+1} Final Validation Loss: {val_loss:.6f}")
 
     if val_loss < best_val_loss:
         best_val_loss = val_loss
@@ -109,7 +109,7 @@ for fold, (train_idx, val_idx) in enumerate(kfold.split(X)):
 
 # Save best model (native Keras format)
 best_model.save("best_model_cv.keras")
-print("\n🎉 Best cross-validated model saved as `best_model_cv.keras`")
+print("\n Best cross-validated model saved as `best_model_cv.keras`")
 
 
 ## VALIDATION 
@@ -155,7 +155,7 @@ skipped_files = []
 # Loop through CSVs
 for csv_path in csv_files:
     filename = os.path.basename(csv_path)
-    print(f"\n📂 Processing: {filename}")
+    print(f"\n Processing: {filename}")
 
     try:
         df = pd.read_csv(csv_path)
@@ -193,7 +193,7 @@ for csv_path in csv_files:
         rmse_list.append(rmse)
         r2_list.append(r2)
 
-        print(f"🔍 MSE: {mse:.6f}, MAE: {mae:.6f}, RMSE: {rmse:.6f}, R²: {r2:.6f}")
+        print(f" MSE: {mse:.6f}, MAE: {mae:.6f}, RMSE: {rmse:.6f}, R²: {r2:.6f}")
 
         # Plot
         plt.figure(figsize=(10, 4))
@@ -208,7 +208,7 @@ for csv_path in csv_files:
         plt.show()
 
     except Exception as e:
-        print(f"⚠️ Skipping {filename}: {str(e)}")
+        print(f" Skipping {filename}: {str(e)}")
         skipped_files.append(filename)
 
 # Summary
@@ -219,6 +219,6 @@ print(f"Avg RMSE: {np.mean(rmse_list):.6f}")
 print(f"Avg R²:   {np.mean(r2_list):.6f}")
 
 if skipped_files:
-    print("\n⏭ Skipped Files:")
+    print("\n Skipped Files:")
     for f in skipped_files:
         print(f"- {f}"
