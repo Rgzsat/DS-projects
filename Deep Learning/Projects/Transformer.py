@@ -12,6 +12,9 @@ output_window = 1
 batch_size = 10
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+data_path ="/content/drive/MyDrive/Writing workshop data/Final data/Cell4-005C-080425.csv" #LOAD YOUR PATH HERE
+
+
 # Load Data
 df = pd.read_csv(data_path)
 close = np.array(df['V'])
