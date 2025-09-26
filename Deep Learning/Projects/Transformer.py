@@ -310,14 +310,13 @@ for csv_path in csv_files:
     plt.show()
 
 # === Final Averages ===
-print("\n Average Performance Across All Files:")
+print("\n Average Performance Across All Files FIRST TESTING:")
 print(f"Avg MSE:  {np.mean(mse_list):.6f}")
 print(f"Avg MAE:  {np.mean(mae_list):.6f}")
 print(f"Avg RMSE: {np.mean(rmse_list):.6f}")
 print(f"Avg R²:   {np.mean(r2_list):.6f}")
 
 # NEW TEST TRANSFORMER NETWORK
-
 
 # Load model
 model = TransAm().to(device)
@@ -375,7 +374,7 @@ skipped_files = []  # <-- Move it here, outside the loop
 # Loop through each CSV
 for csv_path in csv_files:
     filename = os.path.basename(csv_path)
-    print(f"\n📁 Processing: {filename}")
+    print(f"\n Processing: {filename}")
 
     # Load and preprocess
     df = pd.read_csv(csv_path)
@@ -390,7 +389,7 @@ for csv_path in csv_files:
 
     # Check sequence length
     if len(test_seq) == 0:
-        print(f"⚠️ Skipping {filename}: not enough data for inference.")
+        print(f" Skipping {filename}: not enough data for inference.")
         skipped_files.append(filename)
         continue
 
@@ -431,7 +430,7 @@ for csv_path in csv_files:
     plt.show()
 
 # === Final Averages ===
-print("\n Average Performance Across All Files LEV50N:")
+print("\n Average Performance Across All Files SECOND TESTING:")
 print(f"Avg MSE:  {np.mean(mse_list):.6f}")
 print(f"Avg MAE:  {np.mean(mae_list):.6f}")
 print(f"Avg RMSE: {np.mean(rmse_list):.6f}")
@@ -444,6 +443,4 @@ if skipped_files:
         print(f"- {f}")
 else:
     print("\n No files were skipped.")
-
-
 
