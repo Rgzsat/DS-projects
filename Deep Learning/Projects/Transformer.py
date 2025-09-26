@@ -310,7 +310,7 @@ for csv_path in csv_files:
     plt.show()
 
 # === Final Averages ===
-print("\n Average Performance Across All Files INR21700-50E:")
+print("\n Average Performance Across All Files:")
 print(f"Avg MSE:  {np.mean(mse_list):.6f}")
 print(f"Avg MAE:  {np.mean(mae_list):.6f}")
 print(f"Avg RMSE: {np.mean(rmse_list):.6f}")
