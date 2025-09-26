@@ -295,7 +295,7 @@ for csv_path in csv_files:
     r2_list.append(r2)
 
     # Print per-file metrics
-    print(f"🔍 MSE: {mse:.6f}, MAE: {mae:.6f}, RMSE: {rmse:.6f}, R²: {r2:.6f}")
+    print(f" MSE: {mse:.6f}, MAE: {mae:.6f}, RMSE: {rmse:.6f}, R²: {r2:.6f}")
 
     # Plot
     plt.figure(figsize=(10, 4))
@@ -315,6 +315,5 @@ print(f"Avg MSE:  {np.mean(mse_list):.6f}")
 print(f"Avg MAE:  {np.mean(mae_list):.6f}")
 print(f"Avg RMSE: {np.mean(rmse_list):.6f}")
 print(f"Avg R²:   {np.mean(r2_list):.6f}")
-
 
 
