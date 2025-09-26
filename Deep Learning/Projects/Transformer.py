@@ -12,7 +12,7 @@ output_window = 1
 batch_size = 10
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-data_path ="/content/drive/MyDrive/Writing workshop data/Final data/Cell4-005C-080425.csv" #LOAD YOUR PATH HERE
+data_path = #LOAD YOUR PATH HERE FOR THE TRAINING AND VALIDATION PART
 
 
 # Load Data
@@ -416,7 +416,7 @@ for csv_path in csv_files:
     r2_list.append(r2)
 
     # Print per-file metrics
-    print(f"🔍 MSE: {mse:.6f}, MAE: {mae:.6f}, RMSE: {rmse:.6f}, R²: {r2:.6f}")
+    print(f" MSE: {mse:.6f}, MAE: {mae:.6f}, RMSE: {rmse:.6f}, R²: {r2:.6f}")
 
     # Plot
     plt.figure(figsize=(10, 4))
@@ -431,7 +431,7 @@ for csv_path in csv_files:
     plt.show()
 
 # === Final Averages ===
-print("\n📊 Average Performance Across All Files LEV50N:")
+print("\n Average Performance Across All Files LEV50N:")
 print(f"Avg MSE:  {np.mean(mse_list):.6f}")
 print(f"Avg MAE:  {np.mean(mae_list):.6f}")
 print(f"Avg RMSE: {np.mean(rmse_list):.6f}")
@@ -443,7 +443,7 @@ if skipped_files:
     for f in skipped_files:
         print(f"- {f}")
 else:
-    print("\n✅ No files were skipped.")
+    print("\n No files were skipped.")
 
 
 
