@@ -316,4 +316,134 @@ print(f"Avg MAE:  {np.mean(mae_list):.6f}")
 print(f"Avg RMSE: {np.mean(rmse_list):.6f}")
 print(f"Avg R²:   {np.mean(r2_list):.6f}")
 
+# NEW TEST TRANSFORMER NETWORK
+
+
+# Load model
+model = TransAm().to(device)
+model.load_state_dict(torch.load('best_model.pt'))
+model.eval()
+
+# Parameters
+input_window = 10
+output_window = 1
+
+# Folder containing test CSVs
+data_folder_test2 = #Write your new path here
+csv_files = glob.glob(os.path.join(data_folder_test2, "*.csv"))
+
+
+# Utility Functions
+def create_input_sequences(data, input_window):
+    seqs = []
+    L = len(data)
+    for i in range(L - input_window - output_window):
+        input_seq = np.array(data[i:i+input_window], dtype=np.float32)
+        target_seq = np.array(data[i+input_window:i+input_window+output_window], dtype=np.float32)
+        seqs.append((input_seq, target_seq))
+    return seqs
+
+def get_batch(data, i, batch_size):
+    batch = data[i:i+batch_size]
+    inputs = torch.stack([torch.tensor(x[0], dtype=torch.float32) for x in batch])
+    targets = torch.stack([torch.tensor(x[1], dtype=torch.float32) for x in batch])
+    inputs = inputs.unsqueeze(-1).transpose(0, 1).to(device)
+    targets = targets.unsqueeze(-1).transpose(0, 1).to(device)
+    return inputs, targets
+
+def forecast_seq(model, sequences):
+    predictions = []
+    actuals = []
+    with torch.no_grad():
+        for i in range(0, len(sequences) - 10, 10):
+            inputs, targets = get_batch(sequences, i, 10)
+            output = model(inputs)
+            predictions.append(output[-1].squeeze().cpu())
+            actuals.append(targets[-1].squeeze().cpu())
+    return torch.cat(predictions), torch.cat(actuals)
+
+def cumulative_logreturn_to_voltage(cum_log_returns, start_price):
+    return start_price * np.exp(cum_log_returns)
+
+# Initialize accumulators
+mse_list = []
+mae_list = []
+rmse_list = []
+r2_list = []
+skipped_files = []  # <-- Move it here, outside the loop
+
+# Loop through each CSV
+for csv_path in csv_files:
+    filename = os.path.basename(csv_path)
+    print(f"\n📁 Processing: {filename}")
+
+    # Load and preprocess
+    df = pd.read_csv(csv_path)
+    close = np.array(df['V'])
+    logreturn = np.diff(np.log(close)).astype(np.float32)
+    cumsum_logreturn = logreturn.cumsum()
+    split = int(0.7 * len(logreturn))
+    initial_price = close[split]
+
+    test_data = cumsum_logreturn[split:]
+    test_seq = create_input_sequences(test_data, input_window)
+
+    # Check sequence length
+    if len(test_seq) == 0:
+        print(f"⚠️ Skipping {filename}: not enough data for inference.")
+        skipped_files.append(filename)
+        continue
+
+    # Forecast
+    forecast, truth = forecast_seq(model, test_seq)
+
+    # Rescale to original
+    forecast_np = forecast.numpy()
+    truth_np = truth.numpy()
+    forecast_voltages = cumulative_logreturn_to_voltage(forecast_np, initial_price)
+    truth_voltages = cumulative_logreturn_to_voltage(truth_np, initial_price)
+
+    # Metrics
+    mse = mean_squared_error(truth_voltages, forecast_voltages)
+    mae = mean_absolute_error(truth_voltages, forecast_voltages)
+    rmse = np.sqrt(mse)
+    r2 = r2_score(truth_voltages, forecast_voltages)
+
+    # Store metrics
+    mse_list.append(mse)
+    mae_list.append(mae)
+    rmse_list.append(rmse)
+    r2_list.append(r2)
+
+    # Print per-file metrics
+    print(f"🔍 MSE: {mse:.6f}, MAE: {mae:.6f}, RMSE: {rmse:.6f}, R²: {r2:.6f}")
+
+    # Plot
+    plt.figure(figsize=(10, 4))
+    plt.plot(truth_voltages, label='Actual', color='red')
+    plt.plot(forecast_voltages, label='Forecast', color='green')
+    plt.title(f'Forecast vs Actual: {filename}')
+    plt.xlabel('Time Steps')
+    plt.ylabel('Voltage')
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+
+# === Final Averages ===
+print("\n📊 Average Performance Across All Files LEV50N:")
+print(f"Avg MSE:  {np.mean(mse_list):.6f}")
+print(f"Avg MAE:  {np.mean(mae_list):.6f}")
+print(f"Avg RMSE: {np.mean(rmse_list):.6f}")
+print(f"Avg R²:   {np.mean(r2_list):.6f}")
+
+# === Skipped Files ===
+if skipped_files:
+    print("\n⏭ Skipped Files (too short):")
+    for f in skipped_files:
+        print(f"- {f}")
+else:
+    print("\n✅ No files were skipped.")
+
+
 
