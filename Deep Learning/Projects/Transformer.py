@@ -219,11 +219,6 @@ data_folder_test = #Read the folder with your testing data
 csv_files = glob.glob(os.path.join(data_folder_test, "*.csv"))
 
 
-
-
-
-
-
 # Utility Functions
 def create_inout_sequences(data, input_window):
     seqs = []
@@ -265,7 +260,7 @@ r2_list = []
 # Loop through each CSV
 for csv_path in csv_files:
     filename = os.path.basename(csv_path)
-    print(f"\n📁 Processing: {filename}")
+    print(f"\n Processing: {filename}")
 
     # Load and preprocess
     df = pd.read_csv(csv_path)
@@ -315,7 +310,7 @@ for csv_path in csv_files:
     plt.show()
 
 # === Final Averages ===
-print("\n📊 Average Performance Across All Files INR21700-50E:")
+print("\n Average Performance Across All Files INR21700-50E:")
 print(f"Avg MSE:  {np.mean(mse_list):.6f}")
 print(f"Avg MAE:  {np.mean(mae_list):.6f}")
 print(f"Avg RMSE: {np.mean(rmse_list):.6f}")
