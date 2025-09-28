@@ -72,6 +72,7 @@ Figure 15: Predictive modelling of battery capacity through LSTM.
 
 Figure 16: Outlier analysis comparing LOF, DBSCAN, and OPTICS
 
+
 <img width="788" height="266" alt="image" src="https://github.com/user-attachments/assets/dda9afe5-5639-4d38-a11f-72524ef40905" />
 
 Figure 17: Time-series forecasting of battery voltage through Transformer network.
