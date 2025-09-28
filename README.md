@@ -64,6 +64,6 @@ Figure 14: Confusion matrix of the Vision Transformer.
 
 # Projects 
 
-<img width="567" height="455" alt="image" src="https://github.com/user-attachments/assets/432f200f-86c9-40e4-800c-7fcd81b310fd" 
-  
+<img width="481" height="342" alt="image" src="https://github.com/user-attachments/assets/f10c84ce-d460-4aac-b3a1-ea4973f2fa30" />
+
 Figure 15: LSTM prediction of the battery capacity in Machine Learning applications
