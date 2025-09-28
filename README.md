@@ -66,4 +66,8 @@ Figure 14: Confusion matrix of the Vision Transformer.
 
 <img width="481" height="342" alt="image" src="https://github.com/user-attachments/assets/f10c84ce-d460-4aac-b3a1-ea4973f2fa30" />
 
-Figure 15: LSTM prediction of the battery capacity in Machine Learning applications
+Figure 15: Regression of battery capacity in Machine Learning applications through LSTM.
+
+<img width="788" height="266" alt="image" src="https://github.com/user-attachments/assets/dda9afe5-5639-4d38-a11f-72524ef40905" />
+
+Figure 16: Time-series forecasting of battery voltage in Machine learning applications through Transformer network.
