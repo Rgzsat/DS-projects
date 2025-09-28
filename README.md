@@ -70,7 +70,7 @@ Figure 15: Predictive modelling of battery capacity through LSTM.
 
 <img width="788" height="266" alt="image" src="https://github.com/user-attachments/assets/dda9afe5-5639-4d38-a11f-72524ef40905" />
 
-<img width="788" height="266" alt="image" src="https://github.com/user-attachments/assets/b62a98ef-82b6-4c82-aca1-ea9d201e9563" 
+<img width="724" height="1184" alt="Unsupervised labels" src="https://github.com/user-attachments/assets/5afcbac8-c0d0-47b0-b61b-2a00e4ddd445" />
 
 Figure 16: Outlier analysis comparing LOF, DBSCAN, and OPTICS
 
