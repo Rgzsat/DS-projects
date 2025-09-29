@@ -212,7 +212,7 @@ for csv_path in csv_files:
         skipped_files.append(filename)
 
 # Summary
-print("\n📊 Average Metrics Across All Valid Files:")
+print("\n Average Metrics Across All Valid Files:")
 print(f"Avg MSE:  {np.mean(mse_list):.6f}")
 print(f"Avg MAE:  {np.mean(mae_list):.6f}")
 print(f"Avg RMSE: {np.mean(rmse_list):.6f}")
