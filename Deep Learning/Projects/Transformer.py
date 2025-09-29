@@ -438,7 +438,7 @@ print(f"Avg R²:   {np.mean(r2_list):.6f}")
 
 # === Skipped Files ===
 if skipped_files:
-    print("\n⏭ Skipped Files (too short):")
+    print("\n Skipped Files (too short):")
     for f in skipped_files:
         print(f"- {f}")
 else:
