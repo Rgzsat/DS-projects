@@ -64,14 +64,18 @@ Figure 14: Confusion matrix of the Vision Transformer.
 
 # Projects 
 
+<img width="424" height="280" alt="image" src="https://github.com/user-attachments/assets/c98fdd61-acf2-4bd7-ad05-ca64c786923d" />
+
+Figure 15: Learning curve to monitor Training and Validation losses in Deep Learning algorithms
+
 <img width="481" height="342" alt="image" src="https://github.com/user-attachments/assets/f10c84ce-d460-4aac-b3a1-ea4973f2fa30" />
 
-Figure 15: Predictive modelling of battery capacity through LSTM.
+Figure 16: Predictive modelling of battery capacity through LSTM.
 
 <img width="724" height="1184" alt="Unsupervised labels" src="https://github.com/user-attachments/assets/5afcbac8-c0d0-47b0-b61b-2a00e4ddd445" />
 
-Figure 16: Outlier analysis comparing LOF, DBSCAN, and OPTICS
+Figure 17: Outlier analysis comparing LOF, DBSCAN, and OPTICS
 
 <img width="788" height="266" alt="image" src="https://github.com/user-attachments/assets/dda9afe5-5639-4d38-a11f-72524ef40905" />
 
-Figure 17: Time-series forecasting of battery voltage through Transformer network.
+Figure 18: Time-series forecasting of battery voltage through Transformer network.
