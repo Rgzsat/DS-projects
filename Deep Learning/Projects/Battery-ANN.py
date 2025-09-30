@@ -14,7 +14,7 @@ from tensorflow.keras.regularizers import l2
 
 # -------------------------------------
 # TRANSFORM FUNCTION
-# -------------------------------------
+# To transform the data, considering specific features based on user criteria
 # -------------------------------------
 def transform_cm(df, feature_scaler=None, target_scaler=None, fit_scaler=False):
     df = df.copy()
@@ -41,3 +41,9 @@ def transform_cm(df, feature_scaler=None, target_scaler=None, fit_scaler=False):
         y_scaled = target_scaler.transform(y)
 
     return X_scaled.astype(np.float32), y_scaled.astype(np.float32), df, feature_scaler, target_scaler
+
+# FILES & TRANSFORM
+# -------------------------------------
+train_path = "Insert your training path here"
+val_path = "Insert your validation path here"
+test_path = "Insert your testing path here"
