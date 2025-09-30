@@ -47,3 +47,28 @@ def transform_cm(df, feature_scaler=None, target_scaler=None, fit_scaler=False):
 train_path = "Insert your training path here"
 val_path = "Insert your validation path here"
 test_path = "Insert your testing path here"
+
+# ---------------------------------------
+# LOAD AND TRANSFORM DATA
+# ---------------------------------------
+df_train = pd.read_csv(train_path, index_col=(6))
+df_val = pd.read_csv(val_path, index_col=(6))
+df_test = pd.read_csv(test_path, index_col=(6))
+
+X_train, y_train, _, f_scaler, t_scaler = transform_cm(df_train, fit_scaler=True)
+X_val, y_val, _, _, _ = transform_cm(df_val, f_scaler, t_scaler)
+X_test, y_test, _, _, _ = transform_cm(df_test, f_scaler, t_scaler)
+
+# Convert to tensors
+X_train_tensor = torch.tensor(X_train).to(device)
+y_train_tensor = torch.tensor(y_train).to(device)
+X_val_tensor = torch.tensor(X_val).to(device)
+y_val_tensor = torch.tensor(y_val).to(device)
+X_test_tensor = torch.tensor(X_test).to(device)
+y_test_tensor = torch.tensor(y_test).to(device)
+
+# Dataloaders
+bs = 128
+train_loader = DataLoader(TensorDataset(X_train_tensor, y_train_tensor), batch_size=bs, shuffle=True)
+val_loader = DataLoader(TensorDataset(X_val_tensor, y_val_tensor), batch_size=bs, shuffle=False)
+
