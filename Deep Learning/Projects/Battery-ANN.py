@@ -158,3 +158,19 @@ for epoch in range(n_epochs):
         if patience == 0:
             print("Early stopping triggered.")
             break
+
+# Load best weights
+model.load_state_dict(best_model_weights)
+
+# ---------------------------------------
+# PLOT TRAINING CURVES
+# ---------------------------------------
+plt.plot(train_loss_all, label='Train Loss')
+plt.plot(val_loss_all, label='Val Loss')
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.title('Training & Validation Loss')
+plt.legend()
+plt.tight_layout()
+plt.show()
+
