@@ -105,3 +105,54 @@ train_loss_all = []
 val_loss_all = []
 best_loss = float('inf')
 best_model_weights = copy.deepcopy(model.state_dict())
+
+
+# ---------------------------------------
+# TRAINING LOOP
+# ---------------------------------------
+for epoch in range(n_epochs):
+    model.train()
+    train_loss = 0.0
+    train_num = 0
+
+    with tqdm(train_loader, desc=f"Epoch {epoch+1}") as pbar:
+        for inputs, targets in pbar:
+            optimizer.zero_grad()
+            outputs = model(inputs)
+            loss = loss_func(outputs, targets)
+            loss.backward()
+            optimizer.step()
+            train_loss += loss.item() * inputs.size(0)
+            train_num += inputs.size(0)
+            pbar.set_postfix(loss=loss.item(), lr=optimizer.param_groups[0]['lr'])
+
+    train_loss_epoch = train_loss / train_num
+    train_loss_all.append(train_loss_epoch)
+
+    # Validation
+    model.eval()
+    val_loss = 0.0
+    val_num = 0
+    with torch.no_grad():
+        for inputs, targets in val_loader:
+            outputs = model(inputs)
+            loss = loss_func(outputs, targets)
+            val_loss += loss.item() * inputs.size(0)
+            val_num += inputs.size(0)
+
+    val_loss_epoch = val_loss / val_num
+    val_loss_all.append(val_loss_epoch)
+
+    print(f"Epoch {epoch+1} | Train Loss: {train_loss_epoch:.6f} | Val Loss: {val_loss_epoch:.6f}")
+    scheduler.step()
+
+    # Early stopping
+    if val_loss_epoch < best_loss:
+        best_loss = val_loss_epoch
+        best_model_weights = copy.deepcopy(model.state_dict())
+        patience = patience_limit
+    else:
+        patience -= 1
+        if patience == 0:
+            print("Early stopping triggered.")
+            break
