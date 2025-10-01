@@ -180,3 +180,7 @@ plt.show()
 model.eval()
 with torch.no_grad():
     test_preds = model(X_test_tensor).cpu().numpy()
+
+# Denormalize predictions and targets
+y_pred_denorm = t_scaler.inverse_transform(test_preds)
+y_true_denorm = t_scaler.inverse_transform(y_test_tensor.cpu().numpy())
