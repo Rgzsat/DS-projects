@@ -91,4 +91,17 @@ class MLPRegressor(nn.Module):
 
 model = MLPRegressor(input_dim=X_train.shape[1]).to(device)
 
+# ---------------------------------------
+# TRAINING SETUP
+# ---------------------------------------
+optimizer = optim.Adam(model.parameters(), lr=1e-4, weight_decay=1e-5)
+scheduler = optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.95)
+loss_func = nn.MSELoss()
 
+n_epochs = 50
+patience_limit = 10
+patience = patience_limit
+train_loss_all = []
+val_loss_all = []
+best_loss = float('inf')
+best_model_weights = copy.deepcopy(model.state_dict())
