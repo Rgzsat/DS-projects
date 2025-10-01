@@ -72,3 +72,23 @@ bs = 128
 train_loader = DataLoader(TensorDataset(X_train_tensor, y_train_tensor), batch_size=bs, shuffle=True)
 val_loader = DataLoader(TensorDataset(X_val_tensor, y_val_tensor), batch_size=bs, shuffle=False)
 
+# ---------------------------------------
+# MODEL DEFINITION
+# ---------------------------------------
+class MLPRegressor(nn.Module):
+    def __init__(self, input_dim):
+        super(MLPRegressor, self).__init__()
+        self.model = nn.Sequential(
+            nn.Linear(input_dim, 64),
+            nn.ReLU(),
+            nn.Linear(64, 64),
+            nn.ReLU(),
+            nn.Linear(64, 1)
+        )
+
+    def forward(self, x):
+        return self.model(x)
+
+model = MLPRegressor(input_dim=X_train.shape[1]).to(device)
+
+
