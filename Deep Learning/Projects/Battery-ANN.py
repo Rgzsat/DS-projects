@@ -174,3 +174,9 @@ plt.legend()
 plt.tight_layout()
 plt.show()
 
+# ---------------------------------------
+# TESTING
+# ---------------------------------------
+model.eval()
+with torch.no_grad():
+    test_preds = model(X_test_tensor).cpu().numpy()
