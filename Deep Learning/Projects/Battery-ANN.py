@@ -184,3 +184,23 @@ with torch.no_grad():
 # Denormalize predictions and targets
 y_pred_denorm = t_scaler.inverse_transform(test_preds)
 y_true_denorm = t_scaler.inverse_transform(y_test_tensor.cpu().numpy())
+
+# Metrics
+mae = mean_absolute_error(y_true_denorm, y_pred_denorm)
+rmse = np.sqrt(mean_squared_error(y_true_denorm, y_pred_denorm))
+
+print(f"Test MAE: {mae:.4f}")
+print(f"Test RMSE: {rmse:.4f}")
+
+# Plot predictions
+plt.figure()
+plt.plot(y_true_denorm, label='Actual')
+plt.plot(y_pred_denorm, label='Predicted', color='red')
+plt.xlabel('Time Step')
+plt.ylabel('Voltage [V]')
+plt.title('MLP Voltage Prediction (Test Set)')
+plt.legend()
+sns.despine()
+plt.tight_layout()
+plt.show()
+
