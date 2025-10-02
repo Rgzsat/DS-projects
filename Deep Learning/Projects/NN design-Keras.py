@@ -46,7 +46,7 @@ def transform_cm(df, feature_scaler=None, target_scaler=None, fit_scaler=False):
 # -------------------------------------
 # FILES & TRANSFORM
 # -------------------------------------
-train_path = r'C:\Users\47406\Downloads\Final article\RIGOL\1B1-1A.csv'
-val_path = r'C:\Users\47406\Downloads\Final article\RIGOL\1B1-3A.csv'
-test_path = r'C:\Users\47406\Downloads\Coding 2023\Coding-initial datasets\2A4-10A.csv'
+train_path = "Introduce your training path here"
+val_path = "Introduce your validation path here"
+test_path ="Introduce your testing path here"
 
