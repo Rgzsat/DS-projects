@@ -13,6 +13,9 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.regularizers import l2
 
+# -------------------------------------
+# TRANSFORM FUNCTION
+# -------------------------------------
 
 def transform_cm(df, feature_scaler=None, target_scaler=None, fit_scaler=False):
     df = df.copy()
@@ -39,3 +42,11 @@ def transform_cm(df, feature_scaler=None, target_scaler=None, fit_scaler=False):
         y_scaled = target_scaler.transform(y)
 
     return X_scaled.astype(np.float32), y_scaled.astype(np.float32), df, feature_scaler, target_scaler
+
+# -------------------------------------
+# FILES & TRANSFORM
+# -------------------------------------
+train_path = r'C:\Users\47406\Downloads\Final article\RIGOL\1B1-1A.csv'
+val_path = r'C:\Users\47406\Downloads\Final article\RIGOL\1B1-3A.csv'
+test_path = r'C:\Users\47406\Downloads\Coding 2023\Coding-initial datasets\2A4-10A.csv'
+
