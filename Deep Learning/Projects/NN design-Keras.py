@@ -127,9 +127,9 @@ rmse = np.sqrt(mean_squared_error(y_true, y_pred))
 print(f"Test MAE: {mae:.4f}")
 print(f"Test RMSE: {rmse:.4f}")
 
-# -------------------------------------
-# PREDICTION PLOT
-# -------------------------------------
+# -------------------------------------------------
+# PREDICTION PLOT FOR MULTILAYER PERCEPTRON EXAMPLE
+# -------------------------------------------------
 plt.figure()
 plt.plot(y_true, label='Actual')
 plt.plot(y_pred, label='Predicted', color='red')
