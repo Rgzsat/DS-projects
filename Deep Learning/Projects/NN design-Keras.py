@@ -66,4 +66,39 @@ learning_rate = 1e-4
 gamma = 0.95
 weight_decay = 1e-4
 
+#TO DESIGN A MULTILAYER PERCEPTRON OR A DEEP NEURAL NETWORK, BASED ON PREFERENCES
+
+model = Sequential([
+    Dense(num_ann_units, input_shape=(X_train.shape[1],), activation='relu', kernel_regularizer=l2(weight_decay)),
+    #Dense(num_ann_units, activation='relu'),
+    #Dense(num_ann_units, activation='relu'),
+    Dense(num_ann_units, activation='relu'),
+    Dense(num_ann_units, activation='relu'),
+    #Dense(50, kernel_initializer='normal', activation='relu'),
+    Dropout(0.2),
+    Dense(1)
+])
+
+lr_schedule = keras.optimizers.schedules.ExponentialDecay(
+    initial_learning_rate=learning_rate,
+    decay_steps=10000,
+    decay_rate=gamma
+)
+
+opt = keras.optimizers.Adam(learning_rate=lr_schedule)
+model.compile(optimizer=opt, loss='mse', metrics=['mse', 'mae'])
+
+# -------------------------------------
+# TRAINING
+# -------------------------------------
+early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
+
+history = model.fit(
+    X_train, y_train,
+    validation_data=(X_val, y_val),
+    epochs=100,
+    batch_size=200,
+    callbacks=[early_stop],
+    verbose=1
+)
 
