@@ -102,3 +102,16 @@ history = model.fit(
     verbose=1
 )
 
+
+# -------------------------------------
+# LOSS PLOTS
+# -------------------------------------
+plt.plot(history.history['loss'], label='Train Loss')
+plt.plot(history.history['val_loss'], label='Val Loss')
+plt.xlabel('Epoch')
+plt.ylabel('MSE Loss')
+plt.title('Training vs Validation Loss (Keras)')
+plt.legend()
+plt.tight_layout()
+plt.show()
+
