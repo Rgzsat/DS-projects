@@ -50,3 +50,20 @@ train_path = "Introduce your training path here"
 val_path = "Introduce your validation path here"
 test_path ="Introduce your testing path here"
 
+df_train = pd.read_csv(train_path, index_col=(6))
+df_val = pd.read_csv(val_path, index_col=(6))
+df_test = pd.read_csv(test_path, index_col=(6))
+
+X_train, y_train, _, f_scaler, t_scaler = transform_cm(df_train, fit_scaler=True)
+X_val, y_val, _, _, _ = transform_cm(df_val, f_scaler, t_scaler)
+X_test, y_test, _, _, _ = transform_cm(df_test, f_scaler, t_scaler)
+
+# -------------------------------------
+# MODEL SETUP (Keras)
+# -------------------------------------
+num_ann_units = 64#64
+learning_rate = 1e-4
+gamma = 0.95
+weight_decay = 1e-4
+
+
