@@ -102,7 +102,6 @@ history = model.fit(
     verbose=1
 )
 
-
 # -------------------------------------
 # LOSS PLOTS
 # -------------------------------------
@@ -115,3 +114,15 @@ plt.legend()
 plt.tight_layout()
 plt.show()
 
+# -------------------------------------
+# EVALUATION
+# -------------------------------------
+y_pred_scaled = model.predict(X_test)
+y_pred = t_scaler.inverse_transform(y_pred_scaled)
+y_true = t_scaler.inverse_transform(y_test)
+
+mae = mean_absolute_error(y_true, y_pred)
+rmse = np.sqrt(mean_squared_error(y_true, y_pred))
+
+print(f"Test MAE: {mae:.4f}")
+print(f"Test RMSE: {rmse:.4f}")
