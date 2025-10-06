@@ -51,11 +51,47 @@ X_train, y_train=get_val(dataset_train)[0], get_val(dataset_train)[1]
 X_val, y_val=get_val(dataset_valid)[0], get_val(dataset_valid)[1]
 X_test, y_test=get_val(dataset_test)[0], get_val(dataset_test)[1]
 
-
-#X_train = scaler.fit_transform(X_train)
-#X_val = scaler.fit_transform(X_val)
-#X_test = scaler.fit_transform(X_test)
-
 print(X_train.shape)
 print(X_val.shape)
 print(X_test.shape)
+
+#PIPELINE, EXAMPLE OF MLP
+
+pipelines = {
+    'MLP'   : make_pipeline(StandardScaler(), MLPRegressor(max_iter= 800, random_state=1, #1, or 123
+                                                           early_stopping=True))
+}
+
+# Check that we have all 5 model families, and that they are all pipelines
+for key, value in pipelines.items():
+    print( key, type(value) )
+
+
+# FOR MLP HYPERPARAMETERS
+
+from joblib import dump, load
+
+
+# MLP hyperparameters
+mlp_hyperparameters = {
+    'mlpregressor__hidden_layer_sizes': [(200,), (240,), (245,)],#150, 115, 100
+    'mlpregressor__activation': ['relu', 'tanh'],
+    'mlpregressor__solver': ['adam' ],
+        'mlpregressor__alpha': [1],
+    'mlpregressor__learning_rate': ['constant','adaptive']
+    }
+
+
+# Create hyperparameters dictionary
+hyperparameters = {
+    'MLP': mlp_hyperparameters
+}
+
+for key in ['MLP']:
+    if key in hyperparameters:
+        if type(hyperparameters[key]) is dict:
+            print( key, 'was found in hyperparameters, and it is a grid.' )
+        else:
+            print( key, 'was found in hyperparameters, but it is not a grid.' )
+    else:
+        print( key, 'was not found in hyperparameters')
