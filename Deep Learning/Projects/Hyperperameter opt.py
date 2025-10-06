@@ -21,7 +21,7 @@ dataset_valid= "INSERT YOUR VALIDATION PATH HERE"
 
 dataset_test="INSERT YOUR TESTING PATH HERE"
 
-#OPTIONAL, IF YOU HAVE LIMITED DATASETS
+#OPTIONAL, IF YOU HAVE LIMITED DATASETS, IT CONTAINS ALSO A FUNCTION TO SPLIT DATA
 
 train_size = int(len(dataset_train) * 0.70)
 val_size= int(len(dataset_train) * 0.20)
@@ -43,7 +43,19 @@ def get_val(dataset):
     
     return X,y
 
+X_train, y_train=get_val(dataset_train)[0], get_val(dataset_train)[1]
+X_val, y_val=get_val(dataset_valid)[0], get_val(dataset_valid)[1]
+X_test, y_test=get_val(dataset_test)[0], get_val(dataset_test)[1]
 
 X_train, y_train=get_val(dataset_train)[0], get_val(dataset_train)[1]
 X_val, y_val=get_val(dataset_valid)[0], get_val(dataset_valid)[1]
 X_test, y_test=get_val(dataset_test)[0], get_val(dataset_test)[1]
+
+
+#X_train = scaler.fit_transform(X_train)
+#X_val = scaler.fit_transform(X_val)
+#X_test = scaler.fit_transform(X_test)
+
+print(X_train.shape)
+print(X_val.shape)
+print(X_test.shape)
