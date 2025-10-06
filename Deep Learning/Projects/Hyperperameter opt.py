@@ -14,3 +14,10 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 
 from sklearn.model_selection import train_test_split
+
+dataset_train = "INSERT YOUR TRAININT PATH HERE"
+
+dataset_valid= "INSERT YOUR VALIDATION PATH HERE"
+
+dataset_test="INSERT YOUR TESTING PATH HERE"
+
