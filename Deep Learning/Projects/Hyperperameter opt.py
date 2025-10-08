@@ -130,9 +130,4 @@ for name, model in fitted_models.items():
     print(name, model.best_score_)
 
 for name,model in fitted_models.items():
-    #pred_test = fitted_models[name].predict(X_test)
     pred_test = pipe.predict(X_test)
-    #print(name)
-    #print('R2:', r2_score(y_test, pred_test))
-    #print('MAE:', mean_absolute_error(y_test, pred_test))
-    #print(('RMSE', math.sqrt(mean_squared_error(y_test, pred_test))))
