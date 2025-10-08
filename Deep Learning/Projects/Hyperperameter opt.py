@@ -131,3 +131,10 @@ for name, model in fitted_models.items():
 
 for name,model in fitted_models.items():
     pred_test = pipe.predict(X_test)
+
+print(fitted_models['MLP'].best_estimator_)
+
+
+print(fitted_models['MLP'].best_params_)
+
+print(fitted_models['MLP'].cv_results_)
