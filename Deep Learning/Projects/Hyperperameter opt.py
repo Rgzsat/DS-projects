@@ -95,3 +95,28 @@ for key in ['MLP']:
             print( key, 'was found in hyperparameters, but it is not a grid.' )
     else:
         print( key, 'was not found in hyperparameters')
+
+# Create empty dictionary called fitted_models
+fitted_models = {}
+
+# Loop through model pipelines, tuning each one and saving it to fitted_models
+for name, pipeline in pipelines.items():
+    model = GridSearchCV(pipeline, hyperparameters[name], cv=5, n_jobs=-1, return_train_score=True
+                         )
+    
+    # Fit model on X_train, y_train
+    model.fit(X_train, y_train)
+    
+    
+    # Store model in fitted_models[name] 
+    fitted_models[name] = model
+    
+    estimator =  fitted_models[name].best_estimator_
+    #dump(estimator, "your-model.joblib")
+    joblib.dump(estimator, 'mlp.pkl')
+
+
+    # Print '{name} has been fitted'
+    print(name, 'has been fitted.')
+
+
