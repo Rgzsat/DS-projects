@@ -138,3 +138,18 @@ print(fitted_models['MLP'].best_estimator_)
 print(fitted_models['MLP'].best_params_)
 
 print(fitted_models['MLP'].cv_results_)
+
+import seaborn as sns
+plt.figure(1)
+plt.plot(y_test, label='actual') 
+plt.plot(pred_test, label= 'predicted')
+plt.tight_layout()
+sns.despine(top=True)
+plt.subplots_adjust(left=0.07)
+plt.xlabel('Time [sec]')
+plt.ylabel('Voltage [V]')
+plt.title('MLP implementation')
+plt.legend()
+plt.show()
+
+
