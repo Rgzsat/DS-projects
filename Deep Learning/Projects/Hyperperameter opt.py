@@ -196,3 +196,7 @@ train_scores_mean = df_cv_results['mean_train_score']
 valid_scores_mean = df_cv_results['mean_test_score']
 train_scores_std = df_cv_results['std_train_score']
 valid_scores_std = df_cv_results['std_test_score']
+
+param_cols = [c for c in df_cv_results.columns if c[:6] == 'param_']
+param_ranges = [grid.param_grid[p[6:]] for p in param_cols]
+param_ranges_lengths = [len(pr) for pr in param_ranges]
