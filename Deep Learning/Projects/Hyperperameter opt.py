@@ -182,15 +182,10 @@ plt.plot(train_scores, label='train')
 plt.legend(loc='best')
 plt.show()
 
-
-#from numbers import Number
 import numbers
 grid=model
 
-#param_to_vary= 'mlpregressor__alpha'
 param_to_vary= 'mlpregressor__activation'
-#param_to_vary= 'mlpregressor__learning_rate'
-
 title='Validation Curve'
 ylim=(-1,1.01)
 xlim=None
