@@ -152,4 +152,22 @@ plt.title('MLP implementation')
 plt.legend()
 plt.show()
 
+pred_train= pipe.predict(X_train)
+pred_val= pipe.predict(X_val)
+
+
+print('R2 Train:', r2_score(y_train, pred_train))
+print('MAE Train :', mean_absolute_error(y_train, pred_train))
+print('RMSE Train', math.sqrt(mean_squared_error(y_train, pred_train)))
+
+print('R2 Validation:', r2_score(y_val, pred_val))
+print('MAE Validation :', mean_absolute_error(y_val, pred_val))
+print('RMSE Validation', math.sqrt(mean_squared_error(y_val, pred_val)))
+
+print('R2 Test:', r2_score(y_test, pred_test))
+print('MAE Test :', mean_absolute_error(y_test, pred_test))
+print('RMSE Test', math.sqrt(mean_squared_error(y_test, pred_test)))
+
+actual= (np.r_[y_train,y_val, y_test])
+pred= (np.r_[pred_train, pred_val, pred_test])
 
