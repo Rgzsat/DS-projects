@@ -171,3 +171,14 @@ print('RMSE Test', math.sqrt(mean_squared_error(y_test, pred_test)))
 actual= (np.r_[y_train,y_val, y_test])
 pred= (np.r_[pred_train, pred_val, pred_test])
 
+test_scores = model.cv_results_['mean_test_score']
+train_scores = model.cv_results_['mean_train_score'] 
+
+print(test_scores)
+print(train_scores)
+
+plt.plot(test_scores, label='test')
+plt.plot(train_scores, label='train')
+plt.legend(loc='best')
+plt.show()
+
