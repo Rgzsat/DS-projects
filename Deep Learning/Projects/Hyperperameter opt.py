@@ -200,3 +200,9 @@ valid_scores_std = df_cv_results['std_test_score']
 param_cols = [c for c in df_cv_results.columns if c[:6] == 'param_']
 param_ranges = [grid.param_grid[p[6:]] for p in param_cols]
 param_ranges_lengths = [len(pr) for pr in param_ranges]
+
+train_scores_mean = np.array(train_scores_mean).reshape(*param_ranges_lengths)
+valid_scores_mean = np.array(valid_scores_mean).reshape(*param_ranges_lengths)
+train_scores_std = np.array(train_scores_std).reshape(*param_ranges_lengths)
+valid_scores_std = np.array(valid_scores_std).reshape(*param_ranges_lengths)
+
