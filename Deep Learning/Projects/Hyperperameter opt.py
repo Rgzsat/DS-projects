@@ -206,3 +206,7 @@ valid_scores_mean = np.array(valid_scores_mean).reshape(*param_ranges_lengths)
 train_scores_std = np.array(train_scores_std).reshape(*param_ranges_lengths)
 valid_scores_std = np.array(valid_scores_std).reshape(*param_ranges_lengths)
 
+param_to_vary_idx = param_cols.index('param_{}'.format(param_to_vary))
+
+slices = []
+
