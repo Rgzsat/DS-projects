@@ -223,3 +223,9 @@ for idx, param in enumerate(grid.best_params_):
         idx_of_best_param = param_ranges[idx].index(best_param_val)
         slices.append(idx_of_best_param)
 
+train_scores_mean = train_scores_mean[tuple(slices)]
+valid_scores_mean = valid_scores_mean[tuple(slices)]
+train_scores_std = train_scores_std[tuple(slices)]
+valid_scores_std = valid_scores_std[tuple(slices)]
+
+plt.clf()
