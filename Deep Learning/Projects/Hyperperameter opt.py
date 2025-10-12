@@ -229,3 +229,7 @@ train_scores_std = train_scores_std[tuple(slices)]
 valid_scores_std = valid_scores_std[tuple(slices)]
 
 plt.clf()
+
+plt.title(title)
+plt.xlabel(param_to_vary)
+plt.ylabel('Score')
