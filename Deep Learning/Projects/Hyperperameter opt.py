@@ -210,3 +210,16 @@ param_to_vary_idx = param_cols.index('param_{}'.format(param_to_vary))
 
 slices = []
 
+
+for idx, param in enumerate(grid.best_params_):
+    if (idx == param_to_vary_idx):
+        slices.append(slice(None))
+        continue
+    best_param_val = grid.best_params_[param]
+    idx_of_best_param = 0
+    if isinstance(param_ranges[idx], np.ndarray):
+        idx_of_best_param = param_ranges[idx].tolist().index(best_param_val)
+    else:
+        idx_of_best_param = param_ranges[idx].index(best_param_val)
+        slices.append(idx_of_best_param)
+
