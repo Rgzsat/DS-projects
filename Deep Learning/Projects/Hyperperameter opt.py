@@ -233,3 +233,20 @@ plt.clf()
 plt.title(title)
 plt.xlabel(param_to_vary)
 plt.ylabel('Score')
+
+
+if (ylim is None):
+    plt.ylim(0.0, 1.1)
+else:
+    plt.ylim(*ylim)
+
+if (not (xlim is None)):
+    plt.xlim(*xlim)
+
+lw = 2
+
+plot_fn = plt.plot
+if log:
+    plot_fn = plt.semilogx
+
+
