@@ -27,8 +27,8 @@ import pandas as pd
 from math import sqrt
 
 #%%
-dataset_train= pd.read_csv(r'C:\Users\rogilb\Downloads\Testing cells\1A-1-B-1.csv',index_col= 6)#[:-1]
-dataset_valid= pd.read_csv(r'C:\Users\rogilb\Downloads\Testing cells\10A-1-A-1.csv',index_col= 6)#[:-1]
+dataset_train= "Introduce here your training dataset or path"
+dataset_valid= "Introduce here your validation dataset or path"
 
 
 scaler = MinMaxScaler(feature_range=(0, 1))
