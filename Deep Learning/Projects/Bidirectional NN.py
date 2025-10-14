@@ -11,8 +11,6 @@ import matplotlib.pyplot as plt
 from tensorflow.keras.layers import Dense, LSTM, Dropout, GRU, Bidirectional
 from keras.layers import Activation, Dense
 
-
-
 import os
 import glob
 import random
@@ -29,7 +27,6 @@ from math import sqrt
 #%%
 dataset_train= "Introduce here your training dataset or path"
 dataset_valid= "Introduce here your validation dataset or path"
-
 
 scaler = MinMaxScaler(feature_range=(0, 1))
 
