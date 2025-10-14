@@ -250,3 +250,19 @@ if log:
     plot_fn = plt.semilogx
 
 
+param_range = param_ranges[param_to_vary_idx]
+if (not isinstance(param_range[0], numbers.Number)):
+    param_range = [str(x) for x in param_range]
+plot_fn(param_range, train_scores_mean, label='Training score', color='r',
+            lw=lw)
+plt.fill_between(param_range, train_scores_mean - train_scores_std,
+                     train_scores_mean + train_scores_std, alpha=0.1,
+                     color='r', lw=lw)
+plot_fn(param_range, valid_scores_mean, label='Cross-validation score',
+            color='b', lw=lw)
+plt.fill_between(param_range, valid_scores_mean - valid_scores_std,
+                     valid_scores_mean + valid_scores_std, alpha=0.1,
+                     color='b', lw=lw)
+plt.legend(loc='lower right')
+
+plt.show()
