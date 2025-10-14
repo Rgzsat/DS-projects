@@ -266,3 +266,18 @@ plt.fill_between(param_range, valid_scores_mean - valid_scores_std,
 plt.legend(loc='lower right')
 
 plt.show()
+
+dataset_f= "TRIAL DATASET, FOR NEW TESTING"#[:-1]
+#dataset_f=(dataset_f.drop('time', axis=1))
+
+#Xf = np.array(dataset_f.drop('V', axis=1))
+#Xf= (np.array(dataset_f.drop(['V', 'I'], axis=1)))
+#Xf= scaler.fit_transform(Xf)
+#yf= np.array(dataset_f.V)
+Xf, yf= get_val(dataset_f)[0], get_val(dataset_f) [1]
+
+pred_f= pipe.predict(Xf)
+
+print('R2 final:', r2_score(yf, pred_f))
+print('MAE final :', mean_absolute_error(yf, pred_f))
+print('RMSE final', math.sqrt(mean_squared_error(yf, pred_f)))
