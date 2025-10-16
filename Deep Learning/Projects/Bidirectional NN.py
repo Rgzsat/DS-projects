@@ -66,3 +66,13 @@ X_valid = np.reshape(X_valid, (X_valid.shape[0], 1, X_valid.shape[1]))
 from tensorflow.keras.regularizers import L1L2
 import tensorflow as tf
 from keras.regularizers import l2
+
+units=50
+model = Sequential()
+model.add(Bidirectional(LSTM(units, kernel_regularizer=l2(0.0001),return_sequences=True),
+                             input_shape=(X_train.shape[1], look_back), 
+                             ))
+model.add(Bidirectional(LSTM(units)))
+model.add(Dropout(0.2)) #0.1 or 0.2
+model.add(Dense(1))
+model.add(Activation('relu'))
