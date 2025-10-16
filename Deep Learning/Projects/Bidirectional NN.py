@@ -31,8 +31,6 @@ dataset_valid= "Introduce here your validation dataset or path"
 scaler = MinMaxScaler(feature_range=(0, 1))
 
 def df(dataset):
-    #v= dataset['V']
-    #dataset= np.array(v.iloc[::-1])
     dataset=  np.array(dataset['V'])
     dataset = np.reshape(dataset, (-1, 1))
     dataset = scaler.fit_transform(dataset)
@@ -44,3 +42,5 @@ df_valid= df(dataset_valid)
 
 train_size = (len(df_train))
 val_size = len(df_valid)
+
+
