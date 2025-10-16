@@ -43,4 +43,26 @@ df_valid= df(dataset_valid)
 train_size = (len(df_train))
 val_size = len(df_valid)
 
+def create_dataset(dataset, look_back=1):
+    X, Y = [], []
+    for i in range(len(dataset)-look_back-1):
+        a = dataset[i:(i+look_back), 0]
+        X.append(a)
+        Y.append(dataset[i + look_back, 0])
+    return np.array(X), np.array(Y)
 
+# reshape into X=t and Y=t+1
+look_back = 12
+X_train, Y_train = create_dataset(df_train, look_back)
+X_valid, Y_valid = create_dataset(df_valid, look_back)
+
+X_train.shape
+Y_valid.shape
+
+# reshape input to be [samples, time steps, features]
+X_train = np.reshape(X_train, (X_train.shape[0], 1, X_train.shape[1]))
+X_valid = np.reshape(X_valid, (X_valid.shape[0], 1, X_valid.shape[1]))
+
+from tensorflow.keras.regularizers import L1L2
+import tensorflow as tf
+from keras.regularizers import l2
