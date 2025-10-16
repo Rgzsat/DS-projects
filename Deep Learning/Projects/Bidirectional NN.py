@@ -83,3 +83,9 @@ lr_schedule = keras.optimizers.schedules.ExponentialDecay(
     decay_rate=0.9)
 opt = keras.optimizers.Adam(learning_rate=lr_schedule)
 
+model.compile(loss='mean_squared_error', optimizer=opt, metrics='MeanSquaredError')  
+
+history = model.fit(X_train, Y_train, epochs=500, batch_size=200, validation_data=(X_valid, Y_valid), 
+                    callbacks=[EarlyStopping(monitor='val_loss', patience=10)], verbose=1, shuffle=False)
+# Training Phase
+model.summary()
