@@ -131,3 +131,9 @@ print('Valid Root Mean Squared Error:',np.sqrt(mean_squared_error(Y_valid[0], va
 
 print('Coefficient of determination: %.4f R2' % r2_score(Y_valid.T, valid_predict))
 
+#%%
+# shift train predictions for plotting
+trainPredictPlot = np.empty_like(df_train)
+trainPredictPlot[:, :] = np.nan
+trainPredictPlot[look_back:len(train_predict)+look_back, :] = train_predict
+
