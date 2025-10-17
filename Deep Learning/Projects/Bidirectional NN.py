@@ -89,3 +89,22 @@ history = model.fit(X_train, Y_train, epochs=500, batch_size=200, validation_dat
                     callbacks=[EarlyStopping(monitor='val_loss', patience=10)], verbose=1, shuffle=False)
 # Training Phase
 model.summary()
+
+#%%
+plt.figure(figsize=(8,4))
+plt.plot(history.history['loss'], label='Train Loss')
+plt.plot(history.history['val_loss'], label='Val Loss')
+plt.title('model loss')
+plt.ylabel('loss')
+plt.xlabel('epochs')
+plt.legend(loc='upper right')
+plt.show();
+
+plt.figure(figsize=(8,4))
+plt.plot(history.history['mean_squared_error'], label='MSE')
+plt.plot(history.history['val_mean_squared_error'], label='Val MSE')
+plt.title('model metrics')
+plt.ylabel('MSE')
+plt.xlabel('epochs')
+plt.legend(loc='upper right')
+plt.show();
