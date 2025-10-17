@@ -137,3 +137,16 @@ trainPredictPlot = np.empty_like(df_train)
 trainPredictPlot[:, :] = np.nan
 trainPredictPlot[look_back:len(train_predict)+look_back, :] = train_predict
 
+import seaborn as sns
+plt.plot(scaler.inverse_transform(df_train), color= 'blue')
+plt.plot(scaler.inverse_transform(df_valid), label= 'actual', color= 'blue')
+plt.plot(trainPredictPlot, color= 'orange', label= 'predicted')
+plt.plot(validPredictPlot, color= 'orange')
+plt.tight_layout()
+sns.despine(top=True)
+plt.subplots_adjust(left=0.07)
+plt.xlabel('Time [sec]')
+plt.ylabel('Voltage [V]')
+plt.title('Bidirectional implementation')
+plt.legend()
+plt.show()
