@@ -108,3 +108,14 @@ plt.ylabel('MSE')
 plt.xlabel('epochs')
 plt.legend(loc='upper right')
 plt.show();
+
+#%%
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_absolute_error
+from sklearn.metrics import r2_score
+
+# make predictions
+train_predict = model.predict(X_train)
+valid_predict = model.predict(X_valid)
+
+
