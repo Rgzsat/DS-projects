@@ -192,3 +192,11 @@ test_predict = model.predict(X_test)
 
 test_predict = scaler.inverse_transform(test_predict)
 Y_test = scaler.inverse_transform([Y_test])
+
+
+print('Test Mean Absolute Error:', mean_absolute_error(Y_test[0], test_predict[:,0]))
+print('Test Root Mean Squared Error:',np.sqrt(mean_squared_error(Y_test[0], test_predict[:,0])))
+
+print('Coefficient of determination: %.4f R2' % r2_score(Y_test.T, test_predict))
+
+
