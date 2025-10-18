@@ -199,4 +199,13 @@ print('Test Root Mean Squared Error:',np.sqrt(mean_squared_error(Y_test[0], test
 
 print('Coefficient of determination: %.4f R2' % r2_score(Y_test.T, test_predict))
 
-
+plt.plot((Y_test.T), label= 'actual')
+plt.plot((test_predict), color= 'red', label= 'predicted')
+plt.tight_layout()
+sns.despine(top=True)
+plt.subplots_adjust(left=0.07)
+plt.xlabel('Time [sec]')
+plt.ylabel('Voltage [V]')
+plt.title('Bidirectional implementation- Testing')
+plt.legend()
+plt.show()
