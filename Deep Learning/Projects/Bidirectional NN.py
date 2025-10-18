@@ -184,3 +184,11 @@ plt.show()
 dataset_test= pd.read_csv(r'C:\Users\rogilb\Downloads\Testing cells\10A-2-A-4.csv',index_col= 6)#[:-1]
 df_test= df(dataset_test)
 X_test, Y_test = create_dataset(df_test, look_back)
+
+
+X_test = np.reshape(X_test, (X_test.shape[0], 1, X_test.shape[1]))
+
+test_predict = model.predict(X_test)
+
+test_predict = scaler.inverse_transform(test_predict)
+Y_test = scaler.inverse_transform([Y_test])
