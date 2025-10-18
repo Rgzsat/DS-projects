@@ -178,3 +178,9 @@ plt.ylabel('Voltage [V]')
 plt.title('Bidirectional implementation-Validation')
 plt.legend()
 plt.show()
+
+#%%
+
+dataset_test= pd.read_csv(r'C:\Users\rogilb\Downloads\Testing cells\10A-2-A-4.csv',index_col= 6)#[:-1]
+df_test= df(dataset_test)
+X_test, Y_test = create_dataset(df_test, look_back)
