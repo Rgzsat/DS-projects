@@ -149,4 +149,21 @@ plt.xlabel('Time [sec]')
 plt.ylabel('Voltage [V]')
 plt.title('Bidirectional implementation')
 plt.legend()
+plt.show
+
+#%%
+
+plt.plot(scaler.inverse_transform(df_train), label= 'actual')
+#plt.plot(scaler.inverse_transform(df_valid), label= 'actual-valid')
+plt.plot(trainPredictPlot, color= 'orange', label= 'predicted')
+#plt.plot(validPredictPlot, color= 'orange')
+plt.tight_layout()
+sns.despine(top=True)
+plt.subplots_adjust(left=0.07)
+plt.xlabel('Time [sec]')
+plt.ylabel('Voltage [V]')
+plt.title('Bidirectional implementation-Training')
+plt.legend()
 plt.show()
+
+
