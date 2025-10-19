@@ -27,3 +27,9 @@ from math import sqrt
 dataset_train= #Introduce here your path for the training dataset
 
 look_back = 8#
+
+
+dataset= np.array(dataset_train['V'])
+dataset = np.reshape(dataset, (-1, 1))
+scaler = MinMaxScaler(feature_range=(0, 1))
+dataset = scaler.fit_transform(dataset)
