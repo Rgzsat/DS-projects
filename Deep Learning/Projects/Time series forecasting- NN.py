@@ -49,3 +49,10 @@ def create_dataset(dataset, look_back=look_back):
 # reshape into X=t and Y=t+1
 X_train, Y_train = create_dataset(train, look_back)
 X_valid, Y_valid = create_dataset(valid, look_back)
+
+X_train.shape
+Y_valid.shape
+
+# reshape input to be [samples, time steps, features]
+X_train = np.reshape(X_train, (X_train.shape[0], 1, X_train.shape[1]))
+X_valid = np.reshape(X_valid, (X_valid.shape[0], 1, X_valid.shape[1]))
