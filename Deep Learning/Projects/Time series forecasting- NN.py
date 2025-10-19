@@ -46,3 +46,6 @@ def create_dataset(dataset, look_back=look_back):
         Y.append(dataset[i + look_back, 0])
     return np.array(X), np.array(Y)
 
+# reshape into X=t and Y=t+1
+X_train, Y_train = create_dataset(train, look_back)
+X_valid, Y_valid = create_dataset(valid, look_back)
