@@ -10,7 +10,6 @@ from keras.callbacks import EarlyStopping
 from sklearn.preprocessing import MinMaxScaler
 import matplotlib.pyplot as plt
 
-
 import os
 import glob
 import random
@@ -23,3 +22,8 @@ from torch.utils.data import Dataset, DataLoader
 import torch.optim as optim
 import pandas as pd
 from math import sqrt
+
+
+dataset_train= #Introduce here your path for the training dataset
+
+look_back = 8#
