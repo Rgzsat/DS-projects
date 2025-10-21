@@ -73,3 +73,15 @@ lr_schedule = keras.optimizers.schedules.ExponentialDecay(
     decay_steps=10000,
     decay_rate=0.9)
 opt = keras.optimizers.AdamW(learning_rate=lr_schedule)
+
+
+#model.compile(loss='mean_squared_error', optimizer='adam', metrics='MeanSquaredError')
+
+history = model.fit(X_train, Y_train, epochs=500, batch_size=90, validation_data=(X_valid, Y_valid), 
+                   callbacks=[EarlyStopping(monitor='val_loss', patience=10)], verbose=1, shuffle=False)
+
+#history = model.fit(X_train, Y_train, epochs=500, batch_size=200, validation_data=(X_valid, Y_valid), 
+                   # verbose=1, shuffle=False)
+
+# Training Phase
+model.summary()
