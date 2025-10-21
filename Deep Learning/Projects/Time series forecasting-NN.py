@@ -80,3 +80,13 @@ history = model.fit(X_train, Y_train, epochs=500, batch_size=90, validation_data
 
 # Training Phase
 model.summary()
+
+#%%
+plt.figure(figsize=(8,4))
+plt.plot(history.history['loss'], label='Train Loss')
+plt.plot(history.history['val_loss'], label='Val Loss')
+plt.title('model loss')
+plt.ylabel('loss')
+plt.xlabel('epochs')
+plt.legend(loc='upper right')
+plt.show();
