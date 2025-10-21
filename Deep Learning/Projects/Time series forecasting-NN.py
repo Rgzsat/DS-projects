@@ -64,7 +64,6 @@ from keras.regularizers import l2
 model = Sequential()
 
 model.add(tf.keras.layers.LSTM(200, activation='relu', kernel_regularizer =l2(0.0001)))
-#model.add(tf.keras.layers.GRU(200, activation='relu'))
 model.add(tf.keras.layers.InputLayer(input_shape=(1, look_back)))
 model.add(Dropout(0.2)) #0.1 or 0.2
 model.add(Dense(1))
