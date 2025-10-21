@@ -90,3 +90,13 @@ plt.ylabel('loss')
 plt.xlabel('epochs')
 plt.legend(loc='upper right')
 plt.show();
+
+#%%
+plt.figure(figsize=(8,4))
+plt.plot(history.history['mean_squared_error'], label='MSE')
+plt.plot(history.history['val_mean_squared_error'], label='Val MSE')
+plt.title('model metrics')
+plt.ylabel('MSE')
+plt.xlabel('epochs')
+plt.legend(loc='upper right')
+plt.show();
