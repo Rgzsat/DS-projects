@@ -56,3 +56,21 @@ Y_valid.shape
 # reshape input to be [samples, time steps, features]
 X_train = np.reshape(X_train, (X_train.shape[0], 1, X_train.shape[1]))
 X_valid = np.reshape(X_valid, (X_valid.shape[0], 1, X_valid.shape[1]))
+
+from tensorflow.keras.regularizers import L1L2
+import tensorflow as tf
+from keras.regularizers import l2
+
+model = Sequential()
+
+model.add(tf.keras.layers.LSTM(200, activation='relu', kernel_regularizer =l2(0.0001)))
+#model.add(tf.keras.layers.GRU(200, activation='relu'))
+model.add(tf.keras.layers.InputLayer(input_shape=(1, look_back)))
+model.add(Dropout(0.2)) #0.1 or 0.2
+model.add(Dense(1))
+
+lr_schedule = keras.optimizers.schedules.ExponentialDecay(
+    initial_learning_rate=1e-4,
+    decay_steps=10000,
+    decay_rate=0.9)
+opt = keras.optimizers.AdamW(learning_rate=lr_schedule)
