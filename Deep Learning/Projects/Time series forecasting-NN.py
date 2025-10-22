@@ -158,3 +158,10 @@ dataset_test= np.array(dataset_test['V'])
 dataset_test = np.reshape(dataset_test, (-1, 1))
 scaler2 = MinMaxScaler(feature_range=(0, 1))
 df_test = scaler2.fit_transform(dataset_test)
+
+X_test, Y_test = create_dataset(df_test, look_back)
+
+X_test = np.reshape(X_test, (X_test.shape[0], 1, X_test.shape[1]))
+
+test_predict = model.predict(X_test)
+
