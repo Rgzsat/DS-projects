@@ -131,3 +131,24 @@ trainPredictPlot[look_back:len(train_predict)+look_back, :] = train_predict
 validPredictPlot = np.empty_like(dataset)
 validPredictPlot[:, :] = np.nan
 validPredictPlot[len(train_predict)+(look_back*2)+1:len(dataset)-1, :] = valid_predict
+
+
+#%%
+import seaborn as sns
+
+actual= (np.r_[Y_train.T, Y_valid.T])
+pred= (np.r_[train_predict, valid_predict])
+
+#plt.plot(scaler.inverse_transform(dataset), label= 'actual')
+plt.plot(actual, label= 'actual')
+plt.plot(pred, label= 'predicted', color= 'orange')
+#plt.plot(trainPredictPlot, color= 'orange', label= 'predicted')
+#plt.plot(validPredictPlot, color= 'orange')
+plt.tight_layout()
+sns.despine(top=True)
+plt.subplots_adjust(left=0.07)
+plt.xlabel('Time [sec]')
+plt.ylabel('Voltage [V]')
+plt.title('LSTM implementation')
+plt.legend()
+plt.show()
