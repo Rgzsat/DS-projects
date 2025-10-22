@@ -167,3 +167,6 @@ test_predict = model.predict(X_test)
 
 test_predict = scaler2.inverse_transform(test_predict)
 Y_test = scaler2.inverse_transform([Y_test])
+
+print('Test Mean Absolute Error:', mean_absolute_error(Y_test[0], test_predict[:,0]))
+
