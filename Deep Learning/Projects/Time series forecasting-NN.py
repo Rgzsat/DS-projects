@@ -152,3 +152,9 @@ plt.ylabel('Voltage [V]')
 plt.title('LSTM implementation')
 plt.legend()
 plt.show()
+
+dataset_test= pd.read_csv(r'C:\Users\rogilb\Downloads\Testing cells\35A-1-A-4.csv',index_col= 6)#[:-1]
+dataset_test= np.array(dataset_test['V'])
+dataset_test = np.reshape(dataset_test, (-1, 1))
+scaler2 = MinMaxScaler(feature_range=(0, 1))
+df_test = scaler2.fit_transform(dataset_test)
