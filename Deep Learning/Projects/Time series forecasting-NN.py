@@ -108,3 +108,17 @@ from sklearn.metrics import r2_score
 # make predictions
 train_predict = model.predict(X_train)
 valid_predict = model.predict(X_valid)
+
+# invert predictions
+train_predict = scaler.inverse_transform(train_predict)
+Y_train = scaler.inverse_transform([Y_train])
+valid_predict = scaler.inverse_transform(valid_predict)
+Y_valid = scaler.inverse_transform([Y_valid])
+
+print('Train Mean Absolute Error:', mean_absolute_error(Y_train[0], train_predict[:,0]))
+print('Train Root Mean Squared Error:',np.sqrt(mean_squared_error(Y_train[0], train_predict[:,0])))
+print('Valid Mean Absolute Error:', mean_absolute_error(Y_valid[0], valid_predict[:,0]))
+print('Valid Root Mean Squared Error:',np.sqrt(mean_squared_error(Y_valid[0], valid_predict[:,0])))
+
+print('Coefficient of determination: %.4f R2' % r2_score(Y_valid.T, valid_predict))
+
