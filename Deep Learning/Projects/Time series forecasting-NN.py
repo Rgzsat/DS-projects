@@ -165,3 +165,5 @@ X_test = np.reshape(X_test, (X_test.shape[0], 1, X_test.shape[1]))
 
 test_predict = model.predict(X_test)
 
+test_predict = scaler2.inverse_transform(test_predict)
+Y_test = scaler2.inverse_transform([Y_test])
