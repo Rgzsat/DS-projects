@@ -27,7 +27,6 @@ from skopt.space import Real, Integer
 from skopt.plots import plot_convergence, plot_objective, plot_evaluations, plot_histogram, plot_objective_2D 
 from skopt.utils import use_named_args
 
-dataset_train = pd.read_csv(r'C:\Users\47406\Downloads\Coding-initial\1B4-1A.csv', index_col= 6)[:-1]
-dataset_valid= pd.read_csv(r'C:\Users\47406\Downloads\Coding-initial\1A1-10A.csv', index_col= 6)#[:-1]
-#sc = StandardScaler()
+dataset_train "Introduce your training data path"
+dataset_valid= "Introduce your validation data path"
 scaler = MinMaxScaler(feature_range=(0, 1))
