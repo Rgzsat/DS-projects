@@ -169,4 +169,17 @@ test_predict = scaler2.inverse_transform(test_predict)
 Y_test = scaler2.inverse_transform([Y_test])
 
 print('Test Mean Absolute Error:', mean_absolute_error(Y_test[0], test_predict[:,0]))
+print('Coefficient of determination: %.4f R2' % r2_score(Y_test.T, test_predict))
+
+plt.plot((Y_test.T), label= 'actual')
+plt.plot((test_predict), color= 'red', label= 'predicted')
+#plt.plot(testPredictPlot, color= 'orange')
+plt.tight_layout()
+sns.despine(top=True)
+plt.subplots_adjust(left=0.07)
+plt.xlabel('Time [sec]')
+plt.ylabel('Voltage [V]')
+plt.title('LSTM implementatio- Testing')
+plt.legend()
+plt.show()
 
