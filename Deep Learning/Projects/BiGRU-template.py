@@ -55,3 +55,7 @@ val_size = len(dataset_train) - train_size
 x_train, y_train= df(dataset_train)[0], df(dataset_train)[1]
 x_valid, y_valid= df(dataset_valid)[0], df(dataset_valid)[1]
 
+X_train = x_train.reshape((x_train.shape[0], 1, x_train.shape[1]))
+X_valid = x_valid.reshape((x_valid.shape[0], 1, x_valid.shape[1]))
+
+print(X_train.shape, y_train.shape, X_valid.shape, y_valid.shape)
