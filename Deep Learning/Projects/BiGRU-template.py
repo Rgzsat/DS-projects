@@ -59,3 +59,14 @@ X_train = x_train.reshape((x_train.shape[0], 1, x_train.shape[1]))
 X_valid = x_valid.reshape((x_valid.shape[0], 1, x_valid.shape[1]))
 
 print(X_train.shape, y_train.shape, X_valid.shape, y_valid.shape)
+
+from tensorflow.keras.regularizers import L1L2
+import tensorflow as tf
+from keras.regularizers import l2
+
+
+units=250 #200, 300
+model = Sequential()
+model.add(Bidirectional(GRU(units, kernel_regularizer=l2(0.0001),return_sequences=True),
+                             input_shape=(X_train.shape[1], X_train.shape[2]), 
+                             ))
