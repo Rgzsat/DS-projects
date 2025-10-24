@@ -50,3 +50,8 @@ def df(dataset):
 
 train_size = int(len(dataset_train) * 0.7)
 val_size = len(dataset_train) - train_size
+
+
+x_train, y_train= df(dataset_train)[0], df(dataset_train)[1]
+x_valid, y_valid= df(dataset_valid)[0], df(dataset_valid)[1]
+
