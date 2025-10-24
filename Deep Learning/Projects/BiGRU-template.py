@@ -70,3 +70,9 @@ model = Sequential()
 model.add(Bidirectional(GRU(units, kernel_regularizer=l2(0.0001),return_sequences=True),
                              input_shape=(X_train.shape[1], X_train.shape[2]), 
                              ))
+
+
+model.add(Bidirectional(GRU(units)))
+model.add(Dropout(0.2)) #0.1 or 0.2
+model.add(Dense(1))
+model.add(Activation('relu'))
