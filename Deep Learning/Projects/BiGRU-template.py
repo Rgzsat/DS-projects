@@ -76,3 +76,9 @@ model.add(Bidirectional(GRU(units)))
 model.add(Dropout(0.2)) #0.1 or 0.2
 model.add(Dense(1))
 model.add(Activation('relu'))
+
+lr_schedule = keras.optimizers.schedules.ExponentialDecay(
+    initial_learning_rate=1e-4,
+    decay_steps=10000,
+    decay_rate=0.9)
+opt = keras.optimizers.Adam(learning_rate=lr_schedule)
