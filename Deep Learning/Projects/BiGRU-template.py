@@ -82,3 +82,6 @@ lr_schedule = keras.optimizers.schedules.ExponentialDecay(
     decay_steps=10000,
     decay_rate=0.9)
 opt = keras.optimizers.Adam(learning_rate=lr_schedule)
+
+model.compile(loss='mean_squared_error', optimizer=opt, metrics='MeanSquaredError')                   
+
