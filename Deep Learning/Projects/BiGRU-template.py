@@ -116,6 +116,22 @@ from sklearn.metrics import mean_absolute_error
 #from keras.callbacks import EarlyStopping
 from sklearn.metrics import r2_score
 
+#%%
+
+import seaborn as sns
+
+plt.figure(1)
+plt.plot((y_train), label= 'actual')
+plt.plot((train_predict), label= 'predicted')
+plt.tight_layout()
+sns.despine(top=True)
+plt.subplots_adjust(left=0.07)
+plt.xlabel('Time [sec]')
+plt.ylabel('Voltage [V]')
+plt.title('BiGRU implementation-Training')
+plt.legend()
+plt.show()
+
 # make predictions
 train_predict = model.predict(X_train)
 valid_predict = model.predict(X_valid)
