@@ -168,3 +168,8 @@ plt.title('BiGRU implementation-Validation')
 plt.legend()
 plt.show()
 
+#%%
+dataset_test= pd.read_csv(r'C:\Users\47406\Downloads\Coding-initial\2A4-10A.csv', index_col= 6)#[:-1]
+x_test, y_test= df(dataset_test)[0], df(dataset_test)[1]
+X_test = x_test.reshape((x_test.shape[0], 1, x_test.shape[1]))
+
