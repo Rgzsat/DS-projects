@@ -129,3 +129,12 @@ y_valid = scaler.inverse_transform(y_valid)
 print(valid_predict.shape)
 
 print(valid_predict)
+
+print('Train Mean Absolute Error:', mean_absolute_error(y_train, train_predict))
+print('Train Root Mean Squared Error:',np.sqrt(mean_squared_error(y_train, train_predict)))
+print('Valid Mean Absolute Error:', mean_absolute_error(y_valid, valid_predict))
+print('Valid Root Mean Squared Error:',np.sqrt(mean_squared_error(y_valid, valid_predict)))
+
+print(' Training Coefficient of determination: %.4f R2' % r2_score(y_train, train_predict))
+print(' Validation Coefficient of determination: %.4f R2' % r2_score(y_valid, valid_predict))
+
