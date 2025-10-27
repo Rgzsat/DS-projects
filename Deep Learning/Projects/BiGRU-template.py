@@ -110,4 +110,22 @@ plt.xlabel('epochs')
 plt.legend(loc='upper right')
 plt.show();
 
+#%%
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_absolute_error
+#from keras.callbacks import EarlyStopping
+from sklearn.metrics import r2_score
 
+# make predictions
+train_predict = model.predict(X_train)
+valid_predict = model.predict(X_valid)
+
+# invert predictions
+train_predict = scaler.inverse_transform(train_predict)
+y_train = scaler.inverse_transform(y_train)
+valid_predict = scaler.inverse_transform(valid_predict)
+y_valid = scaler.inverse_transform(y_valid)
+
+print(valid_predict.shape)
+
+print(valid_predict)
