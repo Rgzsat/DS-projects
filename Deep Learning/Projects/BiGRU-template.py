@@ -154,3 +154,17 @@ print('Valid Root Mean Squared Error:',np.sqrt(mean_squared_error(y_valid, valid
 print(' Training Coefficient of determination: %.4f R2' % r2_score(y_train, train_predict))
 print(' Validation Coefficient of determination: %.4f R2' % r2_score(y_valid, valid_predict))
 
+#%%
+plt.figure(2)
+plt.plot((y_valid), label= 'actual')
+#plt.plot(sorted(valid_predict, reverse= True), label= 'predicted', color= 'red')
+plt.plot((valid_predict), label= 'predicted')
+plt.tight_layout()
+sns.despine(top=True)
+plt.subplots_adjust(left=0.07)
+plt.xlabel('Time [sec]')
+plt.ylabel('Voltage [V]')
+plt.title('BiGRU implementation-Validation')
+plt.legend()
+plt.show()
+
