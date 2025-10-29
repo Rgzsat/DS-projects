@@ -169,7 +169,13 @@ plt.legend()
 plt.show()
 
 #%%
-dataset_test= pd.read_csv(r'C:\Users\47406\Downloads\Coding-initial\2A4-10A.csv', index_col= 6)#[:-1]
+dataset_test= "Introuce your testing path"#
 x_test, y_test= df(dataset_test)[0], df(dataset_test)[1]
 X_test = x_test.reshape((x_test.shape[0], 1, x_test.shape[1]))
+
+test_predict = model.predict(X_test)
+
+# invert predictions
+test_predict = scaler.inverse_transform(test_predict)
+y_test = scaler.inverse_transform(y_
 
