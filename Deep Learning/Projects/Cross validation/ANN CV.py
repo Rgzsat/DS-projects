@@ -29,3 +29,20 @@ dataset_train = "TRAINING PATH"
 dataset_valid= "VALIDATION PATH"
 
 scaler = MinMaxScaler(feature_range=(0, 1))
+
+def df(dataset):
+    cap= dataset['mAh']/1000
+    max_cap=cap[len(cap)-1]
+    dod= (max_cap - cap)/max_cap
+    dataset['SOC']= dod
+    X= dataset
+    X= scaler.fit_transform(X)
+    
+    ir= (4.1-dataset['V'])/dataset['I']
+    yi= ir[0]*dataset['I']+dataset['V']
+    y = np.array(yi)
+    y = np.reshape(y, (-1, 1))
+    y= scaler.fit_transform(y)
+    
+    
+    return X, y
