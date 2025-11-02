@@ -94,3 +94,22 @@ for train, test in kfold.split(inputs, targets):
   model.add(Dense(1))
   
   model.compile(optimizer=opt, loss='mse', metrics=['mse', 'mae']
+
+  # Generate a print
+  print('------------------------------------------------------------------------')
+  print(f'Training for fold {fold_no} ...')
+
+  # Fit data to model
+  history = model.fit(X_train, y_train, epochs=500, batch_size=250, validation_data=(X_valid, y_valid), 
+                      callbacks=[EarlyStopping(monitor='val_loss', patience=10)], verbose=1, shuffle=False)
+
+
+  # Generate generalization metrics
+  scores = model.evaluate(inputs[test], targets[test], verbose=0)
+  print(f'Score for fold {fold_no}: {model.metrics_names[0]} of {scores[0]}; {model.metrics_names[1]} of {scores[1]}; {model.metrics_names[2]} of {scores[2]}')
+  mse_per_fold.append(scores[1])
+  mae_per_fold.append(scores[2])
+  loss_per_fold.append(scores[0])
+
+  # Increase fold number
+  fold_no = fold_no + 1
