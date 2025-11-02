@@ -43,6 +43,10 @@ def df(dataset):
     y = np.array(yi)
     y = np.reshape(y, (-1, 1))
     y= scaler.fit_transform(y)
-    
-    
+
     return X, y
+
+X_train, y_train= df(dataset_train)[0], df(dataset_train)[1]
+X_valid, y_valid= df(dataset_valid)[0], df(dataset_valid)[1]
+
+print(X_train.shape, y_train.shape, X_valid.shape, y_valid.shape)
