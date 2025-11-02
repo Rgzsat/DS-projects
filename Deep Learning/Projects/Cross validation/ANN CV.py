@@ -70,3 +70,27 @@ kfold = KFold(n_splits=num_folds, shuffle=True)
 mse_per_fold = []
 mae_per_fold = []
 loss_per_fold = []
+
+# K-fold Cross Validation model evaluation
+fold_no = 1
+for train, test in kfold.split(inputs, targets):
+
+  # Define the model architecture
+  model = Sequential([
+      Dense(64, input_shape=(X_train.shape[1],), activation='relu', 
+            kernel_regularizer=l2(0.001)),
+      Dense(64, activation='relu'),
+      Dense(64, activation='relu'),
+      Dense(4, activation='softmax')
+  ])
+  lr_schedule = keras.optimizers.schedules.ExponentialDecay(
+      initial_learning_rate=1e-4,
+      decay_steps=10000,
+      decay_rate=0.9)
+  opt = keras.optimizers.Adam(learning_rate=lr_schedule)
+
+  model.add(Dense(units=50, kernel_initializer='normal', activation='relu'))
+  model.add(Dropout(0.2)) #0.1 or 0.2
+  model.add(Dense(1))
+  
+  model.compile(optimizer=opt, loss='mse', metrics=['mse', 'mae']
