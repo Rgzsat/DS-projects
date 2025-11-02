@@ -127,3 +127,7 @@ print(f'> MSE: {np.mean(mse_per_fold)} (+- {np.std(mse_per_fold)})')
 print(f'> MAE: {np.mean(mae_per_fold)} (+- {np.std(mae_per_fold)})')
 print(f'> Loss: {np.mean(loss_per_fold)}')
 print('------------------------------------------------------------------------')
+
+#%%
+
+model.save('MLP.h5')
