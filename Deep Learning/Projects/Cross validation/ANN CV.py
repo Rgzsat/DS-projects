@@ -50,3 +50,23 @@ X_train, y_train= df(dataset_train)[0], df(dataset_train)[1]
 X_valid, y_valid= df(dataset_valid)[0], df(dataset_valid)[1]
 
 print(X_train.shape, y_train.shape, X_valid.shape, y_valid.shape)
+
+#%% KFOLD
+
+from sklearn.model_selection import KFold 
+from keras.regularizers import l2
+
+#choose how many folds/subsets you want
+num_folds = 10
+
+# Merge inputs and targets
+inputs = np.concatenate((X_train, X_valid), axis=0)
+targets = np.concatenate((y_train, y_valid), axis=0)
+
+# Define the K-fold Cross Validator
+kfold = KFold(n_splits=num_folds, shuffle=True)
+
+# Define per-fold score containers
+mse_per_fold = []
+mae_per_fold = []
+loss_per_fold = []
