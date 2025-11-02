@@ -93,7 +93,8 @@ for train, test in kfold.split(inputs, targets):
   model.add(Dropout(0.2)) #0.1 or 0.2
   model.add(Dense(1))
   
-  model.compile(optimizer=opt, loss='mse', metrics=['mse', 'mae']
+  model.compile(optimizer=opt, loss='mse', metrics=['mse', 'mae'])
+
 
   # Generate a print
   print('------------------------------------------------------------------------')
@@ -113,3 +114,16 @@ for train, test in kfold.split(inputs, targets):
 
   # Increase fold number
   fold_no = fold_no + 1
+    
+# == Provide average scores ==
+print('------------------------------------------------------------------------')
+print('Score per fold')
+for i in range(0, len(mse_per_fold)):
+  print('------------------------------------------------------------------------')
+  print(f'> Fold {i+1} - Loss: {loss_per_fold[i]} - MSE: {mse_per_fold[i]} - MAE: {mae_per_fold[i]}')
+print('------------------------------------------------------------------------')
+print('Average scores for all folds ANN-MLP:')
+print(f'> MSE: {np.mean(mse_per_fold)} (+- {np.std(mse_per_fold)})')
+print(f'> MAE: {np.mean(mae_per_fold)} (+- {np.std(mae_per_fold)})')
+print(f'> Loss: {np.mean(loss_per_fold)}')
+print('------------------------------------------------------------------------')
