@@ -22,3 +22,16 @@ from sklearn.preprocessing import MinMaxScaler
 dataset_train = "TRAINING PATH"
 dataset_valid= "VALIDATION PATH"
 scaler = MinMaxScaler(feature_range=(0, 1))
+
+
+def df(dataset):
+    dataset=(dataset.drop('time', axis=1))
+    X = dataset.drop('V', axis=1)
+    X= scaler.fit_transform(X)
+    
+    y = np.array(dataset.V)
+    y = np.reshape(y, (-1, 1))
+    y= scaler.fit_transform(y)
+    
+    return X, y
+
