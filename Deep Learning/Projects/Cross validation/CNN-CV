@@ -35,3 +35,10 @@ def df(dataset):
     
     return X, y
 
+X_train, y_train= df(dataset_train)[0], df(dataset_train)[1]
+X_valid, y_valid= df(dataset_valid)[0], df(dataset_valid)[1]
+
+X_train_series = X_train.reshape((X_train.shape[0], X_train.shape[1], 1))
+X_valid_series = X_valid.reshape((X_valid.shape[0], X_valid.shape[1], 1))
+print('Train set shape', X_train_series.shape)
+print('Validation set shape', X_valid_series.shape)
