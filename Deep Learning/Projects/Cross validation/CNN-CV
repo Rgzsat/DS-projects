@@ -18,3 +18,7 @@ from keras.layers import  Dropout, Flatten
 import plotly.offline as py #visualization
 py.init_notebook_mode(connected=True) #visualization
 from sklearn.preprocessing import MinMaxScaler
+
+dataset_train = "TRAINING PATH"
+dataset_valid= "VALIDATION PATH"
+scaler = MinMaxScaler(feature_range=(0, 1))
