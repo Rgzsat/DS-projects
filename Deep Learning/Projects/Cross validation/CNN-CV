@@ -69,3 +69,8 @@ loss_per_fold = []
 lr = 0.00001
 #adam = tf.keras.optimizers.Adam(lr)
 adam = tf.keras.optimizers.legacy.Adam(lr)
+
+# K-fold Cross Validation model evaluation
+fold_no 
+
+
