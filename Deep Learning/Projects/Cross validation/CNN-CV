@@ -42,3 +42,30 @@ X_train_series = X_train.reshape((X_train.shape[0], X_train.shape[1], 1))
 X_valid_series = X_valid.reshape((X_valid.shape[0], X_valid.shape[1], 1))
 print('Train set shape', X_train_series.shape)
 print('Validation set shape', X_valid_series.shape)
+
+#%% KFOLD
+
+from sklearn.model_selection import KFold 
+from keras.regularizers import l2
+from keras.callbacks import EarlyStopping
+from tensorflow.keras import optimizers
+
+epochs = 500
+
+#choose how many folds/subsets you want
+num_folds = 10
+
+# Merge inputs and targets
+inputs = np.concatenate((X_train_series, X_valid_series), axis=0)
+targets = np.concatenate((y_train, y_valid), axis=0)
+
+# Define the K-fold Cross Validator
+kfold = KFold(n_splits=num_folds, shuffle=True)
+
+# Define per-fold score containers
+mse_per_fold = []
+mae_per_fold = []
+loss_per_fold = []
+lr = 0.00001
+#adam = tf.keras.optimizers.Adam(lr)
+adam = tf.keras.optimizers.legacy.Adam(lr)
