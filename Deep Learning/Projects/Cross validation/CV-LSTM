@@ -16,3 +16,20 @@ from skopt.utils import use_named_args
 dataset_train = pd.read_csv(r'C:\Users\47406\Downloads\Coding-initial\1B4-1A.csv', index_col= 6)[:-1]
 dataset_valid= pd.read_csv(r'C:\Users\47406\Downloads\Coding-initial\1A1-10A.csv', index_col= 6)#[:-1]
 scaler = MinMaxScaler(feature_range=(0, 1))
+
+def df(dataset):
+    cap= dataset['mAh']/1000
+    max_cap=cap[len(cap)-1]
+    dod= (max_cap - cap)/max_cap
+    dataset['SOC']= dod
+    X= dataset
+    X= scaler.fit_transform(X)
+    
+    ir= (4.1-dataset['V'])/dataset['I']
+    yi= ir[0]*dataset['I']+dataset['V']
+    y = np.array(yi)
+    y = np.reshape(y, (-1, 1))
+    y= scaler.fit_transform(y)
+    
+    
+    return X, y
