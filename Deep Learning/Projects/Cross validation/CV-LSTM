@@ -63,3 +63,11 @@ kfold = KFold(n_splits=num_folds, shuffle=True)
 mse_per_fold = []
 mae_per_fold = []
 loss_per_fold = []
+
+
+# K-fold Cross Validation model evaluation
+fold_no = 1
+for train, test in kfold.split(inputs, targets):
+
+
+
