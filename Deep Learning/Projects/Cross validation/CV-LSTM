@@ -64,10 +64,44 @@ mse_per_fold = []
 mae_per_fold = []
 loss_per_fold = []
 
-
 # K-fold Cross Validation model evaluation
 fold_no = 1
 for train, test in kfold.split(inputs, targets):
 
+  # Define the model architecture
+  model = Sequential()
+
+  model.add(tf.keras.layers.LSTM(250, activation='relu', kernel_regularizer =l2(0.0001)))
+  model.add(tf.keras.layers.InputLayer(input_shape=(X_train.shape[1], X_train.shape[2])))
+  model.add(Dropout(0.2)) #0.1 or 0.2
+  model.add(Dense(1))
+
+  lr_schedule = keras.optimizers.schedules.ExponentialDecay(
+      initial_learning_rate=1e-4,
+      decay_steps=10000,
+      decay_rate=0.9)
+  opt = keras.optimizers.Adam(learning_rate=lr_schedule)
+
+
+  model.compile(loss='mean_squared_error', optimizer=opt, metrics=['mse', 'mae'])
+
+
+  # Generate a print
+  print('------------------------------------------------------------------------')
+  print(f'Training for fold {fold_no} ...')
+
+  # Fit data to model
+  history = model.fit(X_train, y_train, epochs=500, batch_size=240, validation_data=(X_valid, y_valid), 
+                     callbacks=[EarlyStopping(monitor='val_loss', patience=10)], verbose=1, shuffle=False)
+
+  # Generate generalization metrics
+  scores = model.evaluate(inputs[test], targets[test], verbose=0)
+  print(f'Score for fold {fold_no}: {model.metrics_names[0]} of {scores[0]}; {model.metrics_names[1]} of {scores[1]}; {model.metrics_names[2]} of {scores[2]}')
+  mse_per_fold.append(scores[1])
+  mae_per_fold.append(scores[2])
+  loss_per_fold.append(scores[0])
+
+  # Increase fold number
+  fold_no = fold_no + 1
 
 
