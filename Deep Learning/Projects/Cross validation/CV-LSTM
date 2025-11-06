@@ -56,4 +56,10 @@ num_folds = 10
 inputs = np.concatenate((X_train, X_valid), axis=0)
 targets = np.concatenate((y_train, y_valid), axis=0)
 
+# Define the K-fold Cross Validator
+kfold = KFold(n_splits=num_folds, shuffle=True)
 
+# Define per-fold score containers
+mse_per_fold = []
+mae_per_fold = []
+loss_per_fold = []
