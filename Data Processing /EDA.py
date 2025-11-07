@@ -30,3 +30,7 @@ battery_df.shape
 battery_df.info()
 battery_df.count()
 battery_df.isnull().sum()
+
+battery_df.describe()
+sns.boxplot(x = battery_df['OCV'])
+plt.show()
