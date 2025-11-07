@@ -7,7 +7,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-bess_df  = pd.read_csv(r'C:\Users\47406\Downloads\Coding-initial\1B4-1A.csv')[:-1]
+bess_df  ="Introduce your dataset"
 
 def df(dataset):
     #dataset=(dataset.drop('time', axis=1))
@@ -24,7 +24,7 @@ def df(dataset):
     
     return dataset
 
-Airbnb_df= df(airbnb_df)
+battery_df= df(airbnb_df)
 
 battery_df.shape
 battery_df.info()
