@@ -7,7 +7,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-airbnb_df  = pd.read_csv(r'C:\Users\47406\Downloads\Coding-initial\1B4-1A.csv')[:-1]
+bess_df  = pd.read_csv(r'C:\Users\47406\Downloads\Coding-initial\1B4-1A.csv')[:-1]
 
 def df(dataset):
     #dataset=(dataset.drop('time', axis=1))
@@ -26,7 +26,7 @@ def df(dataset):
 
 Airbnb_df= df(airbnb_df)
 
-Airbnb_df.shape
-Airbnb_df.info()
-Airbnb_df.count()
-Airbnb_df.isnull().sum()
+battery_df.shape
+battery_df.info()
+battery_df.count()
+battery_df.isnull().sum()
