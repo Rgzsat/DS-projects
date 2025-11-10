@@ -83,3 +83,15 @@ plt.ylabel('Density', fontsize=14)
 
 # Add a title to the plot
 #plt.title('Distribution of Open Circuit Voltage (OCV)',fontsize=15)
+
+#%%
+
+numerical_features = ['I','V', 'R', 'P', 'mAh', 'wh', 'time', 'SOC', 'OCV']
+
+# Create a boxplot foreach quantitative features
+
+for f in numerical_features:
+    sns.boxplot(x=f, data=Airbnb_df )
+    plt.show()
+    plt.close()
+
