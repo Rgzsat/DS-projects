@@ -64,3 +64,22 @@ print(battery_df.shape)
 
 # so here outliers are removed, see the new max price
 print(battery_df['OCV'].max())
+
+#%% DATA VISUALIZATION
+
+# Create a figure with a custom size
+plt.figure(figsize=(12, 5))
+
+# Set the seaborn theme to darkgrid
+sns.set_theme(style='darkgrid')
+
+# Create a histogram of the 'price' column of the Airbnb_df dataframe
+# using sns distplot function and specifying the color as red
+sns.distplot(battery_df['OCV'],color=('r'))
+
+# Add labels to the x-axis and y-axis
+plt.xlabel('OCV [V]', fontsize=14)
+plt.ylabel('Density', fontsize=14)
+
+# Add a title to the plot
+#plt.title('Distribution of Open Circuit Voltage (OCV)',fontsize=15)
