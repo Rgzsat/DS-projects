@@ -39,4 +39,28 @@ plt.show()
 
 battery_df.describe()
 sns.boxplot(x = battery_df['OCV'])
-plt.show()
+plt.show
+
+#%% USING QR TECHNIQUE for outliers
+
+# writing a outlier function for removing outliers in important columns.
+def iqr_technique(DFcolumn):
+  Q1 = np.percentile(DFcolumn, 25)
+  Q3 = np.percentile(DFcolumn, 75)
+  IQR = Q3 - Q1
+  lower_range = Q1 - (1.5 * IQR)
+  upper_range = Q3 + (1.5 * IQR)                        # interquantile range
+
+  return lower_range,upper_range
+
+lower_bound,upper_bound = iqr_technique(battery_df['OCV'])
+
+battery_df = battery_df[(battery_df.OCV>lower_bound) & (battery_df.OCV)]
+
+# so the outliers are removed from price column now check with boxplot and also check shape of new Dataframe!
+
+sns.boxplot(x = battery_df['OCV'])
+print(battery_df.shape)
+
+# so here outliers are removed, see the new max price
+print(battery_df['OCV'].max())
