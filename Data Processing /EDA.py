@@ -34,3 +34,9 @@ battery_df.isnull().sum()
 battery_df.describe()
 sns.boxplot(x = battery_df['OCV'])
 plt.show()
+
+#%% Describe the Dataset and removing outliers
+
+battery_df.describe()
+sns.boxplot(x = battery_df['OCV'])
+plt.show()
