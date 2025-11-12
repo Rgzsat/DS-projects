@@ -73,7 +73,7 @@ plt.figure(figsize=(12, 5))
 # Set the seaborn theme to darkgrid
 sns.set_theme(style='darkgrid')
 
-# Create a histogram of the 'price' column of the Airbnb_df dataframe
+# Create a histogram of the 'price' column of the battery_df dataframe
 # using sns distplot function and specifying the color as red
 sns.distplot(battery_df['OCV'],color=('r'))
 
@@ -98,7 +98,7 @@ for f in numerical_features:
 #%%
 # Create a histogram for each numerical features
 for f in numerical_features:
-    sns.histplot(x=f, data= Airbnb_df )
+    sns.histplot(x=f, data= battery_df )
     plt.show()
     plt.close()
 
@@ -118,7 +118,7 @@ def plot_corr(df,size=10):
     plt.yticks(range(len(corr.columns)), corr.columns);
     
 
-train= Airbnb_df.copy()
+train= battery_df.copy()
 plot_corr(train)
 
 #%%
