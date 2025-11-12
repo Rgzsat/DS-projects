@@ -91,7 +91,7 @@ numerical_features = ['I','V', 'R', 'P', 'mAh', 'wh', 'time', 'SOC', 'OCV']
 # Create a boxplot foreach quantitative features
 
 for f in numerical_features:
-    sns.boxplot(x=f, data=Airbnb_df )
+    sns.boxplot(x=f, data=battery_df )
     plt.show()
     plt.close()
 
@@ -120,3 +120,10 @@ def plot_corr(df,size=10):
 
 train= Airbnb_df.copy()
 plot_corr(train)
+
+#%%
+import seaborn as sn
+
+corr = train.select_dtypes(include=['float64', 'int32']).corr()
+f, ax = plt.subplots(figsize=(22, 22))
+sn.heatmap(corr, vmax=.8, square=True)
