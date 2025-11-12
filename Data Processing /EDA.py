@@ -95,3 +95,11 @@ for f in numerical_features:
     plt.show()
     plt.close()
 
+#%%
+# Create a histogram for each numerical features
+for f in numerical_features:
+    sns.histplot(x=f, data= Airbnb_df )
+    plt.show()
+    plt.close()
+
+
