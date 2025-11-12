@@ -24,7 +24,7 @@ def df(dataset):
     
     return dataset
 
-battery_df= df(airbnb_df)
+battery_df= df(bess_df)
 
 battery_df.shape
 battery_df.info()
