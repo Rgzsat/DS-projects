@@ -127,3 +127,11 @@ import seaborn as sn
 corr = train.select_dtypes(include=['float64', 'int32']).corr()
 f, ax = plt.subplots(figsize=(22, 22))
 sn.heatmap(corr, vmax=.8, square=True)
+
+#%%
+import seaborn as sn
+
+corr = train.select_dtypes(include=['float64', 'int32']).corr()
+f, ax = plt.subplots(figsize=(22, 22))
+sn.heatmap(corr, vmax=.8, square=True)
+
