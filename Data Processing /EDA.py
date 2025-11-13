@@ -154,6 +154,14 @@ cf.style.background_gradient(cmap='coolwarm').set_precision(1)
 plt.figure(figsize=(12,6)) #9, 8
 sn.heatmap(cf, vmax=.8, square=True, annot=True)
 
+#%%
+from matplotlib.axes._axes import _log as matplotlib_axes_logger
+matplotlib_axes_logger.setLevel('ERROR')
 
+target_correlations = train.corr().iloc[-1:, :].transpose().sort_values('OCV', ascending=False).round(2)
+target_correlations
 
+# Let's plot the 10 features that have the largest correlation coefficents:
+for my_top_10_target_corr in target_correlations.index[1:5]:  
+    train.plot(kind="scatter", x=my_top_10_target_corr, y="OCV")
 
