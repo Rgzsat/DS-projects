@@ -135,3 +135,19 @@ corr = train.select_dtypes(include=['float64', 'int32']).corr()
 f, ax = plt.subplots(figsize=(22, 22))
 sn.heatmap(corr, vmax=.8, square=True)
 
+#%%
+# Correlation between attributes with Voc
+corr_list = corr['OCV'].sort_values(axis=0, ascending=False).iloc[1:]
+corr_list
+
+#%% Visualize Correlated Attributes
+
+# Scatter plotting the variables most correlated with SalePrice
+cols = corr.nlargest(10, 'OCV')['OCV'].index
+sn.set()
+sn.pairplot(train[cols], size=2.5)
+plt.show()
+
+
+
+
