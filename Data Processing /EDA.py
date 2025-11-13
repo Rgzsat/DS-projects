@@ -148,6 +148,12 @@ sn.set()
 sn.pairplot(train[cols], size=2.5)
 plt.show()
 
+#%%
+cf = train.corr()
+cf.style.background_gradient(cmap='coolwarm').set_precision(1)
+plt.figure(figsize=(12,6)) #9, 8
+sn.heatmap(cf, vmax=.8, square=True, annot=True)
+
 
 
 
