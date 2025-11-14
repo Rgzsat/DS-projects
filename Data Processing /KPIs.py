@@ -12,3 +12,9 @@ from sklearn.preprocessing import RobustScaler
 from sklearn.feature_selection import SelectFromModel
 import embedded_method
 
+dataset_train = "Insert your training path"
+dataset_valid="Insert your validation path"
+
+from sklearn.preprocessing import MinMaxScaler
+
+scaler = MinMaxScaler(feature_range=(0, 1))
