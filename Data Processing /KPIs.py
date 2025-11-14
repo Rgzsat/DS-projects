@@ -18,3 +18,18 @@ dataset_valid="Insert your validation path"
 from sklearn.preprocessing import MinMaxScaler
 
 scaler = MinMaxScaler(feature_range=(0, 1))
+
+def df(dataset):
+    dataset=(dataset.drop('wh', axis=1))
+    dataset = dataset.rename(columns={'mAh': 'Capacity', 'V': 'Voltage', 
+                                      'R': 'Resistance'})
+    cap= dataset['Capacity']/1000
+    max_cap=cap[len(cap)-1]
+    dod= (max_cap - cap)/max_cap
+    dataset['SOC']= dod
+    X= dataset
+    
+    ir= (4.1-dataset['Voltage'])/dataset['I']
+    yi= ir[0]*dataset['I']+dataset['Voltage']
+    
+    return X, yi
