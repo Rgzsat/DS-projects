@@ -57,3 +57,13 @@ feature_selection2 = SelectFromModel(model1, threshold='median',prefit=True)
 selected_feat2 = X_train.columns[(feature_selection2.get_support())]
 print(selected_feat2)
 
+#%% Gradient Boosted Trees Importance
+
+model2 = embedded_method.gbt_importance(X_train=X_train,y_train=y_train,
+                             max_depth=10,top_n=3)
+
+# select features whose importance > threshold
+
+# only 8 features have importance > 0.01
+feature_selection = SelectFromModel(model2, threshold=0.05,prefit=True) 
+selected_feat = X_tr
