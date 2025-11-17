@@ -44,3 +44,15 @@ model1 = embedded_method.rf_importance(X_train=X_train,y_train=y_train,
 from sklearn.feature_selection import SelectFromMod
 
 
+# select features whose importance > threshold
+from sklearn.feature_selection import SelectFromModel
+
+# only 5 features have importance > 0.05
+feature_selection = SelectFromModel(model1, threshold=0.01,prefit=True) 
+selected_feat = X_train.columns[(feature_selection.get_support())]
+print(selected_feat)
+
+# only 12 features have importance > 2 times median
+feature_selection2 = SelectFromModel(model1, threshold='median',prefit=True) 
+selected_feat2 = X_train.columns[(feature_selection2.get_support())]
+print(selected_feat
