@@ -33,3 +33,14 @@ def df(dataset):
     yi= ir[0]*dataset['I']+dataset['Voltage']
     
     return X, yi
+
+#%% RANDOM FOREST
+
+model1 = embedded_method.rf_importance(X_train=X_train,y_train=y_train,
+                             max_depth=10,top_n=3)
+
+
+# select features whose importance > threshold
+from sklearn.feature_selection import SelectFromMod
+
+
