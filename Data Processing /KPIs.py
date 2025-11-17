@@ -55,4 +55,5 @@ print(selected_feat)
 # only 12 features have importance > 2 times median
 feature_selection2 = SelectFromModel(model1, threshold='median',prefit=True) 
 selected_feat2 = X_train.columns[(feature_selection2.get_support())]
-print(selected_feat
+print(selected_feat2)
+
