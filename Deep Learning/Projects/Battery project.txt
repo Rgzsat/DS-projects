@@ -1,5 +1,7 @@
 For this project, a range of deep learning algorithms have been implemented to 
 perform time series forecasting, predictive analytics, and regression on battery systems. 
+The data is proprietary and confidential, corresponding to hundreds of tests for the whole 
+Machine Learning cycle: Training, Validation, and Testing
 The following neural network architectures were chosen:
 
 1) Convolutional Neural Network
