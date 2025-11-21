@@ -1,0 +1,2 @@
+This Notebook includes the data processing of real data using online tools and APIs for a 
+Quantitave Trading Task

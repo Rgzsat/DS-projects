@@ -1,1 +1,0 @@
-This Notebook includes the data processing of real data using online tools and APIs
