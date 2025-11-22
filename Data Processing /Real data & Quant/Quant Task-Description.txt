@@ -1,0 +1,6 @@
+Description:
+
+You are provided with a P10, P50, and P90 day-ahead power forecasts together with an
+actual power of a PV farm in Estonia. Your task is to determine and propose an optimal
+day-ahead sales strategy, i.e. the optimal P-level forecast to use, which would yield us
+the highest total revenue.
