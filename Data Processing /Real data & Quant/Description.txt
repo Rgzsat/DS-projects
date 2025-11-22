@@ -1,2 +1,7 @@
 This Notebook includes the data processing of real data using online tools and APIs for a 
 Quantitave Trading Task
+
+Here is an overview:
+1) Fetching data using an API to extract balance prices from PV assets
+2) EDA related to PV assets
+3) Quantitative Trading task corresponding to Day-Ahead sold volumes
