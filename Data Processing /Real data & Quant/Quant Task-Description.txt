@@ -4,3 +4,10 @@ You are provided with a P10, P50, and P90 day-ahead power forecasts together wit
 actual power of a PV farm in Estonia. Your task is to determine and propose an optimal
 day-ahead sales strategy, i.e. the optimal P-level forecast to use, which would yield us
 the highest total revenue.
+
+Consider that there are just 2 streams of revenues, day-ahead (DA) revenue and
+imbalance revenues, which are calcualted for each MTU (15 min period). Total revenue
+is a sum of those 2 revenue streams across all MTUs. Also, consider that you can always
+limit production of solar PV assets (i.e. produce less), but cannot increase the
+production. E.g. if you sell 4 MWh in DA market and would actually produce 6 MWh, you
+can limit the production to 4 MWh in that specific MTU.
