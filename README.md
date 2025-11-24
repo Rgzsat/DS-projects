@@ -82,6 +82,6 @@ Figure 18: Time-series forecasting of battery voltage through Transformer networ
 
 <img width="989" height="390" alt="image" src="https://github.com/user-attachments/assets/91e4a362-6ac5-42d5-a42d-917a7f560254" />
 
-Figure 19: Quant test-Daily expected total revenue(EUR).
+Figure 19: Quant test-Daily expected total revenue (EUR). Continuous vs Best P-level.
 
 
