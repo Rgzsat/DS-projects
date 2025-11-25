@@ -82,8 +82,8 @@ Figure 18: Time-series forecasting of battery voltage through Transformer networ
 
 <img width="989" height="390" alt="image" src="https://github.com/user-attachments/assets/91e4a362-6ac5-42d5-a42d-917a7f560254" />
 
-Figure 19: Quant test-Daily expected total revenue (EUR). Continuous vs Best P-level. Monte Carlo simulation
+Figure 19: Quant test-Daily expected total revenue (EUR). Continuous vs Best P-level. Stocahastic solution through Monte Carlo.
 
 <img width="690" height="490" alt="image" src="https://github.com/user-attachments/assets/0f3290fa-801b-4d03-9d1e-92d585684cbc" />
 
-Figure 20: Quant test-Day-ahead price vs Optiaml sold volume. Continuous vs Best P-level. Monte Carlo Simulation
+Figure 20: Quant test-Day-ahead price vs Optiaml sold volume. Continuous vs Best P-level. Stochastic solution through Monte Carlo.
