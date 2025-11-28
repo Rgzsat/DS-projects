@@ -19,3 +19,10 @@ Notes:
 depend on actual production.
 • Actual power, forecasted power (P10, P50, P90), and day-ahead prices are
 provided in the Predictions.xlsx file.
+• Imbalance revenue = imbalance volume x balancing price (upward or
+downward depending on the sign of volume)
+• Imbalance volume is the di`erence between actual production volume and dayahead
+sold volume. Imbalance can be positive or negative. E.g. if 5 MWh is sold
+at day-ahead market and the actual production the next day in the respective
+MTU is 4 MWh, then then the imbalance is 4 - 5 = -1 MWh. That is settled with
+imbalance price.
