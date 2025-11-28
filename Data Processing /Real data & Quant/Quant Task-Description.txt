@@ -26,3 +26,9 @@ sold volume. Imbalance can be positive or negative. E.g. if 5 MWh is sold
 at day-ahead market and the actual production the next day in the respective
 MTU is 4 MWh, then then the imbalance is 4 - 5 = -1 MWh. That is settled with
 imbalance price.
+• Negative imbalance is settled with Upward price and positive imbalance is
+settled with Downward imbalance price.
+• Balancing prices can be found at https://baltic.transparencydashboard.
+eu/node/41
+• Pay attention to units. Prices are provided as EUR/MWh, forecast and actual
+power is provided in kW.
