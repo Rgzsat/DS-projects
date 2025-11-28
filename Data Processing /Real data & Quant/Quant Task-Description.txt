@@ -11,3 +11,11 @@ is a sum of those 2 revenue streams across all MTUs. Also, consider that you can
 limit production of solar PV assets (i.e. produce less), but cannot increase the
 production. E.g. if you sell 4 MWh in DA market and would actually produce 6 MWh, you
 can limit the production to 4 MWh in that specific MTU.
+
+Notes:
+• Day-ahead revenue = day-ahead sold volume x day-ahead price
+• Day-ahead volumes are forecasted as P-levels for each MTU for entire day.
+• Day-ahead volumes receive day-ahead price, i.e. day-ahead revenues do not
+depend on actual production.
+• Actual power, forecasted power (P10, P50, P90), and day-ahead prices are
+provided in the Predictions.xlsx file.
