@@ -33,3 +33,6 @@ eu/node/41
 • Pay attention to units. Prices are provided as EUR/MWh, forecast and actual
 power is provided in kW.
 • The task is to propose a solution for future.
+
+Deliverables:
+
