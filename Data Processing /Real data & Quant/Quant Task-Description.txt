@@ -36,3 +36,6 @@ power is provided in kW.
 
 Deliverables:
 
+For a solution we’d like to see how would you determine the DA sold volumes and why.
+You may suggest a specific P-level or weights for di`erent P-levels. Choice is yours. We
+are interested in your thinking behind it.
