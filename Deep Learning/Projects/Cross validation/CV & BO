@@ -23,3 +23,11 @@ import keras
 from tensorflow.keras.models import load_model
 
 import seaborn as sns
+
+bigru= keras.models.load_model("Introduce your path here")
+bigru.summary()
+
+bilstm= keras.models.load_model("Introduce your path here")
+bilstm.summary()
+
+scaler = "Introduce your path here"
