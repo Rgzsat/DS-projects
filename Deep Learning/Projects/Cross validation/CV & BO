@@ -54,3 +54,5 @@ x_test, y_test= df(dataset_test)[0], df(dataset_test)[1]
 X_test = x_test.reshape((x_test.shape[0], 1, x_test.shape[1]))
 soc= (df(dataset_test)[2].SOC)*100
 
+r2= bigru.evaluate(x=X_test,
+                        y=y_test)
