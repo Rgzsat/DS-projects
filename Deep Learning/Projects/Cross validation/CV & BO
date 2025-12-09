@@ -49,4 +49,4 @@ def df(dataset):
     
     return X, y, df2
 
-dataset_test= pd.read_csv(r'C:\Users\rogilb\Downloads\Battery testing\1A4-35A.csv', index_col= 6)
+dataset_test= "Introuce your path here"
