@@ -58,3 +58,6 @@ r2= bigru.evaluate(x=X_test,
                         y=y_test)
 
 
+for name, value in zip(bigru.metrics_names, r2):
+    print(name, value)
+print("{0}: {1:.2%}".format(bigru.metrics_names[0], r2[0]))
