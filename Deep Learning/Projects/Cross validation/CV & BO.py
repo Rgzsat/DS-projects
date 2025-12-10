@@ -56,3 +56,5 @@ soc= (df(dataset_test)[2].SOC)*100
 
 r2= bigru.evaluate(x=X_test,
                         y=y_test)
+
+
