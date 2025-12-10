@@ -72,3 +72,6 @@ r3= bilstm.evaluate(x=X_test,
 for name2, value2 in zip(bilstm.metrics_names, r3):
     print(name2, value2)
 print("{0}: {1:.2%}".format(bilstm.metrics_names[0], r3[0]))
+
+bilstm_predict = bilstm.predict(X_test)
+bilstm_predict = scaler.inverse_transform(bilstm_predict)
