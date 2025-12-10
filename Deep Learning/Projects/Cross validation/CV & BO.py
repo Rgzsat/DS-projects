@@ -61,3 +61,14 @@ r2= bigru.evaluate(x=X_test,
 for name, value in zip(bigru.metrics_names, r2):
     print(name, value)
 print("{0}: {1:.2%}".format(bigru.metrics_names[0], r2[0]))
+
+
+bigru_predict = bigru.predict(X_test)
+bigru_predict = scaler.inverse_transform(bigru_predict)
+
+r3= bilstm.evaluate(x=X_test,
+                        y=y_test)
+
+for name2, value2 in zip(bilstm.metrics_names, r3):
+    print(name2, value2)
+print("{0}: {1:.2%}".format(bilstm.metrics_names[0], r3[0]))
