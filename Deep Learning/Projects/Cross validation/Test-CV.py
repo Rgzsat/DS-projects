@@ -33,3 +33,8 @@ def df(dataset):
     y= scaler.fit_transform(y)
     
     return X, y, df2
+
+x_test= list()
+X_test=list()
+y_test= list()
+soc= list()
