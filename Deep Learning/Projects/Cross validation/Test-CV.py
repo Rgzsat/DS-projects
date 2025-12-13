@@ -16,3 +16,20 @@ for f in files:
     #data['file'] = f.stem
     datasets.append(data)
 
+scaler = "Introduce your path here"
+
+def df(dataset):   
+    df1= dataset.iloc[1: , :]
+    cap= df1['mAh']/1000
+    max_cap=cap[len(cap)-1]
+    dod= (max_cap - cap)/max_cap
+    df2= df1.assign(SOC= dod)
+    X= scaler.fit_transform(df2)
+    
+    ir=(dataset['V'][0]-df2['V'])/df2['I'] 
+    yi= ir[0]*df2['I']+df2['V']
+    y = np.array(yi)
+    y = np.reshape(y, (-1, 1))
+    y= scaler.fit_transform(y)
+    
+    return X, y, df2
