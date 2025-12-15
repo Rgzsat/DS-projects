@@ -50,4 +50,13 @@ for i in range(0,len(datasets)):
     
     soc_ini=(df(datasets[i])[2].SOC)*100
     soc.append(soc_ini)
-    
+
+#%%
+import keras
+from sklearn.metrics import r2_score
+#from tensorflow.keras.models import load_model
+
+bigru= "Introduce your path here"
+bilstm= "Introduce your path here"
+
+
