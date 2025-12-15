@@ -59,4 +59,14 @@ from sklearn.metrics import r2_score
 bigru= "Introduce your path here"
 bilstm= "Introduce your path here"
 
+yf= list()
+#y_test=list()
+
+bigru_predict= list()
+bigru_evaluate= list()
+bigru_r2= list()
+
+bilstm_predict= list()
+bilstm_evaluate= list()
+bilstm_r2= list()
 
