@@ -38,3 +38,16 @@ x_test= list()
 X_test=list()
 y_test= list()
 soc= list()
+
+for i in range(0,len(datasets)):
+    xtest= df(datasets[i])[0]
+    x_test.append(xtest)
+    Xtest= x_test[i].reshape((x_test[i].shape[0], 1, x_test[i].shape[1]))
+    X_test.append(Xtest)
+    
+    ytest= df(datasets[i])[1]
+    y_test.append(ytest)
+    
+    soc_ini=(df(datasets[i])[2].SOC)*100
+    soc.append(soc_ini)
+    
