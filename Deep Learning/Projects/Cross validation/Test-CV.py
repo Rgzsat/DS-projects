@@ -87,3 +87,6 @@ for j in range(0, len(datasets)):
     bilstm_evaluate.append(metrics_bilstm)
     bilstm_r2.append(r2_score(yf[j], bilstm_predict[j]))
     
+#https://pandas.pydata.org/docs/user_guide/merging.html
+col= ['loss', 'mse', 'mae']
+r2= ['r2']
