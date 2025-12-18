@@ -60,7 +60,6 @@ bigru= "Introduce your path here"
 bilstm= "Introduce your path here"
 
 yf= list()
-#y_test=list()
 
 bigru_predict= list()
 bigru_evaluate= list()
@@ -70,3 +69,21 @@ bilstm_predict= list()
 bilstm_evaluate= list()
 bilstm_r2= list()
 
+
+for j in range(0, len(datasets)):
+    yf.append(scaler.inverse_transform(y_test[j]))
+    
+    ocv_bigru= bigru.predict(X_test[j])
+    ocv_bigru= scaler.inverse_transform(ocv_bigru)
+    bigru_predict.append(ocv_bigru)
+    metrics_bigru= bigru.evaluate(x=X_test[j],y=y_test[j])
+    bigru_evaluate.append(metrics_bigru)
+    bigru_r2.append(r2_score(yf[j], bigru_predict[j]))
+    
+    ocv_bilstm= bilstm.predict(X_test[j])
+    ocv_bilstm= scaler.inverse_transform(ocv_bilstm)
+    bilstm_predict.append(ocv_bilstm)
+    metrics_bilstm= bilstm.evaluate(x=X_test[j],y=y_test[j])
+    bilstm_evaluate.append(metrics_bilstm)
+    bilstm_r2.append(r2_score(yf[j], bilstm_predict[j]))
+    
