@@ -90,3 +90,9 @@ for j in range(0, len(datasets)):
 #https://pandas.pydata.org/docs/user_guide/merging.html
 col= ['loss', 'mse', 'mae']
 r2= ['r2']
+
+final_bilstm= pd.concat([pd.DataFrame(bilstm_evaluate, columns= col)
+                         ,pd.DataFrame(bilstm_r2, columns= r2) ], axis=1, join="inner")
+
+final_bigru= pd.concat([pd.DataFrame(bigru_evaluate, columns= col)
+                         ,pd.DataFrame(bigru_r2, columns= r2) ], axis=1, join="inner")
