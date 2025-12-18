@@ -96,3 +96,6 @@ final_bilstm= pd.concat([pd.DataFrame(bilstm_evaluate, columns= col)
 
 final_bigru= pd.concat([pd.DataFrame(bigru_evaluate, columns= col)
                          ,pd.DataFrame(bigru_r2, columns= r2) ], axis=1, join="inner")
+
+print(final_bilstm.mean(axis=0))
+
