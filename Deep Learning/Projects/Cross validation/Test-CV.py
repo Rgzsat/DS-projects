@@ -104,4 +104,15 @@ print(final_bigru.mean(axis=0))
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
+plt.figure(1)
+plt.plot(soc[6],yf[6], label= 'actual')
+plt.plot(soc[6], bigru_predict[6], label= 'BiGRU', color='red')
+plt.plot(soc[6], bilstm_predict[6], label= 'BiLSTM', color='darkgreen')
+plt.tight_layout()
+sns.despine(top=True)
+plt.subplots_adjust(left=0.07)
+plt.xlabel('SOC [%]')
+plt.title('Testing')
+plt.ylabel('OCV [V]')
+plt.legend()
+plt.show()
