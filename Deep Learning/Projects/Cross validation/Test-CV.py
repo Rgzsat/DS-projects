@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import glob
 
-path = # use your path
+path = # Use your path here
 #all_files = glob.glob(os.path.join(path , "/*.csv"))
 files = Path(path).glob('*.csv')  # .rglob to get subdirectories
 from sklearn.preprocessing import MinMaxScaler
@@ -98,4 +98,5 @@ final_bigru= pd.concat([pd.DataFrame(bigru_evaluate, columns= col)
                          ,pd.DataFrame(bigru_r2, columns= r2) ], axis=1, join="inner")
 
 print(final_bilstm.mean(axis=0))
+
 
