@@ -98,5 +98,10 @@ final_bigru= pd.concat([pd.DataFrame(bigru_evaluate, columns= col)
                          ,pd.DataFrame(bigru_r2, columns= r2) ], axis=1, join="inner")
 
 print(final_bilstm.mean(axis=0))
+print(final_bigru.mean(axis=0))
+
+#%%
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 
