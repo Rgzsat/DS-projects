@@ -105,3 +105,6 @@ def visualize_data(features_df):
     plt.title('Feature Correlation Heatmap')
     plt.tight_layout()
     plt.show()
+
+# ---------------------- Feature Selection ----------------------
+
