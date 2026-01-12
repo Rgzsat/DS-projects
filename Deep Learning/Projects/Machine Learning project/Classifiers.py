@@ -108,3 +108,8 @@ def visualize_data(features_df):
 
 # ---------------------- Feature Selection ----------------------
 
+def prepare_data_for_selection(features_df, target_col='label'):
+    features_df = features_df.dropna()
+    X = features_df.select_dtypes(include=[float, int]).drop(columns=[target_col])
+    y = features_df[target_col]
+    return X, y
