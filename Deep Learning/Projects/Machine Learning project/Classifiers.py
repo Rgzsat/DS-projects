@@ -61,3 +61,24 @@ def extract_features(df):
     })
 
     return features
+
+# ---------------------- Folder Processing ----------------------
+
+def process_folder(folder_path):
+    all_features = []
+    for filename in os.listdir(folder_path):
+        if filename.endswith(".csv"):
+            filepath = os.path.join(folder_path, filename)
+            df = pd.read_csv(filepath)
+
+            if df.empty or df.isnull().any().any():
+                print(f"⚠️ Skipping file with issues: {filename}")
+                continue
+
+            features = extract_features(df)
+            features['file'] = filename
+            all_features.append(features)
+
+    return pd.DataFrame(all_features)
+
+
