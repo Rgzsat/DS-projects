@@ -82,3 +82,26 @@ def process_folder(folder_path):
     return pd.DataFrame(all_features)
 
 
+# ---------------------- Visualization ----------------------
+
+def visualize_data(features_df):
+    plt.figure(figsize=(10, 6))
+    sns.histplot(features_df['avg_current'], kde=True)
+    plt.title('Distribution of Average Current')
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+
+    plt.figure(figsize=(10, 6))
+    sns.scatterplot(data=features_df, x='avg_voltage', y='total_capacity_mAh', hue='total_discharge_time_sec')
+    plt.title('Voltage vs Capacity')
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+
+    numeric_df = features_df.select_dtypes(include=[np.number])
+    plt.figure(figsize=(12, 8))
+    sns.heatmap(numeric_df.corr(), annot=True, cmap='coolwarm', fmt=".2f")
+    plt.title('Feature Correlation Heatmap')
+    plt.tight_layout()
+    plt.show()
