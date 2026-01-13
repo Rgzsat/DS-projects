@@ -72,7 +72,7 @@ def process_folder(folder_path):
             df = pd.read_csv(filepath)
 
             if df.empty or df.isnull().any().any():
-                print(f"⚠️ Skipping file with issues: {filename}")
+                print(f" Skipping file with issues: {filename}")
                 continue
 
             features = extract_features(df)
