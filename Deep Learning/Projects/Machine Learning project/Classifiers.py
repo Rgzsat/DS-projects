@@ -125,4 +125,14 @@ def filter_method(X, y, k=10):
         print(f"{name}: {score:.4f}")
     return selected
 
+def wrapper_method(X, y, estimator=None, n_features=10):
+    if estimator is None:
+        estimator = LogisticRegression(max_iter=1000)
+    rfe = RFE(estimator, n_features_to_select=n_features)
+    rfe.fit(X, y)
+    selected = X.columns[rfe.support_]
 
+    print("\n🔍 Wrapper Method (RFE):")
+    for name, rank in zip(X.columns, rfe.ranking_):
+        print(f"{name}: Rank {rank}")
+    return selected
