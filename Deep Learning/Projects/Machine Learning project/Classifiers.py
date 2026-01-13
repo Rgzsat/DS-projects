@@ -136,3 +136,23 @@ def wrapper_method(X, y, estimator=None, n_features=10):
     for name, rank in zip(X.columns, rfe.ranking_):
         print(f"{name}: Rank {rank}")
     return selected
+
+def embedded_method(X, y):
+    model = RandomForestClassifier(n_estimators=100, random_state=42)
+    model.fit(X, y)
+    importances = model.feature_importances_
+    sorted_idx = importances.argsort()[::-1]
+    selected = X.columns[sorted_idx[:10]]
+
+    print("\n🔍 Embedded Method (Random Forest):")
+    for name, score in zip(X.columns[sorted_idx], importances[sorted_idx]):
+        print(f"{name}: {score:.4f}")
+
+    plt.figure(figsize=(10, 6))
+    sns.barplot(x=importances[sorted_idx[:10]], y=X.columns[sorted_idx[:10]])
+    plt.title("Top 10 Features - Random Forest")
+    plt.xlabel("Importance")
+    plt.tight_layout()
+    plt.show()
+
+    return selected
