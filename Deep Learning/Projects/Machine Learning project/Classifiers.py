@@ -113,3 +113,16 @@ def prepare_data_for_selection(features_df, target_col='label'):
     X = features_df.select_dtypes(include=[float, int]).drop(columns=[target_col])
     y = features_df[target_col]
     return X, y
+
+def filter_method(X, y, k=10):
+    selector = SelectKBest(score_func=mutual_info_classif, k=k)
+    selector.fit(X, y)
+    selected = X.columns[selector.get_support()]
+    scores = selector.scores_
+
+    print("\n🔍 Filter Method (Top K by Mutual Info):")
+    for name, score in zip(X.columns, scores):
+        print(f"{name}: {score:.4f}")
+    return selected
+
+
