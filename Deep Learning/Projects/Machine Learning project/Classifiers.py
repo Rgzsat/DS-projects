@@ -156,3 +156,29 @@ def embedded_method(X, y):
     plt.show()
 
     return selected
+
+# ---------------------- Main ----------------------
+
+if __name__ == "__main__":
+    folder = "/content/drive/MyDrive/Writing workshop data/Final data"
+    features_df = process_folder(folder)
+
+    print(f"\n✅ Processed {len(features_df)} files.\n")
+    print(features_df.head())
+
+    # Simulated binary label (you should replace this with your own target)
+    features_df['label'] = (features_df['total_capacity_mAh'] > 0.8*4900).astype(int)
+
+    features_df.to_csv("battery_discharge_features-INR21700.csv", index=False)
+    print("\n💾 Features saved to battery_discharge_features-INR21700.csv")
+
+    # Visualize the data
+    visualize_data(features_df)
+
+    # Feature Selection
+    X, y = prepare_data_for_selection(features_df, target_col='label')
+
+    selected_filter = filter_method(X, y, k=10)
+    selected_wrapper = wrapper_method(X, y, n_features=10)
+    selected_embedded = embedded_method(X, y)
+
