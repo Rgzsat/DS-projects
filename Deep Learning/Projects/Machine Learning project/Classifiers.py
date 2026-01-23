@@ -120,7 +120,7 @@ def filter_method(X, y, k=10):
     selected = X.columns[selector.get_support()]
     scores = selector.scores_
 
-    print("\n🔍 Filter Method (Top K by Mutual Info):")
+    print("\n Filter Method (Top K by Mutual Info):")
     for name, score in zip(X.columns, scores):
         print(f"{name}: {score:.4f}")
     return selected
@@ -132,7 +132,7 @@ def wrapper_method(X, y, estimator=None, n_features=10):
     rfe.fit(X, y)
     selected = X.columns[rfe.support_]
 
-    print("\n🔍 Wrapper Method (RFE):")
+    print("\n Wrapper Method (RFE):")
     for name, rank in zip(X.columns, rfe.ranking_):
         print(f"{name}: Rank {rank}")
     return selected
@@ -144,7 +144,7 @@ def embedded_method(X, y):
     sorted_idx = importances.argsort()[::-1]
     selected = X.columns[sorted_idx[:10]]
 
-    print("\n🔍 Embedded Method (Random Forest):")
+    print("\n Embedded Method (Random Forest):")
     for name, score in zip(X.columns[sorted_idx], importances[sorted_idx]):
         print(f"{name}: {score:.4f}")
 
