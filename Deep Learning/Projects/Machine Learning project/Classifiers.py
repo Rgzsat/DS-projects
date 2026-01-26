@@ -182,3 +182,14 @@ if __name__ == "__main__":
     selected_wrapper = wrapper_method(X, y, n_features=10)
     selected_embedded = embedded_method(X, y)
 
+# ======================================================
+# 🔋 Battery Pack Diagnostics: Voltage–SOC + R_int Method
+# ======================================================
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from scipy.interpolate import interp1d
+import glob
+import re
+from sklearn.metrics import mean_absolute_error, mean_squared_error
