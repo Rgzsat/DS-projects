@@ -183,7 +183,7 @@ if __name__ == "__main__":
     selected_embedded = embedded_method(X, y)
 
 # ======================================================
-# 🔋 Battery Pack Diagnostics: Voltage–SOC + R_int Method
+#  Battery Pack Diagnostics: Voltage–SOC + R_int Method
 # ======================================================
 
 import numpy as np
