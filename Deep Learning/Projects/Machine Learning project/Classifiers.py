@@ -219,3 +219,15 @@ def classify_capacity(cap_ah, nominal_ah=50, threshold=0.7):
         return "Marginal"
     else:
         return "Degraded"
+
+def clean_time_format(time_str):
+    time_str = re.sub(r'\s+', '', str(time_str))
+    parts = time_str.split(":")
+    if len(parts) == 3:
+        h, m, s = map(int, parts)
+        return h * 3600 + m * 60 + s
+    elif len(parts) == 2:
+        m, s = map(int, parts)
+        return m * 60 + s
+    else:
+        raise ValueError(f"Invalid time format: {time_str}")
