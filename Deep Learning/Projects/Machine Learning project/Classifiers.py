@@ -208,3 +208,14 @@ cell_capacity_ah = 50
 pack_capacity_ah = cell_capacity_ah * total_parallel_cells
 
 lower_cutoff_voltage = 2.75  # V
+
+# ========== HELPER FUNCTIONS ==========
+
+def classify_capacity(cap_ah, nominal_ah=50, threshold=0.7):
+    ratio = cap_ah / nominal_ah
+    if ratio >= 0.7:
+        return "Healthy"
+    elif ratio >= threshold:
+        return "Marginal"
+    else:
+        return "Degraded"
