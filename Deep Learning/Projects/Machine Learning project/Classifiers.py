@@ -231,3 +231,10 @@ def clean_time_format(time_str):
         return m * 60 + s
     else:
         raise ValueError(f"Invalid time format: {time_str}")
+
+def estimate_soc(current, time, capacity_ah):
+    dt = np.diff(time, prepend=time[0])
+    ah_used = np.cumsum(current * dt) / 3600
+    soc = 1 - (ah_used / capacity_ah)
+    soc = np.clip(soc, 0, 1)
+    return soc
