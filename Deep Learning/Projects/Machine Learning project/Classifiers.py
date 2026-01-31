@@ -248,3 +248,6 @@ def estimate_internal_resistance(voltage, current, soc, model_ocv):
     r_int = np.zeros_like(voltage)
     r_int[valid_mask] = delta_v[valid_mask] / current[valid_mask]
     return r_int[valid_mask], soc[valid_mask]
+
+
+
