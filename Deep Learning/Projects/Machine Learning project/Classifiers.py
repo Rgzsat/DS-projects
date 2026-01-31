@@ -238,3 +238,13 @@ def estimate_soc(current, time, capacity_ah):
     soc = 1 - (ah_used / capacity_ah)
     soc = np.clip(soc, 0, 1)
     return soc
+
+# ========== INTERNAL RESISTANCE FUNCTIONS ==========
+
+def estimate_internal_resistance(voltage, current, soc, model_ocv):
+    ocv_values = model_ocv(soc)
+    delta_v = voltage - ocv_values
+    valid_mask = np.abs(current) > 0.1
+    r_int = np.zeros_like(voltage)
+    r_int[valid_mask] = delta_v[valid_mask] / current[valid_mask]
+    return r_int[valid_mask], soc[valid_mask]
