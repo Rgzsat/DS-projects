@@ -270,6 +270,6 @@ res_df = pd.DataFrame(results_resistance)
 voltage_df.to_csv("2023-2024-LEV50N-voltage_soc_diagnostics.csv", index=False)
 res_df.to_csv("2023-2024-LEV50N-internal_resistance_diagnostics.csv", index=False)
 
-print("\n✅ Saved results:")
+print(" Saved results:")
 print("   • voltage_soc_diagnostics.csv")
 print("   • internal_resistance_diagnostics.csv\n")
