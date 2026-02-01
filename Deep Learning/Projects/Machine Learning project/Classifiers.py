@@ -262,3 +262,10 @@ def estimate_internal_resistance(voltage, current, soc, model_ocv):
         "resistance_status": class_r
     })
 
+# ========== SAVE REPORTS ==========
+
+voltage_df = pd.DataFrame(results_voltage)
+res_df = pd.DataFrame(results_resistance)
+
+voltage_df.to_csv("2023-2024-LEV50N-voltage_soc_diagnostics.csv", index=False)
+res_df.to_csv("2023-2024-LEV50N-internal_resistance_diagnostics.csv", index=False)
