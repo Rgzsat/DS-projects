@@ -249,5 +249,16 @@ def estimate_internal_resistance(voltage, current, soc, model_ocv):
     r_int[valid_mask] = delta_v[valid_mask] / current[valid_mask]
     return r_int[valid_mask], soc[valid_mask]
 
+ # --- Save results ---
+    results_voltage.append({
+        "file": file.split("/")[-1],
+        "capacity_status": capacity_status,
+        "final_capacity_ah": round(final_capacity_ah, 3)
+    })
 
+    results_resistance.append({
+        "file": file.split("/")[-1],
+        "R_mean_mOhm": round(r_mean * 1000, 3),
+        "resistance_status": class_r
+    })
 
