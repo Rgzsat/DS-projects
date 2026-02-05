@@ -270,6 +270,6 @@ res_df = pd.DataFrame(results_resistance)
 voltage_df.to_csv("NAME OF YOUR OUTPUT FILE.csv", index=False)
 res_df.to_csv("NAME OF YOUR OUTPUT FILE.csv", index=False)
 
-print(" Saved results:")
+print(" Saved results for battery type A:")
 print("   • voltage_soc_diagnostics.csv")
 print("   • internal_resistance_diagnostics.csv\n")
