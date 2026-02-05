@@ -160,7 +160,7 @@ def embedded_method(X, y):
 # ---------------------- Main ----------------------
 
 if __name__ == "__main__":
-    folder = "/content/drive/MyDrive/Writing workshop data/Final data"
+    folder = "Introduce your folder path here"
     features_df = process_folder(folder)
 
     print(f"\n Processed {len(features_df)} files.\n")
