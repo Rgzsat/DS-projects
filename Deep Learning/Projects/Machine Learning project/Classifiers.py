@@ -204,7 +204,7 @@ total_series_cells = cells_in_series_per_module * modules_in_series
 total_parallel_cells = cells_in_parallel_per_module * modules_in_parallel
 
 # Assumed cell capacity in Ah
-cell_capacity_ah = 50
+cell_capacity_ah = 50 #Select your cell capacity value
 pack_capacity_ah = cell_capacity_ah * total_parallel_cells
 
 lower_cutoff_voltage = 2.75  # V
