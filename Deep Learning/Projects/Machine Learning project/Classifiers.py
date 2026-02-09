@@ -249,39 +249,12 @@ def estimate_internal_resistance(voltage, current, soc, model_ocv):
     r_int[valid_mask] = delta_v[valid_mask] / current[valid_mask]
     return r_int[valid_mask], soc[valid_mask]
 
- # --- Save results ---
-    results_voltage.append({
-        "file": file.split("/")[-1],
-        "capacity_status": capacity_status,
-        "final_capacity_ah": round(final_capacity_ah, 3)
-    })
-
-    results_resistance.append({
-        "file": file.split("/")[-1],
-        "R_mean_mOhm": round(r_mean * 1000, 3),
-        "resistance_status": class_r
-    })
-
-# ========== SAVE REPORTS ==========
-
-voltage_df = pd.DataFrame(results_voltage)
-res_df = pd.DataFrame(results_resistance)
-
-voltage_df.to_csv("NAME OF YOUR OUTPUT FILE.csv", index=False)
-res_df.to_csv("NAME OF YOUR OUTPUT FILE.csv", index=False)
-
-print(" Saved results for battery type A in the following files:")
-print("   • voltage_soc_diagnostics.csv")
-print("   • internal_resistance_diagnostics.csv\n")
-
-# ========== PRINT FILES WITH CAPACITY ABOVE 35 Ah ==========
-
-if files_above_35ah:
-    print("Files with capacity above 35 Ah:")
-    for file in files_above_35ah:
-        print(f"   • {file}")
-else:
-    print("\nNo files with capacity above 35 Ah found.")
-
-print("🏁 Diagnostics completed successfully!")
-
+def classify_by_resistance(r_int, nominal_r=0.002, threshold=0.5):
+    r_mean = np.nanmean(np.abs(r_int))
+    ratio = r_mean / nominal_r
+    if ratio < 1.2:
+        return "Healthy", r_mean
+    elif ratio < 1 + threshold:
+        return "Marginal", r_mean
+    else:
+        return "Degraded", r_mean
