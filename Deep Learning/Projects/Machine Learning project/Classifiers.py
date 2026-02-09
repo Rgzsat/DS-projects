@@ -273,3 +273,7 @@ res_df.to_csv("NAME OF YOUR OUTPUT FILE.csv", index=False)
 print(" Saved results for battery type A in the following files:")
 print("   • voltage_soc_diagnostics.csv")
 print("   • internal_resistance_diagnostics.csv\n")
+
+# ========== PRINT FILES WITH CAPACITY ABOVE 35 Ah ==========
+
+
