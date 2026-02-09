@@ -258,3 +258,5 @@ def classify_by_resistance(r_int, nominal_r=0.002, threshold=0.5):
         return "Marginal", r_mean
     else:
         return "Degraded", r_mean
+
+
