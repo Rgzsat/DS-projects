@@ -277,7 +277,7 @@ print("   • internal_resistance_diagnostics.csv\n")
 # ========== PRINT FILES WITH CAPACITY ABOVE 35 Ah ==========
 
 if files_above_35ah:
-    print("\n📋 Files with capacity above 35 Ah:")
+    print("Files with capacity above 35 Ah:")
     for file in files_above_35ah:
         print(f"   • {file}")
 else:
