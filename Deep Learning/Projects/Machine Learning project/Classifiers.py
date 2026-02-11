@@ -195,8 +195,8 @@ import re
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
 # ========== PACK CONFIGURATION ==========
-cells_in_series_per_module = 4
-cells_in_parallel_per_module = 2 #Select the quantity of cells per module
+cells_in_series_per_module = 4 # Select the quantity of cells in series per module
+cells_in_parallel_per_module = 2 #Select the quantity of cells in parallel per module
 modules_in_series = 6 #select the quantity of modules in series
 modules_in_parallel = 3
 
