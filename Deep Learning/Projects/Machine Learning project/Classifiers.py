@@ -265,3 +265,9 @@ folder_path = "/content/drive/MyDrive/Writing workshop data/LEV50N/2023-2024 LEV
 
 folder_path = folder_path.rstrip("/")
 file_paths = glob.glob(f"{folder_path}/*.csv")
+
+if len(file_paths) == 0:
+    raise FileNotFoundError(f"No CSV files found in folder: {folder_path}")
+
+print(f"\n📂 Found {len(file_paths)} CSV files in: {folder_path}\n")
+
