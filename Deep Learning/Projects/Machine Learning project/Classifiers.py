@@ -278,3 +278,10 @@ model_ocv_interp = interp1d(soc_grid, ocv_ref, fill_value="extrapolate")
 
 # ========== MAIN ANALYSIS LOOP ==========
 
+# Initialize a list to store files with capacity above 35 Ah
+files_above_35ah = []
+
+results_voltage = []
+results_resistance = []
+
+print("\n🔋 Starting Battery Pack Diagnostics...\n")
