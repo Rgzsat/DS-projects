@@ -275,3 +275,6 @@ print(f"\n📂 Found {len(file_paths)} CSV files in: {folder_path}\n")
 soc_grid = np.linspace(0, 1, 100)
 ocv_ref = 3.0 + 1.2 * soc_grid - 0.1 * (1 - soc_grid)
 model_ocv_interp = interp1d(soc_grid, ocv_ref, fill_value="extrapolate")
+
+# ========== MAIN ANALYSIS LOOP ==========
+
