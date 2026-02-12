@@ -269,7 +269,7 @@ file_paths = glob.glob(f"{folder_path}/*.csv")
 if len(file_paths) == 0:
     raise FileNotFoundError(f"No CSV files found in folder: {folder_path}")
 
-print(f"\n📂 Found {len(file_paths)} CSV files in: {folder_path}\n")
+print(f"\ Found {len(file_paths)} CSV files in: {folder_path}\n")
 
 # ========== OCV MODEL ==========
 soc_grid = np.linspace(0, 1, 100)
@@ -284,4 +284,4 @@ files_above_35ah = []
 results_voltage = []
 results_resistance = []
 
-print("\n🔋 Starting Battery Pack Diagnostics...\n")
+print("Starting Battery Pack Diagnostics...\n")
