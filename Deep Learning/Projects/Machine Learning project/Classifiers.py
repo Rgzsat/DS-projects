@@ -261,3 +261,7 @@ def classify_by_resistance(r_int, nominal_r=0.002, threshold=0.5):
 
 # ========== FILE PATH SELECTION ==========
 
+folder_path = "/content/drive/MyDrive/Writing workshop data/LEV50N/2023-2024 LEV50N"  # <--- Only change this
+
+folder_path = folder_path.rstrip("/")
+file_paths = glob.glob(f"{folder_path}/*.csv")
