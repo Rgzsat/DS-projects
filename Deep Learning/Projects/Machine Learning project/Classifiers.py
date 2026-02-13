@@ -300,4 +300,7 @@ for file in file_paths:
         print(f" Skipping file (missing columns): {file.split('/')[-1]}")
         continue
 
-
+ # --- Ensure mAh column has data ---
+    if data["mAh"].dropna().empty:
+        print(f" Skipping file (no valid mAh values): {file.split('/')[-1]}")
+        continue
