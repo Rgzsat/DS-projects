@@ -285,3 +285,17 @@ results_voltage = []
 results_resistance = []
 
 print("Starting Battery Pack Diagnostics...\n")
+
+for file in file_paths:
+    data = pd.read_csv(file)
+
+    # --- Skip empty files ---
+    if data.empty:
+        print(f"⚠️ Skipping EMPTY file: {file.split('/')[-1]}")
+        continue
+
+    # --- Ensure required columns exist ---
+    required_cols = {"time", "I", "V", "mAh"}
+    if not required_cols.issubset(data.columns):
+        print(f"⚠️ Skipping file (missing columns): {file.split('/')[-1]}")
+        continue
