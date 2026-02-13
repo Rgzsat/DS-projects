@@ -291,11 +291,13 @@ for file in file_paths:
 
     # --- Skip empty files ---
     if data.empty:
-        print(f"⚠️ Skipping EMPTY file: {file.split('/')[-1]}")
+        print(f" Skipping EMPTY file: {file.split('/')[-1]}")
         continue
 
     # --- Ensure required columns exist ---
     required_cols = {"time", "I", "V", "mAh"}
     if not required_cols.issubset(data.columns):
-        print(f"⚠️ Skipping file (missing columns): {file.split('/')[-1]}")
+        print(f" Skipping file (missing columns): {file.split('/')[-1]}")
         continue
+
+
