@@ -314,3 +314,7 @@ for file in file_paths:
 
     current_cell = np.array(data["I"])
     voltage_cell = np.array(data["V"])
+
+    final_capacity_ah = float(data["mAh"].iloc[-1]) / 1000
+    print(f" File: {file.split('/')[-1]} → Capacity: {final_capacity_ah:.3f} Ah")
+
