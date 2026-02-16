@@ -311,3 +311,6 @@ for file in file_paths:
     except Exception as e:
         print(f" Skipping file (time parse error): {file.split('/')[-1]} — {e}")
         continue
+
+    current_cell = np.array(data["I"])
+    voltage_cell = np.array(data["V"])
