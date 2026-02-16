@@ -309,5 +309,5 @@ for file in file_paths:
     try:
         time_exp = np.array([clean_time_format(t) for t in data["time"]])
     except Exception as e:
-        print(f"⚠️ Skipping file (time parse error): {file.split('/')[-1]} — {e}")
+        print(f" Skipping file (time parse error): {file.split('/')[-1]} — {e}")
         continue
