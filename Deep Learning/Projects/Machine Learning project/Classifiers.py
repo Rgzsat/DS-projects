@@ -317,4 +317,8 @@ for file in file_paths:
 
     final_capacity_ah = float(data["mAh"].iloc[-1]) / 1000
     print(f" File: {file.split('/')[-1]} → Capacity: {final_capacity_ah:.3f} Ah")
+    
+      # Check if the capacity is above 35 Ah and store the filename
+    if final_capacity_ah > 35:
+        files_above_35ah.append(file.split("/")[-1])
 
