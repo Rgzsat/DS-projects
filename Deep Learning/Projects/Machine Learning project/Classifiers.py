@@ -321,4 +321,9 @@ for file in file_paths:
       # Check if the capacity is above 35 Ah and store the filename
     if final_capacity_ah > 35:
         files_above_35ah.append(file.split("/")[-1])
+    
+    # Convert to pack-level
+    current_pack = current_cell * total_parallel_cells
+    voltage_pack = voltage_cell * total_series_cells
+    pack_capacity_ah = final_capacity_ah * total_parallel_cells
 
