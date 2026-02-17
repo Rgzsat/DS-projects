@@ -329,3 +329,7 @@ for file in file_paths:
     
     # --- Estimate SOC ---
     soc_pack = estimate_soc(current_pack, time_exp, pack_capacity_ah)
+
+    mask_valid = (soc_pack > 0.01) & (soc_pack < 0.99) & (np.abs(current_pack) > 0.01)
+    soc_clean = soc_pack[mask_valid]
+    voltage_clean = voltage_pack[mask_valid]
