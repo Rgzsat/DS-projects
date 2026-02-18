@@ -333,3 +333,6 @@ for file in file_paths:
     mask_valid = (soc_pack > 0.01) & (soc_pack < 0.99) & (np.abs(current_pack) > 0.01)
     soc_clean = soc_pack[mask_valid]
     voltage_clean = voltage_pack[mask_valid]
+
+   # Capacity classification
+    capacity_status = classify_capacity(final_capacity_ah)
