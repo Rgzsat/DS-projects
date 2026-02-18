@@ -336,3 +336,15 @@ for file in file_paths:
 
    # Capacity classification
     capacity_status = classify_capacity(final_capacity_ah)
+
+    # Plot Voltage vs SOC
+    plt.figure(figsize=(8, 5))
+    plt.plot(soc_clean * 100, voltage_clean, color="black", label="Pack Voltage")
+    plt.xlabel("State of Charge (%)")
+    plt.ylabel("Voltage (V)")
+    plt.title(f"SOC–Voltage Profile: {file.split('/')[-1]} ({capacity_status})")
+    plt.grid(True)
+    plt.gca().invert_xaxis()
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
