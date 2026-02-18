@@ -348,3 +348,10 @@ for file in file_paths:
     plt.legend()
     plt.tight_layout()
     plt.show()
+
+
+    # --- Internal Resistance Estimation ---
+    r_int, soc_valid = estimate_internal_resistance(voltage_cell, current_cell, soc_pack, model_ocv_interp)
+    class_r, r_mean = classify_by_resistance(r_int)
+
+    print(f"⚙️ Internal Resistance Mean = {r_mean*1000:.3f} mΩ → {class_r}")
