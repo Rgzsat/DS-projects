@@ -380,3 +380,6 @@ for file in file_paths:
     })
 
 # ========== SAVE REPORTS ==========
+
+voltage_df = pd.DataFrame(results_voltage)
+res_df = pd.DataFrame(results_resistance)
