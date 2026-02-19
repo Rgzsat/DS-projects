@@ -364,3 +364,18 @@ for file in file_paths:
     plt.grid(True)
     plt.tight_layout()
     plt.show()
+
+
+    # --- Save results ---
+    results_voltage.append({
+        "file": file.split("/")[-1],
+        "capacity_status": capacity_status,
+        "final_capacity_ah": round(final_capacity_ah, 3)
+    })
+
+    results_resistance.append({
+        "file": file.split("/")[-1],
+        "R_mean_mOhm": round(r_mean * 1000, 3),
+        "resistance_status": class_r
+    })
+
