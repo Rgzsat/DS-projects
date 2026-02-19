@@ -354,3 +354,13 @@ for file in file_paths:
     class_r, r_mean = classify_by_resistance(r_int)
 
     print(f" Internal Resistance Mean = {r_mean*1000:.3f} mΩ → {class_r}")
+
+  # Plot R_int vs SOC
+    plt.figure(figsize=(8, 5))
+    plt.scatter(soc_valid * 100, np.abs(r_int) * 1000, s=5, alpha=0.7, color="blue")
+    plt.xlabel("State of Charge (%)")
+    plt.ylabel("Internal Resistance (mΩ)")
+    plt.title(f"R_int vs SOC: {file.split('/')[-1]} → {class_r}")
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
