@@ -383,3 +383,6 @@ for file in file_paths:
 
 voltage_df = pd.DataFrame(results_voltage)
 res_df = pd.DataFrame(results_resistance)
+
+voltage_df.to_csv("NAME OF YOUR FILE HERE FOR THE VOLTAGE DIAGNOSTICS", index=False)
+res_df.to_csv("NAME OF YOUR FILE HERE FOR THE RESISTANCE DIAGNOSTICS", index=False)
