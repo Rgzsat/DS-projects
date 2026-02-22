@@ -390,3 +390,15 @@ res_df.to_csv("NAME OF YOUR FILE HERE FOR THE RESISTANCE DIAGNOSTICS", index=Fal
 print("\n Saved results:")
 print("    voltage_soc_diagnostics.csv")
 print("    internal_resistance_diagnostics.csv\n")
+
+# ========== PRINT FILES WITH CAPACITY ABOVE THRESHOLD Ah ==========
+#EXAMPLE OF 35Ah
+
+if files_above_35Ah:
+    print("\n📋 Files with capacity above 35 Ah:")
+    for file in files_above_35ah:
+        print(f"   • {file}")
+else:
+    print("\nNo files with capacity above 35 Ah found.")
+
+print("🏁 Diagnostics completed successfully!")
