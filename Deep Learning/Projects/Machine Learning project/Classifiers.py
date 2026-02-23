@@ -403,5 +403,3 @@ else:
 
 print(" Diagnostics completed successfully!")
 
-
-
