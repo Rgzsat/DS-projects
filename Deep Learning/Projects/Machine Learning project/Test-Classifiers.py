@@ -17,3 +17,32 @@ from imblearn.over_sampling import SMOTE
 
 #The threshold is related to an End-of-Life criteria for a battery
 capacity_threshold = 0.70 * 4900  # = 3920
+
+# ---------------------- Load and Prepare ----------------------
+
+from sklearn.svm import OneClassSVM
+
+def one_class_loocv(X, y):
+    X_good = X[y == 0]
+    X_bad = X[y == 1]
+
+    print(f"\n One-Class SVM Evaluation: {len(X_bad)} 'Bad' cells to test")
+
+    model = OneClassSVM(kernel="rbf", gamma='scale', nu=0.05)
+    model.fit(X_good)
+
+    preds = model.predict(X_bad)
+    preds = np.where(preds == -1, 1, 0)  # -1 → anomaly → "Bad"
+
+    y_true = np.ones(len(X_bad))  # All true labels = "Bad"
+
+    cm = confusion_matrix(y_true, preds, labels=[0, 1])
+    sns.heatmap(cm, annot=True, fmt='d', cmap='Reds',
+                xticklabels=["Good", "Bad"], yticklabels=["Good", "Bad"])
+    plt.title('One-Class SVM - Confusion Matrix')
+    plt.xlabel('Predicted')
+    plt.ylabel('True')
+    plt.show()
+
+    print("\nClassification Report:")
+    print(classification_report(y_true, preds, target_names=["Good", "Bad"]))
