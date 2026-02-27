@@ -12,3 +12,5 @@ from sklearn.metrics import (
 )
 from sklearn.feature_selection import mutual_info_classif
 from imblearn.over_sampling import SMOTE
+
+capacity_threshold = 0.70 * 4900  # = 3920
