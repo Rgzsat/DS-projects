@@ -13,4 +13,7 @@ from sklearn.metrics import (
 from sklearn.feature_selection import mutual_info_classif
 from imblearn.over_sampling import SMOTE
 
+#In this part, please select your total battery capacity and the desired threshold
+
+#The threshold is related to an End-of-Life criteria for a battery
 capacity_threshold = 0.70 * 4900  # = 3920
