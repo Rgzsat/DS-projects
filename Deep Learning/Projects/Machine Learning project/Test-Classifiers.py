@@ -66,6 +66,6 @@ def load_data(path, target_col='label', capacity_threshold=capacity_threshold):
 def select_top_features(X, y, k=10):
     mi = mutual_info_classif(X, y)
     mi_series = pd.Series(mi, index=X.columns).sort_values(ascending=False)
-    print("\n🔍 Top features by mutual information:")
+    print("\n Top features by mutual information:")
     print(mi_series.head(k))
     return X[mi_series.head(k).index]
