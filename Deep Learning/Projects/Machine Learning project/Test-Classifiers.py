@@ -46,3 +46,17 @@ def one_class_loocv(X, y):
 
     print("\nClassification Report:")
     print(classification_report(y_true, preds, target_names=["Good", "Bad"]))
+
+def load_data(path, target_col='label', capacity_threshold=capacity_threshold):
+    df = pd.read_csv(path)
+
+    if target_col not in df.columns:
+        # Label: 1 = Bad (below threshold), 0 = Good
+        df[target_col] = (df['total_capacity_mAh'] < capacity_threshold).astype(int)
+
+    print("📊 Class distribution:", df[target_col].value_counts().to_dict())
+
+    df = df.dropna()
+    X = df.select_dtypes(include=[float, int]).drop(columns=[target_col])
+    y = df[target_col]
+    return X, y
