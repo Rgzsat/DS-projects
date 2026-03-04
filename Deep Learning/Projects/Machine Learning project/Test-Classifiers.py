@@ -97,3 +97,23 @@ def evaluate_with_threshold(y_true, y_probs, threshold=0.5):
     plt.show()
 
     return accuracy, auc, f2
+
+# ---------------------- Precision-Recall Curve ----------------------
+
+def plot_precision_recall(y_true, y_scores):
+    precision, recall, thresholds = precision_recall_curve(y_true, y_scores)
+    f2_scores = (5 * precision * recall) / (4 * precision + recall + 1e-9)
+    best_idx = np.argmax(f2_scores)
+    best_thresh = thresholds[best_idx]
+
+    plt.plot(recall, precision, label='PR Curve')
+    plt.scatter(recall[best_idx], precision[best_idx], color='red', label=f'Best F2 @ {best_thresh:.2f}')
+    plt.xlabel('Recall')
+    plt.ylabel('Precision')
+    plt.title('Precision-Recall Curve')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+    print(f"🔍 Best threshold by F2 score: {best_thresh:.2f}")
+    return best_thresh
