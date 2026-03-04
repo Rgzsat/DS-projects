@@ -69,3 +69,31 @@ def select_top_features(X, y, k=10):
     print("\n Top features by mutual information:")
     print(mi_series.head(k))
     return X[mi_series.head(k).index]
+
+# ---------------------- Evaluate Model ----------------------
+
+def evaluate_with_threshold(y_true, y_probs, threshold=0.5):
+    y_pred_thresh = (y_probs >= threshold).astype(int)
+
+    print("\nClassification Report:")
+    print(classification_report(y_true, y_pred_thresh, target_names=["Good", "Bad"]))
+
+    accuracy = accuracy_score(y_true, y_pred_thresh)
+    auc = roc_auc_score(y_true, y_probs) if len(np.unique(y_true)) > 1 else None
+    f2 = fbeta_score(y_true, y_pred_thresh, beta=2)
+
+    print(f"\nAccuracy: {accuracy:.4f}")
+    print(f"ROC AUC: {auc:.4f}" if auc else "ROC AUC: N/A")
+    print(f"F2 Score: {f2:.4f}")
+
+    cm = confusion_matrix(y_true, y_pred_thresh, labels=[0, 1])
+    plt.figure(figsize=(5, 4))
+    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
+                xticklabels=["Good", "Bad"], yticklabels=["Good", "Bad"])
+    plt.title('Confusion Matrix')
+    plt.xlabel('Predicted Label')
+    plt.ylabel('True Label')
+    plt.tight_layout()
+    plt.show()
+
+    return accuracy, auc, f2
