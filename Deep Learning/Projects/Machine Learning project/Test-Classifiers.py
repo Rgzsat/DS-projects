@@ -115,5 +115,5 @@ def plot_precision_recall(y_true, y_scores):
     plt.grid(True)
     plt.show()
 
-    print(f"🔍 Best threshold by F2 score: {best_thresh:.2f}")
+    print(f" Best threshold by F2 score: {best_thresh:.2f}")
     return best_thresh
