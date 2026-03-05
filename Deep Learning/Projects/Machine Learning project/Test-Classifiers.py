@@ -127,13 +127,13 @@ def run_cross_validation(X, y, model=None, n_splits=5, test_size=0.2):
     sss = StratifiedShuffleSplit(n_splits=n_splits, test_size=test_size, random_state=42)
     accuracies, roc_aucs = [], []
 
-    print(f"\n📊 Class distribution: {dict(pd.Series(y).value_counts())}\n")
+    print(f"\n Class distribution: {dict(pd.Series(y).value_counts())}\n")
 
     for fold, (train_idx, test_idx) in enumerate(sss.split(X, y), 1):
         X_train, X_test = X.iloc[train_idx], X.iloc[test_idx]
         y_train, y_test = y.iloc[train_idx], y.iloc[test_idx]
 
-        print(f"➡️ Fold {fold} class distribution train: {y_train.value_counts().to_dict()} test: {y_test.value_counts().to_dict()}")
+        print(f" Fold {fold} class distribution train: {y_train.value_counts().to_dict()} test: {y_test.value_counts().to_dict()}")
 
         if len(y_test.unique()) < 2:
             print("⚠️ Only one class in test set. Skipping fold.")
@@ -151,7 +151,7 @@ def run_cross_validation(X, y, model=None, n_splits=5, test_size=0.2):
                 warnings.warn(f"SMOTE failed: {e}. Using original training set.")
                 X_train_resampled, y_train_resampled = X_train.copy(), y_train.copy()
         else:
-            print("⚠️ Not enough samples for SMOTE. Using original training set.")
+            print(" Not enough samples for SMOTE. Using original training set.")
             X_train_resampled, y_train_resampled = X_train.copy(), y_train.copy()
 
         model.fit(X_train_resampled, y_train_resampled)
@@ -168,8 +168,8 @@ def run_cross_validation(X, y, model=None, n_splits=5, test_size=0.2):
         if auc is not None:
             roc_aucs.append(auc)
 
-    print(f"\n🔁 Average Accuracy: {np.mean(accuracies):.4f} ± {np.std(accuracies):.4f}")
+    print(f"\n Average Accuracy: {np.mean(accuracies):.4f} ± {np.std(accuracies):.4f}")
     if roc_aucs:
-        print(f"🔁 Average ROC AUC: {np.mean(roc_aucs):.4f} ± {np.std(roc_aucs):.4f}")
+        print(f" Average ROC AUC: {np.mean(roc_aucs):.4f} ± {np.std(roc_aucs):.4f}")
     else:
-        print("🔁 ROC AUC could not be calculated in any fold.")
+        print(" ROC AUC could not be calculated in any fold.")
