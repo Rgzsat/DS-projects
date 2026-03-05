@@ -136,7 +136,7 @@ def run_cross_validation(X, y, model=None, n_splits=5, test_size=0.2):
         print(f" Fold {fold} class distribution train: {y_train.value_counts().to_dict()} test: {y_test.value_counts().to_dict()}")
 
         if len(y_test.unique()) < 2:
-            print("⚠️ Only one class in test set. Skipping fold.")
+            print(" Only one class in test set. Skipping fold.")
             continue
 
         min_class = y_train.value_counts().idxmin()
