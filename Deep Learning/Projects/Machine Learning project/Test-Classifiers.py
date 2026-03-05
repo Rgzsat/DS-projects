@@ -173,3 +173,15 @@ def run_cross_validation(X, y, model=None, n_splits=5, test_size=0.2):
         print(f" Average ROC AUC: {np.mean(roc_aucs):.4f} ± {np.std(roc_aucs):.4f}")
     else:
         print(" ROC AUC could not be calculated in any fold.")
+
+# ---------------------- Main ----------------------
+
+if __name__ == "__main__":
+    path = "battery_discharge_features-INR21700.csv"
+    X, y = load_data(path, capacity_threshold=capacity_threshold)
+    X = select_top_features(X, y, k=10)
+
+    if y.value_counts().min() < 5:
+        one_class_loocv(X, y)
+    else:
+        run_cross_validation(X, y)
