@@ -90,7 +90,7 @@ Figure 20: Quant test-Day-ahead price vs Optiaml sold volume. Continuous vs Best
 
 <img width="1122" height="790" alt="image" src="https://github.com/user-attachments/assets/19c83ab0-bc4f-438d-9dc2-afb9016dd7e2" />
 
-Figure 21: Feature Correlation Heatmap for Battery Pack Diagnostics.
+Figure 21: Feature Correlation Heatmap in Data processing for Battery Pack Diagnostics.
 
 <img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/4cb9d93e-3682-4186-8568-4eabf9d0bc97" />
 
