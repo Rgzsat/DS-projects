@@ -87,3 +87,8 @@ Figure 19: Quant test-Daily expected total revenue (EUR). Continuous vs Best P-l
 <img width="690" height="490" alt="image" src="https://github.com/user-attachments/assets/0f3290fa-801b-4d03-9d1e-92d585684cbc" />
 
 Figure 20: Quant test-Day-ahead price vs Optiaml sold volume. Continuous vs Best P-level. Stochastic solution through Monte Carlo.
+
+<img width="1122" height="790" alt="image" src="https://github.com/user-attachments/assets/19c83ab0-bc4f-438d-9dc2-afb9016dd7e2" />
+
+Figure 21: Feature Correlation Heatmap for Battery Pack Diagnostics.
+
