@@ -209,3 +209,6 @@ def parse_time_column(time_str):
     except Exception as e:
         print(f"Time parsing error: {time_str} -> {e}")
         return np.nan
+
+# ---------------------- Feature Engineering ----------------------
+
