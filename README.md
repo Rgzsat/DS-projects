@@ -98,5 +98,5 @@ Figure 22: Feature Selection through Embedded Methods for Battery Pack Diagnosti
 
 <img width="602" height="337" alt="diagram" src="https://github.com/user-attachments/assets/b0de4ff1-26c6-4f10-b7e4-b3eb0f9b30f8" />
 
-Figure 23: Algorithm design diagram for the Transformer Network.
+Figure 23: Algorithm design diagram for the Transformer Network. https://ieeexplore.ieee.org/abstract/document/10849558
 
