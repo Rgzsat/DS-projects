@@ -1,4 +1,6 @@
 This Deep Learning methodology is based on the following article from 
-IEEE Transactions on Intelligent Vehicles. 
+IEEE Transactions on Intelligent Vehicles:
+https://ieeexplore.ieee.org/abstract/document/10568341/
+
 As the main author of this publication, I am the responsible of the coding 
 validation and characterization.
