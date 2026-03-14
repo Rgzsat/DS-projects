@@ -1,1 +1,4 @@
-
+This Deep Learning methodology is based on the following article from 
+IEEE Transactions on Intelligent Vehicles. 
+As the main author of this publication, I am the responsible of the coding 
+validation and characterization.
