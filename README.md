@@ -2,7 +2,6 @@
 
 
 
-
 # Distance functions and data preprocessing
 
 ![image](https://github.com/Rgzsat/DS-projects/assets/87973999/6ea7a4c2-0ad1-4f64-a4d5-3220d1860bb2)
