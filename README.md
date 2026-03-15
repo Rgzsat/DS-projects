@@ -1,4 +1,4 @@
-# Distinctions and awards from implemented/deployed AI projects
+# Distinctions and awards from industrial and academic AI projects
 
 ![AASTA Teadusartikkel](Pictures/AASTA%20TEADUSARTIKKEL%202025.jpg)
 
