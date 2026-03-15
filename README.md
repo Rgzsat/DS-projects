@@ -1,3 +1,5 @@
+# Distinctions and awards from implemented/deployed AI projects
+
 ![AASTA Teadusartikkel](Pictures/AASTA%20TEADUSARTIKKEL%202025.jpg)
 
 # Distance functions and data preprocessing
@@ -105,4 +107,3 @@ Figure 23: Algorithm design diagram for the Transformer Network. https://ieeexpl
 <img width="414" height="280" alt="gru-2" src="https://github.com/user-attachments/assets/20d575f1-c3f1-464e-ace1-c66d3169a6a7" />
 
 Figure 24: Convergence plot of the algorithm design in the Deep Learning methodology. 
-
