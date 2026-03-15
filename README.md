@@ -1,3 +1,5 @@
+![AASTA Teadusartikkel](Pictures/AASTA%20TEADUSARTIKKEL%202025.jpg)
+
 # Distance functions and data preprocessing
 
 ![image](https://github.com/Rgzsat/DS-projects/assets/87973999/6ea7a4c2-0ad1-4f64-a4d5-3220d1860bb2)
@@ -104,4 +106,3 @@ Figure 23: Algorithm design diagram for the Transformer Network. https://ieeexpl
 
 Figure 24: Convergence plot of the algorithm design in the Deep Learning methodology. 
 
-![Top cited article](Pictures/AASTA TEADUSARTIKKEL 2025.jpg)
