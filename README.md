@@ -1,8 +1,12 @@
 # Distinctions and awards from AI projects
 
+![PhD thesis image](https://github.com/user-attachments/assets/40a25458-a14f-460c-92ea-bd0342c5a59b)
+
+Figure A:
+
 ![AASTA Teadusartikkel](Pictures/AASTA%20TEADUSARTIKKEL%202025.jpg)
 
-Figure A: Tallinn University of Technology Research Article of the Year 2025 (Engineering and Technology Field) “Deep Learning methodology for charging management applications in battery cells based on Neural Networks”. https://ieeexplore.ieee.org/document/10568341.
+Figure B: Tallinn University of Technology Research Article of the Year 2025 (Engineering and Technology Field) “Deep Learning methodology for charging management applications in battery cells based on Neural Networks”. https://ieeexplore.ieee.org/document/10568341.
 
 # Distance functions and data preprocessing
 
