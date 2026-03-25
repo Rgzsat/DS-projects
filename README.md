@@ -2,7 +2,8 @@
 
 ![PhD thesis image](https://github.com/user-attachments/assets/40a25458-a14f-460c-92ea-bd0342c5a59b)
 
-Figure A: PhD thesis. https://digikogu.taltech.ee/en/Item/7ecb1e38-a591-47c5-b37e-7c2e901d05f1?_ga=2.148583924.213513183.1774455356-1658968893.1774455356&_gl=1*1u9w17g*_gcl_au*MTQ5NDgwODAyMC4xNzc0NDU1MzU2
+Figure A: PhD thesis
+https://digikogu.taltech.ee/et/Item/7ecb1e38-a591-47c5-b37e-7c2e901d05f1
 
 ![AASTA Teadusartikkel](Pictures/AASTA%20TEADUSARTIKKEL%202025.jpg)
 
