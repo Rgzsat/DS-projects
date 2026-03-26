@@ -2,12 +2,12 @@
 
 ![PhD thesis image](https://github.com/user-attachments/assets/40a25458-a14f-460c-92ea-bd0342c5a59b)
 
-Figure A: PhD thesis
+Figure A. PhD thesis defence: Rolando Antonio Gilbert Zequera, "Artificial Intelligence-Based Predictive Analytics for Battery Energy Storage Systems in Electric Vehicle Applications“.
 https://digikogu.taltech.ee/et/Item/7ecb1e38-a591-47c5-b37e-7c2e901d05f1
 
 ![AASTA Teadusartikkel](Pictures/AASTA%20TEADUSARTIKKEL%202025.jpg)
 
-Figure B: Tallinn University of Technology Research Article of the Year 2025 (Engineering and Technology Field) “Deep Learning methodology for charging management applications in battery cells based on Neural Networks”. https://ieeexplore.ieee.org/document/10568341.
+Figure B. Tallinn University of Technology Research Article of the Year 2025 (Engineering and Technology Field) “Deep Learning methodology for charging management applications in battery cells based on Neural Networks”. https://ieeexplore.ieee.org/document/10568341.
 
 # Distance functions and data preprocessing
 
