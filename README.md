@@ -11,7 +11,7 @@ Figure B. Tallinn University of Technology Research Article of the Year 2025 (En
 
 ![RAGZ - Data Analyst Specialist](https://github.com/user-attachments/assets/7b09b2f3-a863-475b-a160-2bff7bf61c47)
 
-Figure C. Data Analyst Specialist role at Tallinn University of Technology.
+Figure C. Data Analyst Specialist role at Tallinn University of Technology (TalTech).
 
 # Distance functions and data preprocessing
 
