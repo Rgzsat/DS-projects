@@ -59,29 +59,29 @@ Figure 10. Confusion matrix for the classification problem based on AdaBoost (fr
 
 ![image](https://github.com/Rgzsat/DS-projects/assets/87973999/017d20cd-6f19-47b0-8e9a-04da33e97a08)
 
-Figure 11: Image classification of the CNN.
+Figure 11. Image classification of the CNN.
 
 ![image](https://github.com/Rgzsat/DS-projects/assets/87973999/00da8923-6ee7-4484-a686-14fbb0fd8559)
 
-Figure 12: Confusion matrix of the CNN.
+Figure 12. Confusion matrix of the CNN.
 
 ![ml3-7](https://github.com/Rgzsat/DS-projects/assets/87973999/16e5a53b-c4f3-4e4d-8617-0998eb3c9435)
 
-Figure 13: Image classification of the Vision Transformer.
+Figure 13. Image classification of the Vision Transformer.
 
 ![image](https://github.com/Rgzsat/DS-projects/assets/87973999/5b8962b2-a922-4f72-997e-3c23352af94a)
 
-Figure 14: Confusion matrix of the Vision Transformer.
+Figure 14. Confusion matrix of the Vision Transformer.
 
 # Projects 
 
 <img width="424" height="280" alt="image" src="https://github.com/user-attachments/assets/c98fdd61-acf2-4bd7-ad05-ca64c786923d" />
 
-Figure 15: Learning curve to monitor Training and Validation losses in Deep Learning algorithms
+Figure 15. Learning curve to monitor Training and Validation losses in Deep Learning algorithms
 
 <img width="481" height="342" alt="image" src="https://github.com/user-attachments/assets/f10c84ce-d460-4aac-b3a1-ea4973f2fa30" />
 
-Figure 16: Predictive modelling of battery capacity through LSTM.
+Figure 16. Predictive modelling of battery capacity through LSTM.
 
 <img width="724" height="1184" alt="Unsupervised labels" src="https://github.com/user-attachments/assets/5afcbac8-c0d0-47b0-b61b-2a00e4ddd445" />
 
