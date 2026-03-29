@@ -109,13 +109,13 @@ Figure 21. Feature Correlation Heatmap in Data processing for Battery Pack Diagn
 
 <img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/4cb9d93e-3682-4186-8568-4eabf9d0bc97" />
 
-Figure 22: Feature Selection through Embedded Methods for Battery Pack Diagnostics.
+Figure 22. Feature Selection through Embedded Methods for Battery Pack Diagnostics.
 
 <img width="602" height="337" alt="diagram" src="https://github.com/user-attachments/assets/b0de4ff1-26c6-4f10-b7e4-b3eb0f9b30f8" />
 
-Figure 23: Algorithm design diagram for the Transformer Network. https://ieeexplore.ieee.org/abstract/document/10849558
+Figure 23. Algorithm design diagram for the Transformer Network. https://ieeexplore.ieee.org/abstract/document/10849558
 
 <img width="414" height="280" alt="gru-2" src="https://github.com/user-attachments/assets/20d575f1-c3f1-464e-ace1-c66d3169a6a7" />
 
-Figure 24: Convergence plot of the algorithm design in the Deep Learning methodology. 
+Figure 24. Convergence plot of the algorithm design in the Deep Learning methodology. 
 
