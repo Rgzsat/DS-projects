@@ -89,23 +89,23 @@ Figure 16. Predictive modelling of battery capacity through LSTM.
 
 <img width="724" height="1184" alt="Unsupervised labels" src="https://github.com/user-attachments/assets/5afcbac8-c0d0-47b0-b61b-2a00e4ddd445" />
 
-Figure 17: Outlier analysis comparing LOF, DBSCAN, and OPTICS
+Figure 17. Outlier analysis comparing LOF, DBSCAN, and OPTICS
 
 <img width="788" height="266" alt="image" src="https://github.com/user-attachments/assets/dda9afe5-5639-4d38-a11f-72524ef40905" />
 
-Figure 18: Time-series forecasting of battery voltage through Transformer network.
+Figure 18. Time-series forecasting of battery voltage through Transformer network.
 
 <img width="989" height="390" alt="image" src="https://github.com/user-attachments/assets/91e4a362-6ac5-42d5-a42d-917a7f560254" />
 
-Figure 19: Quant test-Daily expected total revenue (EUR). Continuous vs Best P-level. Stochastic solution through Monte Carlo.
+Figure 19. Quant test-Daily expected total revenue (EUR). Continuous vs Best P-level. Stochastic solution through Monte Carlo.
 
 <img width="690" height="490" alt="image" src="https://github.com/user-attachments/assets/0f3290fa-801b-4d03-9d1e-92d585684cbc" />
 
-Figure 20: Quant test-Day-ahead price vs Optiaml sold volume. Continuous vs Best P-level. Stochastic solution through Monte Carlo.
+Figure 20. Quant test-Day-ahead price vs Optiaml sold volume. Continuous vs Best P-level. Stochastic solution through Monte Carlo.
 
 <img width="1122" height="790" alt="image" src="https://github.com/user-attachments/assets/19c83ab0-bc4f-438d-9dc2-afb9016dd7e2" />
 
-Figure 21: Feature Correlation Heatmap in Data processing for Battery Pack Diagnostics.
+Figure 21. Feature Correlation Heatmap in Data processing for Battery Pack Diagnostics.
 
 <img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/4cb9d93e-3682-4186-8568-4eabf9d0bc97" />
 
