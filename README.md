@@ -120,3 +120,5 @@ Figure 23. Algorithm design diagram for the Transformer Network. https://ieeexpl
 Figure 24. Convergence plot of the algorithm design in the Deep Learning methodology. 
 
 <img width="445" height="226" alt="comparison-2" src="https://github.com/user-attachments/assets/1f9b174a-a6ff-4efb-995b-98c808beae09" />
+
+Figure 25. 
