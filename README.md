@@ -121,4 +121,4 @@ Figure 24. Convergence plot of the algorithm design in the Deep Learning methodo
 
 <img width="445" height="226" alt="comparison-2" src="https://github.com/user-attachments/assets/1f9b174a-a6ff-4efb-995b-98c808beae09" />
 
-Figure 25. 
+Figure 25. Predicted results for Charge diagnostics and state estimation of Battery Energy Storage Systems through Transformer models.
