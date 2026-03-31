@@ -1,4 +1,9 @@
--Introduction to Machine Learning in Production (DeepLearning.AI): In the first course of Machine Learning Engineering for Production Specialization, you will identify the various components and design an ML production system end-to-end: project scoping, data needs, modeling strategies, and deployment constraints and requirements; and learn how to establish a model baseline, address concept drift, and prototype the process for developing, deploying, and continuously improving a productionized ML application.
+-Introduction to Machine Learning in Production (DeepLearning.AI): 
+In the first course of Machine Learning Engineering for Production Specialization, 
+you will identify the various components and design an ML production system end-to-end:
+project scoping, data needs, modeling strategies, and deployment constraints and requirements; 
+and learn how to establish a model baseline, address concept drift, and prototype the process 
+for developing, deploying, and continuously improving a productionized ML application.
 
 -Machine Learning Data Lifecycle in Production (DeepLearning.AI): In the second course of Machine Learning Engineering for Production Specialization, you will build data pipelines by gathering, cleaning, and validating datasets and assessing data quality; implement feature engineering, transformation, and selection with TensorFlow Extended and get the most predictive power out of your data; and establish the data lifecycle by leveraging data lineage and provenance metadata tools and follow data evolution with enterprise data schemas.
 
