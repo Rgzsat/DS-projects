@@ -9,3 +9,9 @@ and provide predictive maintenance is a callenging task.
 This article presents a solid and robust Deep Learning methodology based on Neural Networks (NNs)
 in the TensorFlow framework and using Python as a programming language, 
 all to predict the Open Circuit Voltage (OCV) and improve the state estimation of battery cells.
+
+Extensive tests on Lithium-ion cells under diverse operating conditions were carried out, 
+with data acquisition meticulously recorded using a programmable DC Electronic Load. 
+Various architectures were designed using Keras as a high-level 
+Application Programming Interface (API) to build Artificial Neural Networks (ANNs), 
+Convolutional Neural Networks (CNNs), and Recurrent Neural Networks (RNNs).
