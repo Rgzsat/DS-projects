@@ -4,5 +4,8 @@ A Battery Energy Storage System (BESS) plays an important role in achieving
 energy transition and climate change mitigation, with charging management applications 
 being a crucial topic to improve the build, design, and operation of renewable technologies. 
 With the continuous development of Artificial Intelligence (AI), 
-implementing accurate algorithms that monitor Key Performance Indicators (KPIs
-) and provide predictive maintenance is a callenging task. 
+implementing accurate algorithms that monitor Key Performance Indicators (KPIs) 
+and provide predictive maintenance is a callenging task. 
+This article presents a solid and robust Deep Learning methodology based on Neural Networks (NNs)
+in the TensorFlow framework and using Python as a programming language, 
+all to predict the Open Circuit Voltage (OCV) and improve the state estimation of battery cells.
