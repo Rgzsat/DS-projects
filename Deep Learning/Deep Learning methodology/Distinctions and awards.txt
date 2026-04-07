@@ -29,3 +29,13 @@ to keep your production system running. Additionally, you will continuously moni
 system to detect model decay, remediate performance drops, and avoid system failures 
 so it can continuously operate at all times.  
 
+-Machine Learning Engineering for Production (MLOps) Specialization (DeepLearning.AI): 
+The Machine Learning Engineering for Production (MLOps) Specialization covers how to conceptualize,
+build, and maintain integrated systems that continuously operate in production. 
+In striking contrast with standard machine learning modeling, production systems need 
+to handle relentless evolving data. Moreover, the production system must run non-stop 
+at the minimum cost while producing the maximum performance. In this Specialization, 
+you will learn how to use well-established tools and methodologies for doing all of this
+effectively and efficiently.
+By the end, you will be ready to employ your new production-ready skills to participate
+in the development of leading-edge AI technology to solve real-world problems.
