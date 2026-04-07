@@ -15,3 +15,7 @@ with data acquisition meticulously recorded using a programmable DC Electronic L
 Various architectures were designed using Keras as a high-level 
 Application Programming Interface (API) to build Artificial Neural Networks (ANNs), 
 Convolutional Neural Networks (CNNs), and Recurrent Neural Networks (RNNs).
+
+In addition, advanced computer science techniques were executed to improve the performance
+of the algorithms, such as cross-validation, Fine-tuning, Regularization, Bayesian optimization,
+Machine Learning techniques, and Data-Driven approaches. 
