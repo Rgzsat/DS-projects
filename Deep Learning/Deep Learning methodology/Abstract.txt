@@ -18,4 +18,9 @@ Convolutional Neural Networks (CNNs), and Recurrent Neural Networks (RNNs).
 
 In addition, advanced computer science techniques were executed to improve the performance
 of the algorithms, such as cross-validation, Fine-tuning, Regularization, Bayesian optimization,
-Machine Learning techniques, and Data-Driven approaches. 
+Machine Learning techniques, and Data-Driven approaches. The resulting network architectures 
+were stored in Hierarchical Data Format (HDF5) files, tested against both seen and unseen 
+data to ensure its robustness and effectiveness in new battery measurements. 
+The Deep Learning methodology provides remarkable testing accuracy of over 95% for all 
+types of NNs, affirming its high adaptability and reliability in the development
+of AI-powered technology for battery management
