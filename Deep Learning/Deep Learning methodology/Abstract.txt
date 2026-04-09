@@ -23,4 +23,4 @@ were stored in Hierarchical Data Format (HDF5) files, tested against both seen a
 data to ensure its robustness and effectiveness in new battery measurements. 
 The Deep Learning methodology provides remarkable testing accuracy of over 95% for all 
 types of NNs, affirming its high adaptability and reliability in the development
-of AI-powered technology for battery management
+of AI-powered technology for battery management.
