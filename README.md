@@ -7,7 +7,7 @@
 Figure A. PhD thesis defence: Rolando Antonio Gilbert Zequera, "Artificial Intelligence-Based Predictive Analytics for Battery Energy Storage Systems in Electric Vehicle Applications“.
 https://digikogu.taltech.ee/et/Item/7ecb1e38-a591-47c5-b37e-7c2e901d05f1
 
-![PhD defense image](https://github.com/user-attachments/assets/d16c947c-3128-4c4b-be38-88b49acbd5b9)
+![PhD defense image](https://github.com/user-attachments/assets/793f38ff-442c-4fcb-9bbe-1c54a98b9d7c)
 
 
 ![AASTA TEADUSARTIKKEL 2025](https://github.com/user-attachments/assets/809968b3-915a-49e9-954c-c5ed681393fc)
