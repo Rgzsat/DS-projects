@@ -9,7 +9,7 @@ https://digikogu.taltech.ee/et/Item/7ecb1e38-a591-47c5-b37e-7c2e901d05f1
 
 ![PhD defense image](https://github.com/user-attachments/assets/793f38ff-442c-4fcb-9bbe-1c54a98b9d7c)
 
-Figure B. PhD thesis defense schedule.
+Figure B. PhD thesis defense schedule, 05.09.2025 at 11:00h (GMT +3).
 
 ![AASTA TEADUSARTIKKEL 2025](https://github.com/user-attachments/assets/809968b3-915a-49e9-954c-c5ed681393fc)
 
