@@ -9,14 +9,15 @@ https://digikogu.taltech.ee/et/Item/7ecb1e38-a591-47c5-b37e-7c2e901d05f1
 
 ![PhD defense image](https://github.com/user-attachments/assets/793f38ff-442c-4fcb-9bbe-1c54a98b9d7c)
 
+Figure B. PhD thesis defense schedule.
 
 ![AASTA TEADUSARTIKKEL 2025](https://github.com/user-attachments/assets/809968b3-915a-49e9-954c-c5ed681393fc)
 
-Figure B. Tallinn University of Technology Research Article of the Year 2025 (Engineering and Technology Field) “Deep Learning methodology for charging management applications in battery cells based on Neural Networks”. https://ieeexplore.ieee.org/document/10568341.
+Figure C. Tallinn University of Technology Research Article of the Year 2025 (Engineering and Technology Field) “Deep Learning methodology for charging management applications in battery cells based on Neural Networks”. https://ieeexplore.ieee.org/document/10568341.
 
 ![RAGZ - Data Analyst Specialist](https://github.com/user-attachments/assets/7b09b2f3-a863-475b-a160-2bff7bf61c47)
 
-Figure C. Data Analyst Specialist role at Tallinn University of Technology (TalTech) in 2026.
+Figure D. Data Analyst Specialist role at Tallinn University of Technology (TalTech) in 2026.
 
 # Distance functions and data preprocessing
 
