@@ -11,6 +11,10 @@ https://digikogu.taltech.ee/et/Item/7ecb1e38-a591-47c5-b37e-7c2e901d05f1
 
 Figure B. PhD thesis defense schedule, 05.09.2025 at 11:00h (GMT +3).
 
+<img width="311" height="410" alt="image" src="https://github.com/user-attachments/assets/23dcf808-5915-4165-b825-46da8f2e53cd" />
+
+
+
 ![AASTA TEADUSARTIKKEL 2025](https://github.com/user-attachments/assets/809968b3-915a-49e9-954c-c5ed681393fc)
 
 Figure C. Tallinn University of Technology Research Article of the Year 2025 (Engineering and Technology Field) “Deep Learning methodology for charging management applications in battery cells based on Neural Networks”. https://ieeexplore.ieee.org/document/10568341.
