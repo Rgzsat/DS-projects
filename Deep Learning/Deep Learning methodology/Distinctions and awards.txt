@@ -12,14 +12,14 @@ implement feature engineering, transformation, and selection with TensorFlow Ext
 and get the most predictive power out of your data; and establish the data lifecycle 
 by leveraging data lineage and provenance metadata tools and follow data evolution with enterprise data schemas.
 
--Machine Learning Modeling Pipelines in Production (DeepLearning.AI): 
+- 2024. Machine Learning Modeling Pipelines in Production (DeepLearning.AI): 
 In the third course of Machine Learning Engineering for Production Specialization, 
 you will build models for different serving environments; implement tools and techniques 
 to effectively manage your modeling resources and best serve offline and online inference requests; 
 and use analytics tools and performance metrics to address model fairness, 
 explainability issues, and mitigate bottlenecks.
 
--Deploying Machine Learning Models in Production (DeepLearning.AI): 
+- 2024. Deploying Machine Learning Models in Production (DeepLearning.AI): 
 In the fourth course of Machine Learning Engineering for Production Specialization,
 you will learn how to deploy ML models and make them available to end-users.
 You will build scalable and reliable hardware infrastructure to deliver inference requests 
