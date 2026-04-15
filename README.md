@@ -23,6 +23,9 @@ Figure D. Tallinn University of Technology Research Article of the Year 2025 (En
 
 Figure E. Data Analyst Specialist role at Tallinn University of Technology (TalTech) in 2026.
 
+<img width="659" height="313" alt="image" src="https://github.com/user-attachments/assets/964b7cd3-5693-46ad-b0f4-975668db374c" />
+
+
 # Distance functions and data preprocessing
 
 ![image](https://github.com/Rgzsat/DS-projects/assets/87973999/6ea7a4c2-0ad1-4f64-a4d5-3220d1860bb2)
