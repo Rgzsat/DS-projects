@@ -1,1 +1,4 @@
+This document provides an overview about the novelties of the 
+Deep Learning methoology, wich is based on the research article 
+found in the following link:
 
