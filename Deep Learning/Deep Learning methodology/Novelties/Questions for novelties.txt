@@ -1,1 +1,5 @@
+Q1: Please describe the topic of your research paper/thesis,
+including the research question, research design, and main objectives.
 
+Q2: Please explain the results or findings of your thesis and 
+the implications for the broader energy storage sector
