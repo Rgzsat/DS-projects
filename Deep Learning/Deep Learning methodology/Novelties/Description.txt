@@ -3,3 +3,12 @@ Deep Learning methoology, wich is based on the research article
 found in the following link:
 
 https://ieeexplore.ieee.org/document/10568341
+
+The European Association for Storage of Energy (EASE) 
+is proud to launch its ninth annual Student Award recognising 
+outstanding graduate student research in the field of energy storage.
+
+The research must focus on an energy storage-related topic. 
+Eligible papers are Bachelor's, Master's or Doctorates research papers 
+submitted during the above-mentioned period or ongoing. 
+EASE will be able to evaluate papers written in English
