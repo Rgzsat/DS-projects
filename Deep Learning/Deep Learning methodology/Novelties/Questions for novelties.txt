@@ -1,3 +1,11 @@
+This document provides an overview about the novelties of the 
+Deep Learning methoology, wich is based on the research article 
+found in the following link:
+
+https://ieeexplore.ieee.org/document/10568341
+
+The questions of the EASE competition are given as follows:
+
 Q1: Please describe the topic of your research paper/thesis,
 including the research question, research design, and main objectives.
 Please note that your response is limited to 2000 words.
