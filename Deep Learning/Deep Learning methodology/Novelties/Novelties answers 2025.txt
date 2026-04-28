@@ -1,1 +1,7 @@
-This thesis focuses on enhancing the performance and reliability of Battery Energy Storage Systems (BESS) through a multidisciplinary methodology that combines expertise from Electrical Engineering, Mechatronics, Computer Science, Software Engineering, Energy Engineering, and Data Engineering. The central research question is: How can the integration of advanced methodologies from diverse technical fields improve the resilience and operational efficiency of both physical and virtual models of a BESS?
+This thesis focuses on enhancing the performance and reliability
+of Battery Energy Storage Systems (BESS) through a multidisciplinar
+methodology that combines expertise from Electrical Engineering, Mechatronics,
+Computer Science, Software Engineering, Energy Engineering, and Data Engineering.
+The central research question is: How can the integration of advanced methodologies
+from diverse technical fields improve the resilience and operational efficiency of
+both physical and virtual models of a BESS?
