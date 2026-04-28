@@ -5,3 +5,9 @@ Computer Science, Software Engineering, Energy Engineering, and Data Engineering
 The central research question is: How can the integration of advanced methodologies
 from diverse technical fields improve the resilience and operational efficiency of
 both physical and virtual models of a BESS?
+
+The research design includes experimental battery testing, 
+hybrid model development, and the implementation of software
+infrastructure to address operational challenges in both physical systems and virtual environments. 
+Additionally, this thesis bridges gaps between academia and industry by integrating algorithmic 
+approaches from AI and energy systems.
