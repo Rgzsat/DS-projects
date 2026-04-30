@@ -11,3 +11,9 @@ hybrid model development, and the implementation of software
 infrastructure to address operational challenges in both physical systems and virtual environments. 
 Additionally, this thesis bridges gaps between academia and industry by integrating algorithmic 
 approaches from AI and energy systems.
+
+The main objectives of the thesis are:
+•	To develop a robust and adaptable framework for optimizing BESS performance,
+considering both physical degradation and virtual modeling limitations such as
+concept and data drift.
+
