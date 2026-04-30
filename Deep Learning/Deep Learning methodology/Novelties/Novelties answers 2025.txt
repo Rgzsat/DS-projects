@@ -17,3 +17,5 @@ The main objectives of the thesis are:
 considering both physical degradation and virtual modeling limitations such as
 concept and data drift.
 
+•	To support the creation of resilient energy storage systems that contribute 
+to the EU’s goals for sustainable energy and climate change mitigation.
