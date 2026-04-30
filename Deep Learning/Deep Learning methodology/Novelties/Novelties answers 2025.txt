@@ -16,6 +16,8 @@ The main objectives of the thesis are:
 •	To develop a robust and adaptable framework for optimizing BESS performance,
 considering both physical degradation and virtual modeling limitations such as
 concept and data drift.
-
 •	To support the creation of resilient energy storage systems that contribute 
 to the EU’s goals for sustainable energy and climate change mitigation.
+•	To implement APIs and relational databases to improve data management, 
+coding efficiency, and system responsiveness to customer demands such as state estimation, 
+Remaining Useful Lifetime (RUL), and charging management.
