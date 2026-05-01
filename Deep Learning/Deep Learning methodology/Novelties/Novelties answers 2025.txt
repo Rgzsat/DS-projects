@@ -33,3 +33,5 @@ through advanced modeling, Artificial Intelligence (AI), and software engineerin
 The central research question guiding this work is: How can multidisciplinary and
 AI-driven methods be integrated to enhance the performance, reliability, and 
 adaptability of Battery Energy Storage Systems in real-world environments?
+
+Research design
