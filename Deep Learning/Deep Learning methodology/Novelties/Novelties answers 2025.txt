@@ -21,3 +21,5 @@ to the EU’s goals for sustainable energy and climate change mitigation.
 •	To implement APIs and relational databases to improve data management, 
 coding efficiency, and system responsiveness to customer demands such as state estimation, 
 Remaining Useful Lifetime (RUL), and charging management.
+
+Research question
