@@ -35,3 +35,7 @@ AI-driven methods be integrated to enhance the performance, reliability, and
 adaptability of Battery Energy Storage Systems in real-world environments?
 
 Research design
+The research adopts a multidisciplinary design that integrates expertise
+from several fields such as Electrical Engineering, Mechatronics, Computer Science,
+Software Engineering, Energy Engineering, and Data Engineering. 
+These fields are not only complementary but also essential in addressing the multifaceted challenges of BESS development and deployment. The methodology is structured around three fundamental pillars: Digitalization, Decentralization, and Decarbonization, each contributing to a holistic vision for future-ready energy storage systems.
