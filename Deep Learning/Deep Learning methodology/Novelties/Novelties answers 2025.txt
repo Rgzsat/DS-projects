@@ -46,4 +46,7 @@ to a holistic vision for future-ready energy storage systems.
 
 The digitalization component is achieved through the development and implementation
 of advanced algorithms within a sophisticated programming environment. 
-Python was chosen as the primary language due to its extensive libraries and tools for data handling, machine learning, and system integration. The study focused on building the full algorithmic structure from the ground up, avoiding black-box models and ensuring high levels of explainability, traceability, and transparency.
+Python was chosen as the primary language due to its extensive libraries
+and tools for data handling, machine learning, and system integration. 
+The study focused on building the full algorithmic structure from the ground up, 
+avoiding black-box models and ensuring high levels of explainability, traceability, and transparency.
