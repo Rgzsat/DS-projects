@@ -25,6 +25,7 @@ Figure E. Data Analyst Specialist role at Tallinn University of Technology (TalT
 
 <img width="659" height="313" alt="image" src="https://github.com/user-attachments/assets/964b7cd3-5693-46ad-b0f4-975668db374c" />
 
+
 Figure F. MLOps certificate, acknowledged by DeepLearningAI in 2024.
 
 # Distance functions and data preprocessing
