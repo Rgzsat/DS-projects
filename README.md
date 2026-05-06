@@ -9,7 +9,7 @@ https://digikogu.taltech.ee/et/Item/7ecb1e38-a591-47c5-b37e-7c2e901d05f1
 
 ![PhD defense image](https://github.com/user-attachments/assets/793f38ff-442c-4fcb-9bbe-1c54a98b9d7c)
 
-Figure B. PhD thesis defense schedule, 05.09.2025 at 11:00h (GMT +3).
+Figure B. PhD thesis defense schedule, 05.09.2025 at 11:00h (GMT +3). https://taltech.ee/en/events/doktoritoo-kaitsmine-rolando-antonio-gilbert-zequera-artificial-intelligence-based
 
 <img width="311" height="410" alt="image" src="https://github.com/user-attachments/assets/23dcf808-5915-4165-b825-46da8f2e53cd" />
 
@@ -24,7 +24,6 @@ Figure D. Tallinn University of Technology Research Article of the Year 2025 (En
 Figure E. Data Analyst Specialist role at Tallinn University of Technology (TalTech) in 2026.
 
 <img width="659" height="313" alt="image" src="https://github.com/user-attachments/assets/964b7cd3-5693-46ad-b0f4-975668db374c" />
-
 
 Figure F. MLOps certificate, acknowledged by DeepLearningAI in 2024.
 
