@@ -16,4 +16,10 @@ cases where the physical model is already defined.
 
 During the implementation of Deep Learning algorithms in a BESS domain, 
 the opportunity exists to train and fine-tune a Neural Network (NN),
-thus optimizing the battery's operations based on Health and Charge indicators. However, when different types of datasets are collected, the challenge lies in unraveling its interpretation to achieve both Feature Engineering and Feature Selection, as battery specialists typically withhold this information. This opacity regarding the internal mechanisms of the battery presents a significant obstacle when seeking to understand, potentially modify, and test Deep Learning algorithms to interpret the predictors and the target variable during model evaluation. This lack of transparency poses a substantial obstacle in the pursuit of the capability, robustness, and adaptability of AI methods in battery management, which introduces the research question of designing an optimal algorithm whose mechanism can explain the behavior of physical and virtual entities from an energy framework.
+thus optimizing the battery's operations based on Health and Charge indicators.
+However, when different types of datasets are collected, the challenge lies in 
+unraveling its interpretation to achieve both Feature Engineering and Feature Selection, 
+as battery specialists typically withhold this information. This opacity regarding 
+the internal mechanisms of the battery presents a significant obstacle when seeking
+to understand, potentially modify, and test Deep Learning algorithms to interpret 
+the predictors and the target variable during model evaluation. This lack of transparency poses a substantial obstacle in the pursuit of the capability, robustness, and adaptability of AI methods in battery management, which introduces the research question of designing an optimal algorithm whose mechanism can explain the behavior of physical and virtual entities from an energy framework.
