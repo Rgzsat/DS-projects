@@ -1,6 +1,11 @@
 This section includes the corresponding scientific publications that integrate
 the PhD thesis with their corresponding novelties.
 
-A summary of the novelties per publication is given as follows:
+The publications are the following: 
+
+1. Gilbert Zequera, R.A.; Rassõlkin, A.; Vaimann, T.; Kallaste, A. “Overview of battery
+energy storage systems readiness for digital twin of electric vehicles.” IET Smart Grid
+6.1 (2023): 5–16.
+
 
 
