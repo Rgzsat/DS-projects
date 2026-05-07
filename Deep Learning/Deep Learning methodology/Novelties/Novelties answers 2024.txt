@@ -7,4 +7,9 @@ leveraging the building of several neuron's architecture through Key Performance
 Indicators (KPIs) and Transfer learning in battery operating data. The study employs
 an exhaustive computer science approach within the framework of TensorFlow and Keras 
 as a high-level Application Programming Interface (API), experimentally subjecting the
-BESS to rigorous testing across diverse conditions, complemented by meticulous performance data acquisition using a programmable DC Electronic Load. This departure from established paradigms not only fills a critical void in battery development but also offers a novel perspective on renewable energy systems and Artificial Intelligence (AI) methods, particularly in cases where the physical model is already defined.  
+BESS to rigorous testing across diverse conditions, complemented by meticulous
+performance data acquisition using a programmable DC Electronic Load. 
+This departure from established paradigms not only fills a critical void 
+in battery development but also offers a novel perspective on renewable
+energy systems and Artificial Intelligence (AI) methods, particularly in
+cases where the physical model is already defined.  
