@@ -14,3 +14,8 @@ Applications. Sensors 2023, 23, 1414. https://doi.org/10.3390/s23031414.
 Indicators for Battery Energy Storage Systems in Electric Vehicles Applications.”
 2022 IEEE 20th International Power Electronics and Motion Control Conference
 (PEMC). IEEE, 2022.
+
+4. Gilbert Zequera, R.A.; Rassõlkin, A.; Vaimann, T.; Kallaste, A. “Clustering and Outlier
+Analysis for Key Performance Indicators in Battery Energy Storage Systems
+applications.” 2023 IEEE 17th International Conference on Compatibility, Power
+Electronics and Power Engineering (CPE-POWERENG). IEEE, 2023.
