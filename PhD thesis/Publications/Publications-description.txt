@@ -7,5 +7,7 @@ The publications are the following:
 energy storage systems readiness for digital twin of electric vehicles.” IET Smart Grid
 6.1 (2023): 5–16.
 
+2. Ibrahim, M.; Rjabtšikov, V.; Gilbert, R. Overview of Digital Twin Platforms for EV
+Applications. Sensors 2023, 23, 1414. https://doi.org/10.3390/s23031414.
 
 
