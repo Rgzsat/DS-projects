@@ -50,3 +50,8 @@ Python was chosen as the primary language due to its extensive libraries
 and tools for data handling, machine learning, and system integration. 
 The study focused on building the full algorithmic structure from the ground up, 
 avoiding black-box models and ensuring high levels of explainability, traceability, and transparency.
+
+The digital aspect extends to the use of Application Programming Interfaces (APIs)
+and Relational Databases (RDBs) to manage large volumes of real-time and historical data. 
+These tools were instrumental in enhancing the efficiency and accuracy of measurements,
+optimizing system control, and improving coding scalability.
