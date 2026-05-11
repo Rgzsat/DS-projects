@@ -10,4 +10,7 @@ energy storage systems readiness for digital twin of electric vehicles.” IET S
 2. Ibrahim, M.; Rjabtšikov, V.; Gilbert, R. Overview of Digital Twin Platforms for EV
 Applications. Sensors 2023, 23, 1414. https://doi.org/10.3390/s23031414.
 
-
+3. Gilbert Zequera, R.A.; Rassõlkin, A.; Vaimann, T.; Kallaste, A. “Health and Charge
+Indicators for Battery Energy Storage Systems in Electric Vehicles Applications.”
+2022 IEEE 20th International Power Electronics and Motion Control Conference
+(PEMC). IEEE, 2022.
