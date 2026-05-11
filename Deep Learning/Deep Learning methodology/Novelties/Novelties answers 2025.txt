@@ -55,3 +55,10 @@ The digital aspect extends to the use of Application Programming Interfaces (API
 and Relational Databases (RDBs) to manage large volumes of real-time and historical data. 
 These tools were instrumental in enhancing the efficiency and accuracy of measurements,
 optimizing system control, and improving coding scalability.
+
+Decentralization was realized by integrating knowledge from various disciplines 
+to bridge the gap between AI and energy system design. Rather than viewing BESS 
+as isolated physical systems, the research models them as cyber-physical systems, 
+where data flows, control mechanisms, and physical parameters are tightly interlinked. 
+This paradigm allows for more flexible, distributed, and intelligent control architectures
+that respond in real-time to operational conditions.
