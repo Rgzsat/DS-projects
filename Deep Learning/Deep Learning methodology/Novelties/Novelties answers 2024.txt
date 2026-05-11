@@ -22,4 +22,8 @@ unraveling its interpretation to achieve both Feature Engineering and Feature Se
 as battery specialists typically withhold this information. This opacity regarding 
 the internal mechanisms of the battery presents a significant obstacle when seeking
 to understand, potentially modify, and test Deep Learning algorithms to interpret 
-the predictors and the target variable during model evaluation. This lack of transparency poses a substantial obstacle in the pursuit of the capability, robustness, and adaptability of AI methods in battery management, which introduces the research question of designing an optimal algorithm whose mechanism can explain the behavior of physical and virtual entities from an energy framework.
+the predictors and the target variable during model evaluation.
+This lack of transparency poses a substantial obstacle in the pursuit of
+the capability, robustness, and adaptability of AI methods in battery management,
+which introduces the research question of designing an optimal algorithm whose
+mechanism can explain the behavior of physical and virtual entities from an energy framework.
