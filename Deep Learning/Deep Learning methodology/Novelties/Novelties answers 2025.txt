@@ -62,3 +62,10 @@ as isolated physical systems, the research models them as cyber-physical systems
 where data flows, control mechanisms, and physical parameters are tightly interlinked. 
 This paradigm allows for more flexible, distributed, and intelligent control architectures
 that respond in real-time to operational conditions.
+
+The methodological approach promotes the co-design of virtual and physical BESS models,
+treating them as interdependent entities. While the physical system is prone to degradation,
+especially under End-of-Life (EOL) conditions, the virtual system faces challenges such
+as concept drift and data drift, which can impair prediction accuracy and control responsiveness. 
+By accounting for these dynamic factors, the research introduces a robust framework for
+system-wide monitoring and optimization.
