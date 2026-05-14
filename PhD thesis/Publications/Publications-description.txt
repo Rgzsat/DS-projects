@@ -19,3 +19,8 @@ Indicators for Battery Energy Storage Systems in Electric Vehicles Applications.
 Analysis for Key Performance Indicators in Battery Energy Storage Systems
 applications.” 2023 IEEE 17th International Conference on Compatibility, Power
 Electronics and Power Engineering (CPE-POWERENG). IEEE, 2023.
+
+5. Gilbert Zequera, R.A.; Rassõlkin, A.; Vaimann, T.; Kallaste, A. “Data Science-based
+Techniques for Modelling and Diagnostics of Battery Cells Based on End-of-Life
+criteria.” 2023 International Conference on Electrical Drives and Power Electronics
+(EDPE). IEEE, 2023.
