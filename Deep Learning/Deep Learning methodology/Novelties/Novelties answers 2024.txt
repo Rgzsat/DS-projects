@@ -34,7 +34,10 @@ These challenge tasks constitute central research added value, as the primary ob
 of this study is to establish a precise Deep Learning methodology for battery modelling
 and state estimation applied to charging management. To accomplish this objective, 
 a series of diverse testing wassystematically conducted on the LEV50N battery cells using
-a programmable DC Electronic Load.
-These processes were designed to comprehensively explore the battery's performance 
-characteristics and to gain deeper insights into its intricate electrical engineering operation.
-The extensive testing on Lithium-ion cells under various conditions and the meticulous data acquisition using a programmable DC Electronic Load have led to the creation of diverse NN architectures. These include Artificial Neural Networks (ANNs), Convolutional Neural Networks (CNNs), and Recurrent Neural Networks (RNNs), all designed using Keras API. 
+a programmable DC Electronic Load. These processes were designed to comprehensively explore the
+battery's performance characteristics and to gain deeper insights into its intricate 
+electrical engineering operation.The extensive testing on Lithium-ion cells under
+various conditions and the meticulous data acquisition using a programmable DC Electronic 
+Load have led to the creation of diverse NN architectures. These include Artificial Neural
+Networks (ANNs), Convolutional Neural Networks (CNNs), and Recurrent Neural Networks (RNNs),
+all designed using Keras API. 
