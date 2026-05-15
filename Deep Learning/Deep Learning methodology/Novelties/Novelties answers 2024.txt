@@ -41,3 +41,10 @@ various conditions and the meticulous data acquisition using a programmable DC E
 Load have led to the creation of diverse NN architectures. These include Artificial Neural
 Networks (ANNs), Convolutional Neural Networks (CNNs), and Recurrent Neural Networks (RNNs),
 all designed using Keras API. 
+
+Likewise, an experimental plan has been requested to further intensify battery testing,
+more data and measurements, because if in the future there is a problem related to 
+the degradation of energy capacity, which may be aging, useful life, and predictive maintenance,
+it is necessary take immediate measures, all this because when the energy storage system
+is not well adapted to the user's needs, additional issues can arise to take advantage 
+of the lack of performance during the operation of the whole system.
