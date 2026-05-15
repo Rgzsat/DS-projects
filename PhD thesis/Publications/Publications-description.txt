@@ -24,3 +24,7 @@ Electronics and Power Engineering (CPE-POWERENG). IEEE, 2023.
 Techniques for Modelling and Diagnostics of Battery Cells Based on End-of-Life
 criteria.” 2023 International Conference on Electrical Drives and Power Electronics
 (EDPE). IEEE, 2023.
+
+6. Gilbert Zequera, R.A.; Rassõlkin, A.; Vaimann, T.; Kallaste, A. “Modeling Battery
+Energy Storage Systems Based on Remaining Useful Lifetime through Regression
+Algorithms and Binary Classifiers.” Applied Sciences 13.13 (2023): 7597.
