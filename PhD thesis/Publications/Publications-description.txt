@@ -15,20 +15,20 @@ Indicators for Battery Energy Storage Systems in Electric Vehicles Applications.
 2022 IEEE 20th International Power Electronics and Motion Control Conference
 (PEMC). IEEE, 2022.
 
-4. Gilbert Zequera, R.A.; Rassõlkin, A.; Vaimann, T.; Kallaste, A. “Clustering and Outlier
+IV. Gilbert Zequera, R.A.; Rassõlkin, A.; Vaimann, T.; Kallaste, A. “Clustering and Outlier
 Analysis for Key Performance Indicators in Battery Energy Storage Systems
 applications.” 2023 IEEE 17th International Conference on Compatibility, Power
 Electronics and Power Engineering (CPE-POWERENG). IEEE, 2023.
 
-5. Gilbert Zequera, R.A.; Rassõlkin, A.; Vaimann, T.; Kallaste, A. “Data Science-based
+V. Gilbert Zequera, R.A.; Rassõlkin, A.; Vaimann, T.; Kallaste, A. “Data Science-based
 Techniques for Modelling and Diagnostics of Battery Cells Based on End-of-Life
 criteria.” 2023 International Conference on Electrical Drives and Power Electronics
 (EDPE). IEEE, 2023.
 
-6. Gilbert Zequera, R.A.; Rassõlkin, A.; Vaimann, T.; Kallaste, A. “Modeling Battery
+VI. Gilbert Zequera, R.A.; Rassõlkin, A.; Vaimann, T.; Kallaste, A. “Modeling Battery
 Energy Storage Systems Based on Remaining Useful Lifetime through Regression
 Algorithms and Binary Classifiers.” Applied Sciences 13.13 (2023): 7597.
 
-7. Gilbert Zequera, R.A.; Rassõlkin, A.; Vaimann, T.; Kallaste, A.
+VII. Gilbert Zequera, R.A.; Rassõlkin, A.; Vaimann, T.; Kallaste, A.
 "Deep Learning methodology for charging management applications in battery
 cells based on Neural Networks." IEEE Transactions on Intelligent Vehicles (2024).
