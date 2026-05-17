@@ -28,3 +28,7 @@ criteria.” 2023 International Conference on Electrical Drives and Power Electr
 6. Gilbert Zequera, R.A.; Rassõlkin, A.; Vaimann, T.; Kallaste, A. “Modeling Battery
 Energy Storage Systems Based on Remaining Useful Lifetime through Regression
 Algorithms and Binary Classifiers.” Applied Sciences 13.13 (2023): 7597.
+
+7. Gilbert Zequera, R.A.; Rassõlkin, A.; Vaimann, T.; Kallaste, A.
+"Deep Learning methodology for charging management applications in battery
+cells based on Neural Networks." IEEE Transactions on Intelligent Vehicles (2024).
